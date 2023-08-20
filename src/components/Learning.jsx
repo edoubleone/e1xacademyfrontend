@@ -6,7 +6,7 @@ import FrameTwo from "../assets/icons/Frame 71.png";
 import FrameThree from "../assets/icons/Frame 72.png";
 function Learning() {
   return (
-    <div className="container mx-auto mt-12">
+    <div className="container max-w-6xl mx-auto mt-12">
       <div className="w-5/6">
         <div className="flex flex-col mb-8">
           <h1 className="text-center text-5xl font-bold mb-4 ">
@@ -19,11 +19,12 @@ function Learning() {
           </p>
         </div>
         <div className="flex ">
-          <div className="w-1/3 p-4 bg-gray-100">
+          <div className="w-1/2 p-4 bg-gray-100">
             <img src={ImageLeaning} alt="image" />
+            <img src={ImageTwo} alt="frame" />
           </div>
           <div className="w-1/2 p-4 bg-gray-100 ">
-            <div className=" flex flex-col space-y-4">
+            <div className=" flex flex-col space-y-10">
               <div className="p-8 bg-[#256bdb] text-white mb-3 flex items-center">
                 <div className="pr-4">
                   <img src={Frame} alt="frame" />

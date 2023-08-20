@@ -6,15 +6,16 @@ import {
   FaInstagram,
   FaTwitterSquare,
 } from "react-icons/fa";
+import Logo from "../assets/images/logo.jpeg";
 
 function Footer() {
   return (
     <div className="bg-white">
-      <div className="container mx-auto">
+      <div className="container mx-auto max-w-6xl">
         <div className="flex ">
           <div className="w-3/5 p-4">
             <div className="h-full  flex flex-col">
-              <h2 className="text-3xl font-bold text-[#e46601]">EXE</h2>
+              <img src={Logo} alt="logo" width="80" height="50" />
             </div>
           </div>
 
