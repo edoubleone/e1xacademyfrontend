@@ -17,31 +17,31 @@ function Navbar() {
           </NavLink>
         </div>
 
-        <ul className="flex space-x-4">
+        <ul className="flex space-x-10">
           <li>
-            <NavLink to="/" exact activeClassName="active">
+            <NavLink to="/" exact activeClassName="active" className="text-lg">
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/about" activeClassName="active">
+            <NavLink to="/about" activeClassName="active" className="text-lg">
               About
             </NavLink>
           </li>
           <li>
-            <NavLink to="/course" activeClassName="active">
+            <NavLink to="/course" activeClassName="active" className="text-lg">
               Course
             </NavLink>
           </li>
           <li>
-            <NavLink to="/contact" activeClassName="active">
+            <NavLink to="/contact" activeClassName="active" className="text-lg">
               Contact
             </NavLink>
           </li>
         </ul>
 
         <div className="flex items-center space-x-4">
-          <NavLink to="/signin" activeClassName="active">
+          <NavLink to="/signin" activeClassName="active" className="text-lg">
             Sign In
           </NavLink>
 
