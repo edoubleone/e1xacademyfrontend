@@ -4,10 +4,16 @@ import Framer from "../assets/icons/Frame 36.png";
 import Framers from "../assets/icons/Frame 35.png";
 import Framerer from "../assets/icons/Frame 34.png";
 import Frameres from "../assets/icons/Frame 37.png";
+import background from "../assets/images/wave.png";
 
 function Course() {
+  const backgroundImageStyle = {
+    backgroundImage: `url(${background})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+  };
   return (
-    <div className="mt-20">
+    <div className="mt-20 bg-[#D6EBFF] py-4" style={backgroundImageStyle}>
       <div className="container max-w-6xl mx-auto justify-center items-center">
         <div>
           <h1 className="text-center text-5xl font-bold pb-4">
@@ -20,7 +26,7 @@ function Course() {
         </div>
         <div className="flex justify-center items-center">
           <div className="w-96 p-3">
-            <div className="h-full bg-blue-200 p-3 ">
+            <div className="h-full bg-white p-3 ">
               <img src={Framers} alt="framer" />
               <div>
                 <p className="text-center font-bold py-3">
@@ -38,7 +44,7 @@ function Course() {
             </div>
           </div>
           <div className="w-96 p-4">
-            <div className="h-full bg-blue-200 p-3">
+            <div className="h-full bg-white p-3">
               <img src={Framerer} alt="framer" />
               <div>
                 <p className="text-center  font-bold py-3">
@@ -59,7 +65,7 @@ function Course() {
         <div className="flex justify-center items-center">
           <div className="w-96 p-4">
             <div className="h-full bg-red-200">
-              <div className="h-full bg-blue-200 p-3">
+              <div className="h-full bg-white p-3">
                 <img src={Framer} alt="framer" />
                 <div>
                   <p className="text-center font-bold py-3">
@@ -79,7 +85,7 @@ function Course() {
           </div>
           <div className="w-96 p-4">
             <div className="h-full bg-yellow-200">
-              <div className="h-full bg-blue-200 p-3">
+              <div className="h-full bg-white p-3">
                 <img src={Frameres} alt="framer" />
                 <div>
                   <p className="text-center font-bold py-3">

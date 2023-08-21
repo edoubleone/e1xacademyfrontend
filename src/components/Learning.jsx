@@ -23,7 +23,7 @@ function Learning() {
             <img src={ImageLeaning} alt="image" />
             <img src={ImageTwo} alt="frame" />
           </div>
-          <div className="w-1/2 p-4 bg-gray-100 ">
+          <div className="w-2/3 p-4 bg-gray-100 ">
             <div className=" flex flex-col space-y-10">
               <div className="p-8 bg-[#256bdb] text-white mb-3 flex items-center">
                 <div className="pr-4">

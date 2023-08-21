@@ -5,7 +5,7 @@ import Logo from "../assets/images/logo.jpeg";
 function Navbar() {
   return (
     <div className="p-4">
-      <nav className="container max-w-6xl flex items-center justify-between  mx-auto">
+      <nav className="container  flex items-center justify-between  mx-auto">
         <div>
           <NavLink
             to="/"
@@ -13,7 +13,7 @@ function Navbar() {
             activeClassName="active"
             className="text-4xl font-semibold text-[#e46601]"
           >
-            <img src={Logo} alt="logo" width="80" height="50" />
+            <img src={Logo} alt="logo" width="100" height="80" />
           </NavLink>
         </div>
 

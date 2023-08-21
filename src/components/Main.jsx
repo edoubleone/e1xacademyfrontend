@@ -1,10 +1,16 @@
 import React from "react";
 import HeaderImage from "../assets/images/header image.png";
+import background from "../assets/images/header.jpeg";
 
 function Main() {
+  const backgroundImageStyle = {
+    backgroundImage: `url(${background})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+  };
   return (
-    <div>
-      <div className="container mx-w-5xl  mx-auto flex">
+    <div className="w-full" style={backgroundImageStyle}>
+      <div className="container mx-w-5xl  mx-auto flex ">
         <div className="w-1/2 relative ">
           <div className="mt-20 ml-14">
             <h1 className="pb-8 text-6xl font-bold">
@@ -44,7 +50,7 @@ function Main() {
           </div>
         </div>
 
-        <div className="w-1/2 ">
+        <div className="w-1/2">
           <img
             src={HeaderImage}
             alt="headerImage"
