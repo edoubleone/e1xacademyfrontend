@@ -15,17 +15,17 @@ function Start() {
         </div>
         <div className="flex justify-center items-center">
           <div className="w-64 p-2">
-            <div className="h-full bg-[#2d418d] flex flex-col justify-center items-center py-4 rounded-3xl text-white ">
+            <div className="h-full bg-[#2d418d]  border border-[#297bf6] flex flex-col justify-center items-center py-4 rounded-3xl text-white ">
               <p>Business Dev</p>
             </div>
           </div>
           <div className="w-64 p-2">
-            <div className="h-full bg-[#2d418d] flex flex-col justify-center items-center py-4 rounded-3xl text-white ">
+            <div className="h-full bg-[#2d418d]  border border-[#297bf6]  flex flex-col justify-center items-center py-4 rounded-3xl text-white ">
               <p>Dev Ops</p>
             </div>
           </div>
           <div className="w-64 p-2">
-            <div className="h-full bg-[#2d418d] flex flex-col justify-center items-center py-4 rounded-3xl text-white ">
+            <div className="h-full bg-[#2d418d] border border-[#297bf6] flex flex-col justify-center items-center py-4 rounded-3xl text-white ">
               <p>Data Science</p>
             </div>
           </div>
@@ -33,17 +33,17 @@ function Start() {
 
         <div className="flex justify-center items-center">
           <div className="w-64 p-2">
-            <div className="h-full bg-[#2d418d] flex flex-col justify-center items-center py-4 rounded-3xl  text-white">
+            <div className="h-full bg-[#2d418d]  border border-[#297bf6] flex flex-col justify-center items-center py-4 rounded-3xl  text-white">
               <p className="text-center">Tableau</p>
             </div>
           </div>
           <div className="w-64 p-2">
-            <div className="h-full bg-[#2d418d] flex flex-col justify-center items-center  py-5 rounded-3xl  text-white">
+            <div className="h-full bg-[#2d418d] border border-[#297bf6] flex flex-col justify-center items-center  py-5 rounded-3xl  text-white">
               <p className="text-center">Oracle Microsoft SQL</p>
             </div>
           </div>
           <div className="w-64 p-2">
-            <div className="h-full bg-[#2d418d] flex flex-col justify-center items-center py-4 rounded-3xl text-white ">
+            <div className="h-full bg-[#2d418d] border border-[#297bf6] flex flex-col justify-center items-center py-4 rounded-3xl text-white ">
               <p className="text-center">Python</p>
             </div>
           </div>

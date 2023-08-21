@@ -38,8 +38,7 @@ function Subscribe() {
               <input
                 type="text"
                 placeholder="Enter Email"
-                className="px-16 py-2 rounded-lg border border-transparent focus:outline-none bg-opacity-50"
-                style={{ color: "transparent" }}
+                className="px-16 py-2 rounded-lg focus:outline-none bg-[#021b76] bg-opacity-50"
               />
 
               <button className="bg-[#e46601] hover:bg-[#e46601] text-white py-2 px-4 rounded-lg">
