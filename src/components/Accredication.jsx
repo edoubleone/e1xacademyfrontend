@@ -20,10 +20,10 @@ function Accredication() {
   return (
     <div
       className="flex justify-center items-center h-screen"
-      style={{ ...backgroundImageStyle, height: "400px" }}
+      style={{ ...backgroundImageStyle, height: "600px" }}
     >
       <div
-        className="flex items-center justify-center h-[80] w-full"
+        className="flex items-center justify-center h-full w-full"
         style={{ ...imageStyle, minHeight: "400px" }}
       >
         <div className="container  mx-auto flex justify-center">
