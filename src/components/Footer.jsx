@@ -10,12 +10,12 @@ import Logo from "../assets/images/logo.jpeg";
 
 function Footer() {
   return (
-    <div className="bg-[#F8F8F8]">
+    <div className="bg-[#F8F8F8] py-10">
       <div className="container mx-auto">
         <div className="flex ">
           <div className="w-3/5 p-4">
             <div className="h-full  flex flex-col">
-              <img src={Logo} alt="logo" width="80" height="50" />
+              <img src={Logo} alt="logo" width="100" height="80" />
             </div>
           </div>
 
@@ -86,3 +86,5 @@ function Footer() {
 }
 
 export default Footer;
+
+// hello
