@@ -1,7 +1,8 @@
 import React from "react";
 import { BiCheckCircle } from "react-icons/bi";
-import manInstructor from "../assets/images/man.png";
-import womanInstructor from "../assets/images/woman.png";
+import CustomButton from "./components/CustomButton";
+import manInstructor from "../../assets/images/man.png";
+import womanInstructor from "../../assets/images/woman.png";
 
 function Instructor() {
   return (
@@ -44,9 +45,7 @@ function Instructor() {
                   <p>Flexible Payment</p>
                 </div>
               </div>
-              <button className="bg-[#e46601] hover:bg-[#e46601] text-white  py-4 px-8 rounded-lg w-60">
-                Get started
-              </button>
+              <CustomButton text="See All" />
             </div>
           </div>
         </div>
@@ -84,9 +83,7 @@ function Instructor() {
                 </div>
               </div>
               <div className="flex flex-col items-end">
-                <button className="bg-[#e46601] hover:bg-[#e46601] text-white py-4 px-8 rounded-lg w-60">
-                  Get started
-                </button>
+                <CustomButton text="See All" />
               </div>
             </div>
           </div>

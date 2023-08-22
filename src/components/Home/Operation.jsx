@@ -1,5 +1,6 @@
 import React from "react";
-import background from "../assets/images/partners.png";
+
+import background from "../../assets/images/partners.png";
 
 function Operation() {
   const backgroundImageStyle = {

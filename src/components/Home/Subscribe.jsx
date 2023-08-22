@@ -1,5 +1,5 @@
 import React from "react";
-import edu from "../assets/icons/edu.png";
+import edu from "../../assets/icons/edu.png";
 
 function Subscribe() {
   const backgroundImageStyle = {

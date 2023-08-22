@@ -1,6 +1,6 @@
 import React from "react";
-import HeaderImage from "../assets/images/header image.png";
-import background from "../assets/images/header.jpeg";
+import background from "../../assets/images/header.jpeg";
+import HeaderImage from "../../assets/images/header image.png";
 
 function Main() {
   const backgroundImageStyle = {

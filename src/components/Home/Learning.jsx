@@ -1,9 +1,10 @@
 import React from "react";
-import ImageLeaning from "../assets/images/imageCrew.png";
-import ImageTwo from "../assets/images/frame.png";
-import Frame from "../assets/icons/Frame 70.png";
-import FrameTwo from "../assets/icons/Frame 71.png";
-import FrameThree from "../assets/icons/Frame 72.png";
+import ImageTwo from "../../assets/images/frame.png";
+import Frame from "../../assets/icons/Frame 70.png";
+import FrameTwo from "../../assets/icons/Frame 71.png";
+import FrameThree from "../../assets/icons/Frame 72.png";
+import ImageLeaning from "../../assets/images/imageCrew.png";
+
 function Learning() {
   return (
     <div className="container max-w-6xl mx-auto mt-12">

@@ -1,10 +1,13 @@
 import React from "react";
-import { BsArrowRightCircle } from "react-icons/bs";
-import Framer from "../assets/icons/Frame 36.png";
-import Framers from "../assets/icons/Frame 35.png";
-import Framerer from "../assets/icons/Frame 34.png";
-import Frameres from "../assets/icons/Frame 37.png";
-import background from "../assets/images/wave.png";
+// import { BsArrowRightCircle } from "react-icons/bs";
+import CourseCard from "./components/CourseCard";
+import CustomButton from "./components/CustomButton";
+import Framer from "../../assets/icons/Frame 36.png";
+import Framers from "../../assets/icons/Frame 35.png";
+import Framerer from "../../assets/icons/Frame 34.png";
+import Frameres from "../../assets/icons/Frame 37.png";
+
+import background from "../../assets/images/wave.png";
 
 function Course() {
   const backgroundImageStyle = {
@@ -25,7 +28,7 @@ function Course() {
           </p>
         </div>
         <div className="flex justify-center items-center">
-          <div className="w-96 p-3">
+          {/* <div className="w-96 p-3">
             <div className="h-full bg-white p-3 ">
               <img src={Framers} alt="framer" />
               <div>
@@ -60,10 +63,24 @@ function Course() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+
+          <CourseCard
+            imageSrc={Framers}
+            title="HealthCare Data Analyst"
+            duration="30 Hours"
+            onViewCourse={() => {}}
+          />
+
+          <CourseCard
+            imageSrc={Framerer}
+            title="Operation Data Analyst"
+            duration="30 Hours"
+            onViewCourse={() => {}}
+          />
         </div>
         <div className="flex justify-center items-center">
-          <div className="w-96 p-4">
+          {/* <div className="w-96 p-4">
             <div className="h-full bg-red-200">
               <div className="h-full bg-white p-3">
                 <img src={Framer} alt="framer" />
@@ -82,8 +99,8 @@ function Course() {
                 </div>
               </div>
             </div>
-          </div>
-          <div className="w-96 p-4">
+          </div> */}
+          {/* <div className="w-96 p-4">
             <div className="h-full bg-yellow-200">
               <div className="h-full bg-white p-3">
                 <img src={Frameres} alt="framer" />
@@ -102,12 +119,24 @@ function Course() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
+          <CourseCard
+            imageSrc={Frameres}
+            title=" Financial Data Analyst"
+            duration="30 Hours"
+            onViewCourse={() => {}}
+          />
+          <CourseCard
+            imageSrc={Framer}
+            title=" Business Data Analyst"
+            duration="30 Hours"
+            onViewCourse={() => {
+              console.log("hello");
+            }}
+          />
         </div>
         <div className="text-center mt-12 mb-9">
-          <button className="bg-[#e46601] hover:bg-[#e46601] text-white   py-3 px-8 rounded-lg w-60">
-            Sell All
-          </button>
+          <CustomButton text="See All" />
         </div>
       </div>
     </div>
