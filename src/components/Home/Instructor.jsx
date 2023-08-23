@@ -7,91 +7,91 @@ import womanInstructor from "../../assets/images/woman.png";
 function Instructor() {
   return (
     <div className="container max-w-5xl mx-auto justify-center items-center">
-      <div className="flex items-start">
-        <div className="w-1/2 p-4 ">
+      <div className="lg:flex  md:flex-row md:justify-center">
+        <div className="lg:w-1/2  p-4">
           <div className="h-full flex flex-col">
             <img src={manInstructor} alt="manInstructor" />
           </div>
         </div>
 
-        <div className="w-1/2 p-4 mt-20 ">
+        <div className="lg:w-1/2 md:w-full md:justify-center md:items-center p-4 mt-20 ">
           <div className="h-full flex flex-col ">
             <h2 className="p-4 text-4xl font-bold">
               Instructor-Led <br></br>Live Classes
             </h2>
             <div className="p-4 space-y-10">
-              <div className="flex items-center space-x-2">
+              <div className="flex lg:items-center space-x-2 md:items-center">
                 <BiCheckCircle />
                 <p>Learn From The Comfort Of Your Living Room</p>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 md:items-center">
                 <BiCheckCircle />
                 <p>Be Matched With Other Learners And Coaches</p>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 md:items-center">
                 <BiCheckCircle />
                 <p>Work On Trade Cases And Capstone Projects</p>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center  space-x-2 md:items-center">
                 <BiCheckCircle />
                 <p>Live Classes Means You Can Archive Your Entire Class</p>
               </div>
-              <div className=" flex items-center space-x-2">
+              <div className=" flex items-center space-x-2 md:items-center">
                 <BiCheckCircle />
                 <p>1009 Virtual</p>
-                <div className="flex items-center space-x-2  ">
+                <div className="flex items-center space-x-2 md:items-center ">
                   <BiCheckCircle />
 
                   <p>Flexible Payment</p>
                 </div>
               </div>
-              <CustomButton text="See All" />
+              <CustomButton text="See All" className="center-button" />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="flex justify-center  ">
-        <div className=" mt-20 w-1/2 p-4">
+      <div className="lg:flex  md:flex-row md:justify-center">
+        <div className=" mt-20 lg:w-1/2  md:w-full p-4">
           <div className="h-full flex flex-col">
             <h1 className="p-4 text-4xl font-bold">
               Your Entire Enterprise <br></br>Transformation
             </h1>
-            <div className="p-4  space-y-10">
-              <div className="flex items-center justify-between">
+            <div className="p-4 space-y-10">
+              <div className="flex items-center justify-between md:items-center">
                 <p>Deliver On Strategic Business Goals By Building Critical</p>
                 <BiCheckCircle />
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between md:items-center">
                 <p>Realize The Full Value Of Technology Investments</p>
                 <BiCheckCircle />
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between md:items-center">
                 <p>Build A Data-Driven, Digitally-Fluent Workforce</p>
                 <BiCheckCircle />
               </div>
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between md:items-center">
                 <p>Live Classes Means You Can Archive Your Entire Class</p>
                 <BiCheckCircle />
               </div>
-              <div className="flex items-center space-x-3 ">
+              <div className="flex items-center justify-between md:items-center">
                 <p>Dedicated screen</p>
                 <BiCheckCircle />
-                <div className="flex items-center space-x-8">
-                  <p>Co-operation</p>
-                  <BiCheckCircle />
-                </div>
               </div>
-              <div className="flex flex-col items-end">
+              <div className="flex items-center justify-between md:items-center">
+                <p>Co-operation</p>
+                <BiCheckCircle />
+              </div>
+              <div className="flex flex-col items-end md:flex-row md:justify-end md:items-center">
                 <CustomButton text="See All" />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="w-1/2 p-4">
-          <div className="h-full flex flex-col ">
-            <img src={womanInstructor} alt="womanInstructor" />
+        <div className="lg:w-1/2 md:w-full  p-4">
+          <div className="h-full flex flex-col">
+            <img src={womanInstructor} alt="manInstructor" />
           </div>
         </div>
       </div>

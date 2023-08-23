@@ -3,7 +3,7 @@ import { BsArrowRightCircle } from "react-icons/bs";
 
 function CourseCard({ imageSrc, title, duration, onViewCourse }) {
   return (
-    <div className="w-96 p-3">
+    <div className="lg:w-96 md:w-80 p-3">
       <div className="h-full bg-white p-3">
         <img src={imageSrc} alt="course" />
         <div>

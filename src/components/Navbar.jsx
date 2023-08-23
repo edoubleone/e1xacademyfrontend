@@ -17,7 +17,7 @@ function Navbar() {
           </NavLink>
         </div>
 
-        <ul className="flex space-x-10">
+        <ul className="flex  space-x-10">
           <li>
             <NavLink to="/" exact activeClassName="active" className="text-lg">
               Home

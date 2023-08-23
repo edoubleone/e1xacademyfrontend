@@ -14,34 +14,31 @@ function Subscribe() {
       style={{ ...backgroundImageStyle, height: "70vh" }}
     >
       <div>
-        <div
-          className="container max-w-lg
-       mx-auto justify-center items-center py-10"
-        >
-          <div className="text-center pb-8  py-12">
-            <p className="text-6xl font-bold text-white">
-              {" "}
-              Subscribe To <br></br> Our Newsletter
+        <div className="container max-w-2xl mx-auto justify-center items-center py-10 px-6">
+          <div className="text-center pb-8 py-12">
+            <p className="md:text-xl lg:text-6xl font-bold text-white">
+              Subscribe To <br /> Our Newsletter
             </p>
             <div>
-              <p className="pb-4 text-white ">
-                Stay updated with educational resources and news <br></br>
+              <p className="pb-4 text-white md:text-xl lg:text-xl">
+                Stay updated with educational resources and news <br />
                 around your skill progress
               </p>
             </div>
           </div>
+
           <div
-            className="border-solid border-2 border-sky-500 p-2"
+            className="border-solid border-2 border-sky-500 md:p-4"
             style={{ borderColor: "#e46601" }}
           >
-            <div className="flex justify-between items-center space-x-3">
+            <div className="lg:flex flex-col md:flex-row md:justify-center items-center md:space-x-3 justify-between">
               <input
                 type="text"
                 placeholder="Enter Email"
-                className="px-16 py-2 rounded-lg focus:outline-none bg-[#021b76] bg-opacity-50"
+                className="w-full md:w-auto px-4 py-2 rounded-lg focus:outline-none bg-[#021b76] bg-opacity-50"
               />
 
-              <button className="bg-[#e46601] hover:bg-[#e46601] text-white py-2 px-4 rounded-lg">
+              <button className="bg-[#e46601] hover:bg-[#e46601] text-white py-2 px-4 rounded-lg md:justify-center">
                 Enroll Now
               </button>
             </div>
