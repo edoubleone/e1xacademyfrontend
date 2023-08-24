@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../assets/images/logo.jpeg";
+import { AiOutlineClose } from "react-icons/ai";
+import { FiMenu } from "react-icons/fi";
 
 function Navbar() {
+  const [navBar, setNavBar] = useState(false);
   return (
     <div className="p-4">
       <nav className="container  flex items-center justify-between  mx-auto">
@@ -17,7 +20,7 @@ function Navbar() {
           </NavLink>
         </div>
 
-        <ul className="flex  space-x-10">
+        <ul className="hidden md:flex  space-x-10">
           <li>
             <NavLink to="/" exact activeClassName="active" className="text-lg">
               Home
@@ -40,7 +43,7 @@ function Navbar() {
           </li>
         </ul>
 
-        <div className="flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-4">
           <NavLink to="/signin" activeClassName="active" className="text-lg">
             Sign In
           </NavLink>

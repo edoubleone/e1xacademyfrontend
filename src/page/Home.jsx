@@ -13,9 +13,7 @@ import {
 function Home() {
   return (
     <div>
-      <div className="px-2">
-        <Main />
-      </div>
+      <Main />
 
       <Learning />
       <Course />
