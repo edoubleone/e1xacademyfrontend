@@ -27,7 +27,7 @@ function Course() {
             Explore From All Your Online Course
           </p>
         </div>
-        <div className="lg:flex  lg:justify-center lg:items-center md:flex md:flex-row md:justify-center md:px-4">
+        <div className="lg:flex  lg:justify-center lg:items-center md:flex md:flex-row md:justify-center md:items-center md:px-4">
           <CourseCard
             imageSrc={Framers}
             title="HealthCare Data Analyst"

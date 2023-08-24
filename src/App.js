@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./page/Home";
 import Footer from "./components/Footer";
-import CookieConsent from "react-cookie-consent";
+import CookieConsent from "./components/CookieConstent";
 import { NavLink } from "react-router-dom";
 function App() {
   return (
@@ -11,15 +11,7 @@ function App() {
       <Navbar />
       <Home />
       <Footer />
-      <CookieConsent
-        debug={true}
-        location="top"
-        buttonStyle={{ color: "#fff", background: "#e46601" }}
-        expires={365}
-      >
-        This site uses cookies. See our{" "}
-        <NavLink to="/privacy">privacy policy</NavLink>{" "}
-      </CookieConsent>
+      <CookieConsent />
     </BrowserRouter>
   );
 }

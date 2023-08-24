@@ -82,7 +82,7 @@ function Instructor() {
                 <p>Co-operation</p>
                 <BiCheckCircle />
               </div>
-              <div className="flex flex-col items-end md:flex-row md:justify-end md:items-center">
+              <div className="flex flex-col lg:items-end md:flex-row lg:justify-end md:justify-center md:items-center">
                 <CustomButton text="See All" />
               </div>
             </div>
