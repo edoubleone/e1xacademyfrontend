@@ -16,11 +16,11 @@ function Subscribe() {
       <div>
         <div className="container  mx-auto justify-center items-center py-10 px-6">
           <div className="text-center pb-8 py-12">
-            <p className=" lg:text-6xl md:text-3xl font-bold text-white">
+            <p className="lg:text-6xl md:text-4xl sm:text-3xl font-bold text-white">
               Subscribe To <br /> Our Newsletter
             </p>
             <div>
-              <p className="pb-4 text-white  lg:text-xl md:text-sm">
+              <p className="pb-4 text-white lg:text-xl md:text-base sm:text-sm">
                 Stay updated with educational resources and news <br />
                 around your skill progress
               </p>
@@ -35,10 +35,10 @@ function Subscribe() {
               <input
                 type="text"
                 placeholder="Enter Email"
-                className="lg:w-56  md:w-auto px-4 py-2 rounded-lg focus:outline-none bg-[#021b76] bg-opacity-50"
+                className="lg:w-56 md:w-auto px-4 py-2 rounded-lg focus:outline-none bg-[#021b76] bg-opacity-50 border-none"
               />
 
-              <button className="bg-[#e46601] hover:bg-[#e46601] text-white py-2 px-4  rounded-lg  ">
+              <button className="bg-[#e46601] hover:bg-[#e46601] text-white py-2 px-4 md:w-56 rounded-lg focus:outline-none">
                 Enroll Now
               </button>
             </div>

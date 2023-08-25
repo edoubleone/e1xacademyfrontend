@@ -45,7 +45,10 @@ function Instructor() {
                   <p>Flexible Payment</p>
                 </div>
               </div>
-              <CustomButton text="See All" className="center-button" />
+
+              <div className="flex items-center justify-center md:items-center">
+                <CustomButton text="See All" className="center-button" />
+              </div>
             </div>
           </div>
         </div>
@@ -82,7 +85,7 @@ function Instructor() {
                 <p>Co-operation</p>
                 <BiCheckCircle />
               </div>
-              <div className="flex flex-col lg:items-end md:flex-row lg:justify-end md:justify-center md:items-center">
+              <div className="flex items-center justify-center md:justify-end md:items-center">
                 <CustomButton text="See All" />
               </div>
             </div>

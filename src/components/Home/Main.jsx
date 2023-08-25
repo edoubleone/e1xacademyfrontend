@@ -18,17 +18,18 @@ function Main() {
                 Find The Right <br /> Course For Your <br /> Future
               </h1>
               <p className="pb-4 text-xl ">
-                We Provide A Cost Effective Virtual Learning <br />
-                Service to Bridge The Gap Of Professional
-                <br />
-                Transition into IT
+                We offer a diverse range of courses curated to shape your
+                future. Whether you're looking to enhance your skills or explore
+                <br></br>
+                new horizons, our platform provides the perfect opportunity to
+                find the right course tailored to your aspirations.
               </p>
               <button className="bg-[#e46601] hover:bg-[#e46601] text-white py-4 px-8 rounded-lg w-60">
                 Get started
               </button>
             </div>
 
-            <div className="absolute bottom-8 left-0 flex ml-12">
+            <div className="absolute bottom-8 left-0 flex ml-12 ">
               <div className="w-64 bg-blue-200 p-8 flex justify-center items-center rounded-3xl">
                 <p className="text-center">Tableau</p>
               </div>

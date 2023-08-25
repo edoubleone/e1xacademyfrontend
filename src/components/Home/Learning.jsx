@@ -30,11 +30,13 @@ function Learning() {
                   <img src={Frame} alt="frame" />
                 </div>
                 <div>
-                  <p className="pb-3 font-semibold ">Fun & Easy To Follow</p>
+                  <p className="pb-3 font-semibold ">
+                    Discover Exciting Learning Journeys
+                  </p>
                   <p>
-                    Learn New Knowledge And Skill In a Variety Of Way. From
-                    Engaging Video Lectures And Dynamics Graphics To Data
-                    Visualization And Interactive Elements
+                    Embark on a Journey of Knowledge and Skill Discovery Through
+                    Captivating Video Lectures, Dynamic Graphics, Interactive
+                    Data Visualization, and Engaging Interactive Elements.
                   </p>
                 </div>
               </div>
@@ -44,12 +46,13 @@ function Learning() {
                     <img src={FrameTwo} alt="frame" />
                   </div>
                   <div>
-                    <p className="pb-3 font-semibold">Learn At Your Own Pace</p>
+                    <p className="pb-3 font-semibold">
+                      Embark on a Self-Paced Learning Journey
+                    </p>
                     <p>
-                      Demonstrating your Knowledge is a critical part of
-                      learning e-double one academy courses and programs provide
-                      a space to practice with open response assessments,
-                      virtual enivornments and more{" "}
+                      Interactive learning at e-double one academy. Showcase
+                      your understanding through open response assessments and
+                      immersive virtual environments
                     </p>
                   </div>
                 </div>
@@ -60,11 +63,14 @@ function Learning() {
                   <img src={FrameThree} alt="frame" />
                 </div>
                 <div>
-                  <p className="pb-3 font-semibold">Continous Learning</p>
+                  <p className="pb-3 font-semibold">
+                    Unleash the power of perpetual learning
+                  </p>
                   <p>
-                    learning On E-DoubleOne Academy Transform How You Think And
-                    What You can Do And it Translate Directly Into Tje Real
-                    World immediately By Applying Your Capability Into Your Job{" "}
+                    Empower yourself through E-DoubleOne Academy's ongoing skill
+                    development, reshaping your thinking and abilities to drive
+                    tangible real-world change by swiftly applying newfound
+                    expertise to your role
                   </p>
                 </div>
               </div>
