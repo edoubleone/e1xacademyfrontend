@@ -14,8 +14,8 @@ function Instructor() {
           </div>
         </div>
 
-        <div className="lg:w-1/2 md:w-full md:justify-center md:items-center p-4 mt-20 ">
-          <div className="h-full flex flex-col ">
+        <div className="lg:w-1/2 w-full md:justify-center md:items-center p-4 mt-20 ">
+          <div className="h-full flex flex-col justify-center ">
             <h2 className="p-4 text-4xl font-bold">
               Instructor-Led <br></br>Live Classes
             </h2>
@@ -54,8 +54,8 @@ function Instructor() {
         </div>
       </div>
 
-      <div className="lg:flex  md:flex-row md:justify-center">
-        <div className=" mt-20 lg:w-1/2  md:w-full p-4">
+      <div className="lg:flex  md:flex-row md:justify-center ">
+        <div className=" mt-20 lg:w-1/2  w-full p-4">
           <div className="h-full flex flex-col">
             <h1 className="p-4 text-4xl font-bold">
               Your Entire Enterprise <br></br>Transformation

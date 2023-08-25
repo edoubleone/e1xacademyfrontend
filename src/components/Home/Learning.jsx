@@ -19,9 +19,9 @@ function Learning() {
           </p>
         </div>
         <div className="lg:flex md:justify-center md:items-center">
-          <div className="lg:w-1/2 md:w-full p-4 bg-gray-100 ">
-            <img src={ImageLeaning} alt="image" />
-            <img src={ImageTwo} alt="image" />
+          <div className="lg:w-1/2   w-full p-4 bg-gray-100 ">
+            <img src={ImageLeaning} alt="image" className="md:w-full" />
+            <img src={ImageTwo} alt="image" className="md:w-full" />
           </div>
           <div className=" lg:w-2/3 md:w-full p-4 bg-gray-100 ">
             <div className="flex flex-col space-y-10 md:justify-center">
