@@ -29,9 +29,8 @@ function Accredication() {
         style={{ ...imageStyle, minHeight: "400px" }}
       >
         <div className="container  mx-auto flex justify-center">
-          <div className="w-3/5  flex flex-col items-center md:flex-row">
-            <div className="h-full bg-blue-500 flex items-center justify-center py-12   rounded-lg ">
-              <InfoBlock imageSrc={people} title="30+" description="Course" />
+          <div className="lg:w-3/5 bg-blue-500 rounded-lg">
+            <div className="lg:flex lg:space-y-0 space-y-10 lg:p-6 p-8 ">
               <InfoBlock
                 imageSrc={edu}
                 title="100+"
@@ -45,7 +44,12 @@ function Accredication() {
               <InfoBlock
                 imageSrc={world}
                 title="100+"
-                description="Happy Student"
+                description="Happy Students"
+              />
+              <InfoBlock
+                imageSrc={people}
+                title="30+"
+                description="Over Countries"
               />
             </div>
           </div>
@@ -56,3 +60,12 @@ function Accredication() {
 }
 
 export default Accredication;
+
+<div className="h-full bg-blue-500 flex items-center justify-center py-12   rounded-lg ">
+  <InfoBlock imageSrc={people} title="30+" description="Course" />
+  <InfoBlock imageSrc={edu} title="100+" description="Happy Students" />
+  <InfoBlock imageSrc={book} title="30+" description="Online Course" />
+  <InfoBlock imageSrc={world} title="100+" description="Happy Student" />
+</div>;
+
+// flex flex-col items-center md:flex-row
