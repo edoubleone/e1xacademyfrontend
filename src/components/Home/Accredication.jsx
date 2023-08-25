@@ -29,8 +29,8 @@ function Accredication() {
         style={{ ...imageStyle, minHeight: "400px" }}
       >
         <div className="container  mx-auto flex justify-center">
-          <div className="lg:w-3/5 md:w-1/3 flex flex-col items-center">
-            <div className="h-full bg-blue-500 flex items-center justify-center lg:py-12 md:py-10   rounded-lg ">
+          <div className="w-3/5  flex flex-col items-center md:flex-row">
+            <div className="h-full bg-blue-500 flex items-center justify-center py-12   rounded-lg ">
               <InfoBlock imageSrc={people} title="30+" description="Course" />
               <InfoBlock
                 imageSrc={edu}

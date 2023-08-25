@@ -10,10 +10,10 @@ function Learning() {
     <div className="container max-w-6xl mx-auto mt-12 px-4 ">
       <div className="lg:w-5/6 md:w-full">
         <div className="flex flex-col mb-8">
-          <h1 className="text-center lg:text-5xl md:text-5xl font-bold mb-4">
+          <h1 className="text-center lg:text-6xl text-2xl font-bold mb-4">
             Why We Are The Best <br /> Online Learning Platform
           </h1>
-          <p className="text-center ">
+          <p className="text-center lg:text-sm text-xs ">
             Delivered By Industry And Subject Expert. Our Course Will Equip You
             With <br /> Confidence And Skill Directly Transferable To Workplace
           </p>

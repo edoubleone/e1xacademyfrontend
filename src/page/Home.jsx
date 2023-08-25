@@ -17,10 +17,10 @@ function Home() {
 
       <Learning />
       <Course />
-      <Start />
+      {/* <Start /> */}
       <Accredication />
-      <Instructor />
-      <Operation />
+      {/* <Instructor /> */}
+      {/* <Operation /> */}
       <Subscribe />
     </div>
   );

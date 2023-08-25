@@ -26,7 +26,7 @@ function Navbar() {
 
   return (
     <div className="p-4">
-      <nav className="container flex items-center justify-between  mx-auto px-4">
+      <nav className="container flex items-center justify-between  mx-auto md:px-2">
         <div>
           <NavLink
             to="/"

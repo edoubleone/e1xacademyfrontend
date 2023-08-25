@@ -12,11 +12,11 @@ function Main() {
     <div className="w-full relative" style={backgroundImageStyle}>
       <div className="container  mx-auto lg:flex  px-4">
         <div className="lg:w-1/2 w-full">
-          <div className="mt-20  ">
-            <h1 className="pb-8 text-6xl font-bold ">
+          <div className="mt-20">
+            <h1 className="pb-8 lg:text-6xl text-4xl font-bold md:flex">
               Find The Right <br /> Course For Your <br /> Future
             </h1>
-            <p className="pb-4 text-xl  ">
+            <p className="pb-4 lg:text-xl text-md  ">
               We offer a diverse range of courses curated to shape your future.
               Whether you're looking to enhance your skills or explore
               <br></br>
@@ -29,16 +29,16 @@ function Main() {
           </div>
         </div>
 
-        <div className="lg:w-1/2 w-full">
+        <div className="lg:w-1/2 w-full ">
           <img
             src={HeaderImage}
             alt="headerImage"
-            className="h-full object-cover"
+            className="h-full object-cover lg:mt-0 md:mt-8"
           />
         </div>
       </div>
-      <div className=" lg:absolute container mx-auto flex  flex-wrap lg:bottom-12 left-0 right-0 lg:px-0 px-4  ">
-        <div className="lg:w-64 w-full bg-blue-200 lg:p-8  p-4  flex justify-center items-center rounded-3xl lg:space-y-0 md:space-y-4">
+      <div className="lg:absolute container mx-auto flex flex-wrap lg:bottom-12 left-0 right-0 space-y-2 lg:space-y-0">
+        <div className="lg:w-64 w-full bg-blue-200 lg:p-8 p-4 flex justify-center items-center rounded-3xl">
           <p className="text-center">Tableau</p>
         </div>
 

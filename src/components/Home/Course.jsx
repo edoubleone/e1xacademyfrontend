@@ -19,15 +19,15 @@ function Course() {
     <div className="mt-20 bg-[#D6EBFF] py-4" style={backgroundImageStyle}>
       <div className="container max-w-6xl mx-auto justify-center items-center px-4 ">
         <div>
-          <h1 className="text-center font-bold pb-2 lg:text-5xl md:text-lg">
+          <h1 className="text-center font-bold pb-2 lg:text-5xl text-3xl">
             Popular Course
           </h1>
 
-          <p className="text-center lg:text-xl md:text-l mb-5">
+          <p className="text-center lg:text-xl text-sm mb-5">
             Explore From All Your Online Course
           </p>
         </div>
-        <div className="lg:flex  lg:justify-center lg:items-center md:flex md:flex-row md:justify-center md:items-center md:px-4">
+        <div className="lg:flex lg:justify-center lg:items-center md:flex md:flex-row md:justify-center md:items-center md:px-4">
           <CourseCard
             imageSrc={Framers}
             title="HealthCare Data Analyst"
