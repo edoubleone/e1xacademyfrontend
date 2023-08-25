@@ -6,10 +6,16 @@ function Start() {
     <div className="bg-[#021b76] py-12">
       <div className="container max-w-6xl mx-auto pb-12">
         <div className="pt-12 py-3">
-          <h1 className="text-center text-5xl font-bold pb-4">
-            {" "}
+          <h1 className="text-center text-5xl font-bold pb-4 relative">
+            <span
+              className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 absolute top-0 left-0 h-full w-full"
+              aria-hidden="true"
+            >
+              Start Learning With Us Now
+            </span>
             Start Learning With Us Now
           </h1>
+
           <p className="text-center mb-5 text-white">
             Become A Professional In Any Of This Course
           </p>

@@ -13,9 +13,10 @@ function Main() {
       <div className="container  mx-auto lg:flex  px-4">
         <div className="lg:w-1/2 w-full">
           <div className="mt-20">
-            <h1 className="pb-8 lg:text-6xl text-4xl font-bold md:flex">
+            <h1 className="pb-8 lg:text-6xl text-4xl font-bold md:flex text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-green-800">
               Find The Right <br /> Course For Your <br /> Future
             </h1>
+
             <p className="pb-4 lg:text-xl text-md  ">
               We offer a diverse range of courses curated to shape your future.
               Whether you're looking to enhance your skills or explore

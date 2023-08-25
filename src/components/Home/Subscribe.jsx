@@ -16,11 +16,11 @@ function Subscribe() {
       <div>
         <div className="container  mx-auto justify-center items-center py-10 px-6">
           <div className="text-center pb-8 py-12">
-            <p className="lg:text-6xl md:text-4xl sm:text-3xl font-bold text-white">
+            <p className="lg:text-6xl text-4xl  font-bold text-white">
               Subscribe To <br /> Our Newsletter
             </p>
             <div>
-              <p className="pb-4 text-white lg:text-xl md:text-base sm:text-sm">
+              <p className="pb-4 text-white lg:text-xl text-base sm:text-sm">
                 Stay updated with educational resources and news <br />
                 around your skill progress
               </p>
