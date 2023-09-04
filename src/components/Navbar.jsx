@@ -7,6 +7,22 @@ import { FiMenu } from "react-icons/fi";
 function Navbar() {
   const [nav, setNav] = useState(false);
   const navRef = useRef(null);
+  const [isSticky, setIsSticky] = useState(false);
+
+  const handleScroll = () => {
+    if (window.scrollY > 200) {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleNav = () => {
     setNav(!nav);
@@ -25,7 +41,7 @@ function Navbar() {
   }, []);
 
   return (
-    <div className="p-4">
+    <div className={`p-4 ${isSticky ? "sticky-navbar" : ""}`}>
       <nav className="container flex items-center justify-between  mx-auto md:px-2">
         <div>
           <NavLink

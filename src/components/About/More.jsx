@@ -16,21 +16,21 @@ const More = () => {
         </div>
         <div className="space-y-9 mt-6">
           <div className="flex gap-5">
-            <div className="w-1/2">
+            <div className="lg:w-1/2 w-full">
               <img
                 src={gallery}
                 alt="headerImage"
                 className="w-full h-full object-cover lg:mt-0 md:mt-8"
               />
             </div>
-            <div className="w-1/2">
+            <div className="lg:w-1/2 w-full">
               <img
                 src={gallery1}
                 alt="headerImage"
                 className="w-full h-full object-cover lg:mt-0 md:mt-8"
               />
             </div>
-            <div className="w-1/2">
+            <div className="lg:w-1/2 w-full">
               <img
                 src={gallery2}
                 alt="headerImage"
@@ -38,22 +38,22 @@ const More = () => {
               />
             </div>
           </div>
-          <div className="flex gap-5">
-            <div className="w-1/2">
+          <div className="flex gap-5 ">
+            <div className="lg:w-1/2 w-full">
               <img
                 src={gallery3}
                 alt="headerImage"
                 className="w-full h-full object-cover lg:mt-0 md:mt-8"
               />
             </div>
-            <div className="w-1/2">
+            <div className="lg:w-1/2 w-full">
               <img
                 src={gallery4}
                 alt="headerImage"
                 className="w-full h-full object-cover lg:mt-0 md:mt-8"
               />
             </div>
-            <div className="w-1/2">
+            <div className="lg:w-1/2 w-full">
               <img
                 src={gallery5}
                 alt="headerImage"

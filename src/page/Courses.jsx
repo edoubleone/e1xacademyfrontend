@@ -1,17 +1,11 @@
-// import React from "react";
-import CourseCard from "../components/CourseCard";
-
+import React from "react";
+import Landing from "../components/Courses/Landing";
+import Course from "../components/Courses/Course";
 const Courses = () => {
   return (
-    <div className="container mx-auto">
-      <div className="flex">
-        {/* <CourseCard
-          imageSrc={Framers}
-          title="HealthCare Data Analyst"
-          duration="30 Hours"
-          onViewCourse={() => {}}
-        /> */}
-      </div>
+    <div>
+      <Landing />
+      <Course />
     </div>
   );
 };

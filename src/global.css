@@ -1,0 +1,9 @@
+/* Add this to your CSS */
+.sticky-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #ffffff; /* Replace with your desired background color */
+}
