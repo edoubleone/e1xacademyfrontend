@@ -11,6 +11,8 @@ const CourseCard = ({
   price,
   title,
   students,
+  getEnrolled,
+  hours,
 }) => {
   return (
     <div className="w-1/2 shadow-md">
@@ -18,12 +20,12 @@ const CourseCard = ({
         <img
           src={courseImage}
           alt="Course Image"
-          className="w-[400px] h-[280px] object-cover lg:mt-0 md:mt-8"
+          className="w-full h-[280px] object-cover lg:mt-0 md:mt-8"
         />
         <div className="absolute bottom-0 left-3 p-2 text-white flex items-center gap-6">
           <div className="flex items-center gap-1">
             <BiTimeFive className="font-bold" />
-            <h2 className="font-bold">45 Hours</h2>
+            <h2 className="font-bold">{hours} Hours</h2>
           </div>
           <div className="flex items-center gap-1">
             <BiBookBookmark className="font-bold" />
@@ -53,7 +55,7 @@ const CourseCard = ({
           </div>
           <div className="flex items-center gap-2">
             <FaCartPlus />
-            <p>Get Enrolled</p>
+            <p>{getEnrolled}</p>
           </div>
         </div>
       </div>
