@@ -1,13 +1,11 @@
 import React from "react";
-import CourseCard from "./components/CourseCard";
+import CourseCard from "../CourseCard";
 import CustomButton from "./components/CustomButton";
 import Framer from "../../assets/icons/Frame 36.png";
 import Framers from "../../assets/icons/Frame 35.png";
 import Framerer from "../../assets/icons/Frame 34.png";
 import Frameres from "../../assets/icons/Frame 37.png";
 import background from "../../assets/images/wave.png";
-
-// import "./Css/card.css";
 
 function Course() {
   const backgroundImageStyle = {

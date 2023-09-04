@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Accredication,
-  Course,
   Instructor,
   Learning,
   Main,
@@ -9,12 +8,11 @@ import {
   Start,
   Subscribe,
 } from "../components/Home/index";
-
+import Course from "../components/Home/Course";
 function Home() {
   return (
     <div>
       <Main />
-
       <Learning />
       <Course />
       <Start />
