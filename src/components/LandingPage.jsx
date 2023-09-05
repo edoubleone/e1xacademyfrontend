@@ -5,6 +5,7 @@ const BackgroundImage = ({ imageUrl, text }) => {
     backgroundImage: `url(${imageUrl})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    backgroundPosition: "center 60%",
   };
 
   return (

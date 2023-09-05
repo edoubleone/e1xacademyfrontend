@@ -12,6 +12,8 @@ const Advisor = () => {
         <div className="lg:w-1/2 w-full">
           <div className="space-y-4">
             <p className="font-bold text-xl">COURSE ADVISOR</p>
+            <p className="border-b-2 border-black w-16 pb-4"></p>
+
             <p className="font-bold text-4xl">
               Our professional & Expert <br></br> Course advisor
             </p>
@@ -33,8 +35,8 @@ const Advisor = () => {
         </div>
       </div>
 
-      <div className="lg:flex flex-row gap-5 mt-12 ">
-        <div className="lg:w-2/5 w-full px-3  shadow-md">
+      <div className="lg:flex md:flex-row md:flex md:justify-center  md:pb-7 gap-5 mt-12 ">
+        <div className="lg:w-2/5 w-full px-3 shadow-md">
           <img
             src={picsProf}
             alt="headerImage"

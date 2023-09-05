@@ -27,6 +27,9 @@ const Ambition = () => {
                 <p className="font-bold"> Students</p>
               </div>
             </div>
+            <button className="py-4 px-8 bg-[#e46601] text-white font-bold rounded-3xl">
+              Explore Course
+            </button>
           </div>
         </div>
         <div className="w-full lg:w-1/2">

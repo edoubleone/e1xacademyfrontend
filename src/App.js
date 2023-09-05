@@ -8,6 +8,9 @@ import CookieConsent from "./components/CookieConstent";
 import Home from "./page/Home";
 import Course from "./page/Courses";
 import About from "./page/About";
+import Contact from "./page/Contact";
+import LiveCourse from "./page/LiveCourse";
+import CourseDetails from "./page/CourseDetails";
 
 function App() {
   return (
@@ -17,6 +20,9 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path="/course" element={<Course />} />
         <Route path="/about" element={<About />} />
+        <Route path="/live-course" element={<LiveCourse />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/course-details" element={<CourseDetails />} />
       </Routes>
       <Footer />
       <CookieConsent />

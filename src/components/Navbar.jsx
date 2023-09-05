@@ -6,8 +6,9 @@ import { FiMenu } from "react-icons/fi";
 
 function Navbar() {
   const [nav, setNav] = useState(false);
-  const navRef = useRef(null);
+  const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const navRef = useRef(null);
 
   const handleScroll = () => {
     if (window.scrollY > 200) {
@@ -27,6 +28,15 @@ function Navbar() {
   const handleNav = () => {
     setNav(!nav);
   };
+
+  const handleDropdownOpen = () => {
+    setDropdownOpen(true);
+  };
+
+  const handleDropdownClose = () => {
+    setDropdownOpen(false);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
@@ -42,7 +52,7 @@ function Navbar() {
 
   return (
     <div className={`p-4 ${isSticky ? "sticky-navbar" : ""}`}>
-      <nav className="container flex items-center justify-between  mx-auto md:px-2">
+      <nav className="container flex items-center justify-between mx-auto md:px-2">
         <div>
           <NavLink
             to="/"
@@ -54,7 +64,7 @@ function Navbar() {
           </NavLink>
         </div>
 
-        <ul className="hidden md:flex  space-x-10">
+        <ul className="hidden md:flex space-x-10">
           <li>
             <NavLink to="/" exact activeClassName="active" className="text-lg">
               Home
@@ -65,14 +75,55 @@ function Navbar() {
               About
             </NavLink>
           </li>
-          <li>
-            <NavLink to="/course" activeClassName="active" className="text-lg">
+          <li
+            className="relative group"
+            ref={navRef}
+            onMouseEnter={handleDropdownOpen}
+            onMouseLeave={handleDropdownClose}
+          >
+            <NavLink
+              to=""
+              activeClassName="active"
+              className="text-lg cursor-pointer"
+            >
               Course
             </NavLink>
+            <div
+              className={`absolute left-[-2] top-full mt-2 w-60 bg-white border border-gray-300 rounded-lg shadow-lg ${
+                isDropdownOpen ? "" : "hidden"
+              }`}
+              onMouseEnter={handleDropdownOpen}
+              onMouseLeave={handleDropdownClose}
+              style={{ zIndex: isDropdownOpen ? 1 : -1 }}
+            >
+              <NavLink
+                to="/course "
+                activeClassName="active-link"
+                className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+              >
+                Online Course
+              </NavLink>
+              <NavLink
+                to="/live-course"
+                activeClassName="active-link"
+                className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+              >
+                Live Course
+              </NavLink>
+            </div>
           </li>
           <li>
             <NavLink to="/contact" activeClassName="active" className="text-lg">
               Contact
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/course-details"
+              activeClassName="active"
+              className="text-lg"
+            >
+              Details-course
             </NavLink>
           </li>
         </ul>
