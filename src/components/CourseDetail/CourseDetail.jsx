@@ -2,6 +2,7 @@ import React from "react";
 
 import BackgroundImage from "../LandingPage";
 import courseDetails from "../../assets/icons/course-detail.jpg";
+import { useParams } from "react-router-dom";
 
 import profPics from "../../assets/images/prof-2.jpg";
 import Course1 from "../../assets/images/courses3.jpg";
@@ -14,27 +15,30 @@ import { BiTimeFive } from "react-icons/bi";
 import { MdLanguage } from "react-icons/md";
 import { BsPeopleFill } from "react-icons/bs";
 const CourseDetail = () => {
+  const { courseId } = useParams();
+
   return (
     <div>
       <BackgroundImage
         imageUrl={courseDetails}
-        text="Courses-details"
-        className="absolute top-0 left-0 w-full h-full"
+        text="Online Courses Details"
+        className="lg:absolute lg:top-0 lg:left-0 lg:w-full lg:h-full"
       />
 
       <div className="mt-12">
         <div className="container mx-auto">
-          <div className="flex  justify-between  ">
-            <div className="w-2/3 space-y-6 ">
-              <h1 className="text-5xl font-bold">
+          <div className="lg:flex   justify-between  ">
+            <div className="lg:w-2/3 w-full space-y-6 ">
+              <h1 className="lg:text-5xl text-3xl font-bold  lg:text-left text-center">
                 Java Programming Masterclass <br></br> with professional author
               </h1>
-              <div className="flex mt-5 gap-6">
+              <div className="lg:flex md:flex-row md:flex  mt-5 gap-6 lg:text-left text-center">
                 <img
                   src={profPics}
                   alt="Instructor Image"
-                  className="lg:h-[45px] lg:w-[45px] md:w-full md:h-full object-cover rounded-full"
+                  className="h-[45px] w-[45px] object-cover rounded-full hidden md:block"
                 />
+
                 <div>
                   <p>Teacher</p>
                   <p className="font-bold">John Kanel</p>
@@ -50,17 +54,18 @@ const CourseDetail = () => {
                   <p className="font-bold">January 24, 2021</p>
                 </div>
               </div>
-              <div className="flex gap-7 ">
-                <div className="w-1/6   text-center py-3 border border-black">
+
+              <div className="lg:flex md:flex-row gap-7 ">
+                <div className="lg:w-1/6 w-full  text-center py-3 border border-black">
                   Overview
                 </div>
-                <div className="w-1/6   text-center py-3 border border-black  ">
+                <div className="lg:w-1/6 w-full   text-center py-3 border border-black  ">
                   Curriculum
                 </div>
-                <div className="w-1/6   text-center py-3 border border-black">
+                <div className="lg:w-1/6  w-full   text-center py-3 border border-black">
                   Advisor
                 </div>
-                <div className="w-1/6   text-center py-3  border border-black">
+                <div className="lg:w-1/6 w-full   text-center py-3  border border-black">
                   Reviews
                 </div>
               </div>
@@ -82,34 +87,34 @@ const CourseDetail = () => {
               </div>
               <div>
                 <h2 className="font-bold pb-3">Learning Objectives</h2>
-                <div className="flex ">
-                  <div className="w-5/6 flex gap-4 pb-6">
+                <div className="lg:flex md:flex-row ">
+                  <div className="lg:w-3/5  w-full flex gap-4 pb-6">
                     <BiRightArrowAlt />
                     Be able to use simple tricks and techniques to make
                     self-control easier
-                    <div className="flex gap-4">
-                      <BiRightArrowAlt />
-                      Be able to use simple tricks and techniques to make
-                      self-control easier
-                    </div>
+                  </div>
+                  <div className="lg:w-3/5 flex  gap-4">
+                    <BiRightArrowAlt />
+                    Be able to use simple tricks and techniques to make
+                    self-control easier
                   </div>
                 </div>
-                <div className="flex">
-                  <div className="w-5/6 flex gap-4">
+                <div className="lg:flex md:flex-row">
+                  <div className="lg:w-3/5 w-full flex gap-4">
                     <BiRightArrowAlt />
                     Have a huge advantage when it comes to sticking to your diet
-                    <div className="flex gap-4">
-                      <BiRightArrowAlt />
-                      Meeting your fitness goals, and leading a healthier
-                      lifestyle.
-                    </div>
+                  </div>
+                  <div className="lg:w-3/5 w-full flex gap-4">
+                    <BiRightArrowAlt />
+                    Meeting your fitness goals, and leading a healthier
+                    lifestyle.
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className=" flex flex-col w-1/4 space-y-8  mt-[-150px] z-40">
-              <div className="w-full pb">
+            <div className=" flex flex-col lg:w-1/4 w-full space-y-8  lg:mt-[-150px] lg:z-40">
+              <div className="w-full  md:flex-wrap  pb">
                 <div className=" shadow-lg mt-3 pb-5 ">
                   <img
                     src={Course3}
@@ -160,7 +165,7 @@ const CourseDetail = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full pb">
+              <div className="w-full  md:flex-wrap  pb">
                 <div className="px-4 space-y-4 shadow-lg mt-3 pb-5">
                   <div className="flex items-center justify-between  py-3 px-4">
                     <h1 className="font-bold text-2xl">Course Categories</h1>
@@ -187,7 +192,7 @@ const CourseDetail = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-full pb">
+              <div className="w-full  md:flex-wrap  pb">
                 <div className="px-4 space-y-4 shadow-lg mt-3 pb-5">
                   <div className="flex items-center justify-between  py-3 px-4">
                     <h1 className="font-bold text-2xl">Related Courses</h1>
@@ -196,7 +201,7 @@ const CourseDetail = () => {
                     <img
                       src={Course1}
                       alt="Instructor Image"
-                      className="lg:h-[100px] lg:w-[100px] md:w-full md:h-full object-cover "
+                      className="h-[100px] w-[100px]  object-cover "
                     />
                     <div className="space-y-1">
                       <h2 className="font-bold">
@@ -209,11 +214,11 @@ const CourseDetail = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="flex items-center justify-between ">
+                  <div className="flex  md:flex-wrap  items-center justify-between ">
                     <img
                       src={Course3}
                       alt="Instructor Image"
-                      className="lg:h-[100px] lg:w-[100px] md:w-full md:h-full object-cover "
+                      className="h-[100px] w-[100px] object-cover "
                     />
                     <div className="space-y-1">
                       <h2 className="font-bold">
@@ -230,7 +235,7 @@ const CourseDetail = () => {
                     <img
                       src={Course2}
                       alt="Instructor Image"
-                      className="lg:h-[100px] lg:w-[100px] md:w-full md:h-full object-cover "
+                      className="h-[100px] w-[100px]  object-cover "
                     />
                     <div className="space-y-1">
                       <h2 className="font-bold">

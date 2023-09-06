@@ -1,8 +1,8 @@
 import React from "react";
 import courseLanding from "../../assets/images/courseLanding.jpg";
 import BackgroundImage from "../LandingPage";
-const Course = () => {
-  return <BackgroundImage imageUrl={courseLanding} text="Courses" />;
+const Landing = () => {
+  return <BackgroundImage imageUrl={courseLanding} text="Online Classes" />;
 };
 
-export default Course;
+export default Landing;

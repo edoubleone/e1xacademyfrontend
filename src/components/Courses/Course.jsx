@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import picsProf from "../../assets/images/prof-1.jpg";
 import { BsPersonFill } from "react-icons/bs";
 import { FaCartPlus } from "react-icons/fa";
@@ -15,8 +16,8 @@ import CourseCard from "./components/CourseCard";
 const Course = () => {
   return (
     <div className="mt-12">
-      <div className="container mx-auto">
-        <div className="flex gap-4 pb-12">
+      <div className="container mx-auto px-4">
+        <div className="lg:flex md:flex-row gap-4 pb-12 ">
           <CourseCard
             courseImage={coursePics}
             instructorImage={picsProf}
@@ -28,6 +29,7 @@ const Course = () => {
             getEnrolled="Get Enrolled"
             hours="45"
           />
+
           <CourseCard
             courseImage={course1}
             instructorImage={picsProf}
@@ -39,6 +41,7 @@ const Course = () => {
             getEnrolled="Get Enrolled"
             hours="45"
           />
+
           <CourseCard
             courseImage={Course2}
             instructorImage={picsProf}
@@ -51,7 +54,7 @@ const Course = () => {
             hours="45"
           />
         </div>
-        <div className="flex gap-4">
+        <div className="lg:flex md:flex-row gap-4 md:justify-center md:pb-8">
           <CourseCard
             courseImage={Course3}
             instructorImage={picsProf}
@@ -62,6 +65,7 @@ const Course = () => {
             students={8000}
             getEnrolled="Get Enrolled"
             hours="45"
+            courseId={1}
           />
           <CourseCard
             courseImage={Course4}
@@ -73,6 +77,7 @@ const Course = () => {
             students={8000}
             getEnrolled="Get Enrolled"
             hours="45"
+            courseId={2}
           />
           <CourseCard
             courseImage={Course6}
@@ -84,6 +89,7 @@ const Course = () => {
             students={8000}
             getEnrolled="Get Enrolled"
             hours="45"
+            courseId={3}
           />
         </div>
       </div>

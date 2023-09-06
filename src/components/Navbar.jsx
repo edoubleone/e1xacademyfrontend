@@ -9,6 +9,7 @@ function Navbar() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
   const navRef = useRef(null);
+  const timeoutRef = useRef(null); // Ref for the timeout
 
   const handleScroll = () => {
     if (window.scrollY > 200) {
@@ -30,11 +31,17 @@ function Navbar() {
   };
 
   const handleDropdownOpen = () => {
+    clearTimeout(timeoutRef.current);
     setDropdownOpen(true);
   };
 
   const handleDropdownClose = () => {
-    setDropdownOpen(false);
+    clearTimeout(timeoutRef.current);
+
+    // Set a timeout to close the dropdown after 1 second (adjust as needed)
+    timeoutRef.current = setTimeout(() => {
+      setDropdownOpen(false);
+    }, 1000); // 1000 milliseconds = 1 second
   };
 
   useEffect(() => {
@@ -115,15 +122,6 @@ function Navbar() {
           <li>
             <NavLink to="/contact" activeClassName="active" className="text-lg">
               Contact
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/course-details"
-              activeClassName="active"
-              className="text-lg"
-            >
-              Details-course
             </NavLink>
           </li>
         </ul>

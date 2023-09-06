@@ -19,10 +19,11 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/course" element={<Course />} />
+        <Route path="/course/:courseDetails" element={<CourseDetails />} />
+
         <Route path="/about" element={<About />} />
         <Route path="/live-course" element={<LiveCourse />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/course-details" element={<CourseDetails />} />
       </Routes>
       <Footer />
       <CookieConsent />

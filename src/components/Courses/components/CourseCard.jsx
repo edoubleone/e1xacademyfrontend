@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { BiTimeFive, BiBookBookmark } from "react-icons/bi";
 import { BsPersonFill } from "react-icons/bs";
 import { FaCartPlus } from "react-icons/fa";
@@ -13,9 +14,16 @@ const CourseCard = ({
   students,
   getEnrolled,
   hours,
+  courseId,
 }) => {
+  const navigate = useNavigate();
+
+  const handleGetEnrolledClick = () => {
+    navigate(`/course/${courseId}`);
+  };
+
   return (
-    <div className="w-1/2 shadow-md">
+    <div className="lg:w-1/2 w-full shadow-md">
       <div className="relative flex justify-center">
         <img
           src={courseImage}
@@ -39,7 +47,7 @@ const CourseCard = ({
           <img
             src={instructorImage}
             alt="Instructor Image"
-            className="lg:h-[40px] lg:w-[40px] md:w-full md:h-full object-cover rounded-full"
+            className="h-[40px] w-[40px]   object-cover rounded-full"
           />
           <p>{instructorName}</p>
         </div>
@@ -53,9 +61,13 @@ const CourseCard = ({
             <p>{students}</p>
             <BsPersonFill />
           </div>
-          <div className="flex items-center gap-2">
-            <FaCartPlus />
-            <p>{getEnrolled}</p>
+          <div>
+            <a href="#" onClick={handleGetEnrolledClick}>
+              <div className="flex items-center gap-2">
+                <FaCartPlus />
+                <p>{getEnrolled}</p>
+              </div>
+            </a>
           </div>
         </div>
       </div>
