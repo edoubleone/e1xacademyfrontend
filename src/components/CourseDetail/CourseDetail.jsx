@@ -26,7 +26,7 @@ const CourseDetail = () => {
       />
 
       <div className="mt-12">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4">
           <div className="lg:flex   justify-between  ">
             <div className="lg:w-2/3 w-full space-y-6 ">
               <h1 className="lg:text-5xl text-3xl font-bold  lg:text-left text-center">
