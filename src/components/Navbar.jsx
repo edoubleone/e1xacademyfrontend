@@ -82,6 +82,15 @@ function Navbar() {
               About
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/courseDetail"
+              activeClassName="active"
+              className="text-lg"
+            >
+              courseDetail
+            </NavLink>
+          </li>
           <li
             className="relative group"
             ref={navRef}

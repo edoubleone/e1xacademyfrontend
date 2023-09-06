@@ -10,7 +10,7 @@ import Course from "./page/Courses";
 import About from "./page/About";
 import ContactPage from "./page/ContactPage";
 import LiveCourse from "./page/LiveCourse";
-import CourseDetails from "./page/CourseDetails";
+import CourseDetailPage from "./page/CourseDetails";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/course" element={<Course />} />
-        <Route path="/course/:courseId" element={<CourseDetails />} />
+        <Route path="/courseDetail" element={<CourseDetailPage />} />
 
         <Route path="/about" element={<About />} />
         <Route path="/live-course" element={<LiveCourse />} />

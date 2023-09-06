@@ -1,13 +1,15 @@
 import React from "react";
 
-import CourseDetail from "../components/CourseDetail/CourseDetail";
+import CourseDetails from "../components/CourseDetail/CourseDetails";
+import Description from "../components/CourseDetail/Description";
 
-const CourseDetails = () => {
+const CourseDetailPage = () => {
   return (
     <div>
-      <CourseDetail />
+      <CourseDetails />
+      <Description />
     </div>
   );
 };
 
-export default CourseDetails;
+export default CourseDetailPage;
