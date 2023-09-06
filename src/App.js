@@ -8,7 +8,7 @@ import CookieConsent from "./components/CookieConstent";
 import Home from "./page/Home";
 import Course from "./page/Courses";
 import About from "./page/About";
-import Contact from "./page/Contact";
+import ContactPage from "./page/ContactPage";
 import LiveCourse from "./page/LiveCourse";
 import CourseDetails from "./page/CourseDetails";
 
@@ -19,11 +19,11 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/course" element={<Course />} />
-        <Route path="/course/:courseDetails" element={<CourseDetails />} />
+        <Route path="/course/:courseId" element={<CourseDetails />} />
 
         <Route path="/about" element={<About />} />
         <Route path="/live-course" element={<LiveCourse />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <Footer />
       <CookieConsent />
