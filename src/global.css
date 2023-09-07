@@ -15,6 +15,30 @@
     rgba(37, 107, 219, 1)
   );
 }
+
+/* custom-grad.css */
+.custom-gradient {
+  background: linear-gradient(
+    222.64deg,
+    #b4e8ff -4.8%,
+    rgba(208, 243, 224, 0.46218) 52.92%,
+    #fffacd 102.53%
+  );
+}
+
+.instructor {
+  background: linear-gradient(
+    90.59deg,
+    #577cff 0.36%,
+    #91d9df 49.58%,
+    #f4ffb1 102.86%
+  );
+}
+
+.bg-custom-blue {
+  background-color: rgba(2, 27, 118, 1);
+}
+
 .bg-custom-button {
   background: linear-gradient(90deg, rgba(246, 133, 0, 1), rgba(210, 76, 0, 1));
 }
@@ -25,4 +49,16 @@
 
 .custom-blue {
   background-color: rgba(124, 248, 254, 1);
+}
+
+.background-card {
+  background: linear-gradient(245.76deg, #e3fbff 5.48%, #f8f8d2 100%);
+}
+
+.custom-grow-background {
+  background: rgba(234, 246, 255, 1);
+}
+
+.custom-description-background {
+  background: rgba(214, 214, 214, 1);
 }

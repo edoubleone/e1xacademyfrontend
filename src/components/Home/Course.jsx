@@ -41,7 +41,7 @@ function Course() {
           />
         </div>
 
-        <div className="lg:flex  lg:justify-center lg:items-center md:flex md:flex-row md:justify-center  ">
+        <div className="lg:flex lg:justify-center lg:items-center md:flex md:flex-row md:justify-center">
           <CourseCard
             imageSrc={Frameres}
             title=" Financial Data Analyst"

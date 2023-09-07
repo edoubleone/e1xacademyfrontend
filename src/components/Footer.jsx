@@ -10,7 +10,7 @@ import Logo from "../assets/images/logo.jpeg";
 
 function Footer() {
   return (
-    <div className="bg-[#F8F8F8] py-10 mt-12">
+    <div className="bg-[#F8F8F8] py-10 ">
       <div className="container mx-auto px-2">
         <div className="lg:flex  flex-row ">
           <div className="lg:w-3/5 w-full p-4">

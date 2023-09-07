@@ -24,7 +24,7 @@ function Main() {
               new horizons, our platform provides the perfect opportunity to
               find the right course tailored to your aspirations.
             </p>
-            <button className="bg-[#e46601] hover:bg-[#e46601] text-white py-4 px-8 rounded-lg lg:w-60 w-full">
+            <button className="bg-custom-button hover:bg-custom-button text-white py-4 px-8 rounded-lg lg:w-60 w-full">
               Get started
             </button>
           </div>

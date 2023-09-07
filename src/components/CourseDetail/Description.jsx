@@ -2,9 +2,9 @@ import React from "react";
 
 const Description = () => {
   return (
-    <div className="w-full mx-auto mt-12">
+    <div className="w-full custom-description-background h mx-auto  ">
       <div className="max-w-4xl mx-auto">
-        <div className="flex items-center space-x-10 justify-center py-5 ">
+        <div className="flex items-center space-x-10 justify-center py-5 p-4">
           <button className="font-bold border-b-4 border-transparent hover:border-[#e46601] pb-3 focus:outline-none">
             Overview
           </button>
@@ -20,7 +20,7 @@ const Description = () => {
         </div>
       </div>
       <div className="border-t pb-6"></div>
-      <div className="max-w-5xl mx-auto space-y-5 mt-6">
+      <div className="max-w-5xl mx-auto space-y-5 mt-6 py-12 p-4">
         <p className="font-bold text-2xl">Description</p>
         <div className="space-y-5">
           <p>
