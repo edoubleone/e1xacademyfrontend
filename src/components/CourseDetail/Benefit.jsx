@@ -17,40 +17,43 @@ const Benefit = () => {
           <div class="md:w-1/3 p-4 space-y-4">
             <img src={thumbs} alt="thumbs" />
             <div className="space-y-2">
-              <p className="text-white font-bold ">Real Time Support</p>
+              <p className="text-white font-bold ">In-Demand Skills</p>
               <p className="text-white text-xs">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
-                veritatis maiores cum
+                Financial data analysis is a highly sought-after skill across
+                industries, boosting your attractiveness to employers in
+                finance, banking, consulting, and beyond
               </p>
             </div>
           </div>
           <div class="md:w-1/3 p-4 space-y-4">
             <img src={thumbs1} alt="thumbs" />
             <div className="space-y-2">
-              <p className="text-white font-bold"> Virtual Project</p>
+              <p className="text-white font-bold"> Career Flexibility</p>
               <p className="text-white text-xs">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
-                veritatis maiores cum
+                The skills acquired can be applied in various sectors, including
+                finance, healthcare, e-commerce, and more, allowing you to
+                explore diverse career paths.
               </p>
             </div>
           </div>
           <div class="md:w-1/3 p-4 space-y-4">
             <img src={thumbs2} alt="thumbs" />
             <div className="space-y-2">
-              <p className="text-white font-bold">Flexible Learning</p>
+              <p className="text-white font-bold">Global Relevance</p>
               <p className="text-white text-xs">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
-                veritatis maiores cum
+                Financial data analysis skills are applicable worldwide,
+                offering potential opportunities for international work or
+                collaboration.
               </p>
             </div>
           </div>
           <div class="md:w-1/3 p-4 space-y-4">
             <img src={thumbs3} alt="thumbs" />
             <div className="space-y-2">
-              <p className="text-white font-bold">Job Ready Tips</p>
+              <p className="text-white font-bold">Job Security</p>
               <p className="text-white text-xs">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero
-                veritatis maiores cum
+                The demand for financial analysts is expected to remain strong,
+                providing job security in an ever-changing job market.
               </p>
             </div>
           </div>

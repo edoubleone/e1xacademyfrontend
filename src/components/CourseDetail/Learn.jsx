@@ -12,52 +12,49 @@ const Learn = () => {
             <div className="mb-4 flex gap-8 px-4 ">
               <img src={icons} alt="icons" className="h-[150px]" />
               <div className="bg-white px-4 space-y-3 py-4">
-                <p>Data Fundemental</p>
+                <p className="font-bold">Data Collection and Cleansing</p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Ratione repellendus reprehenderit, dicta magnam id
-                  perspiciatis tempora tempore asperiores dolorem nemo excepturi
-                  doloremque iure natus illum, pariatur corporis, necessitatibus
-                  quibusdam. Nulla?
+                  You will learn how to gather financial data from various
+                  sources, such as company reports, market data, and databases.
+                  This includes the crucial skill of cleaning and transforming
+                  raw data into a usable format for analysis.
                 </p>
               </div>
             </div>
             <div className="mb-4 flex gap-8 px-4 ">
               <img src={icons} alt="icons" className="h-[150px]" />
               <div className="bg-white px-4 space-y-3 py-4">
-                <p>Data Fundemental</p>
+                <p className="font-bold">Financial Analysis</p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Ratione repellendus reprehenderit, dicta magnam id
-                  perspiciatis tempora tempore asperiores dolorem nemo excepturi
-                  doloremque iure natus illum, pariatur corporis, necessitatibus
-                  quibusdam. Nulla?
+                  You will gain expertise in conducting financial analysis,
+                  which involves assessing the financial health and performance
+                  of individuals, companies, or markets. This encompasses
+                  techniques like ratio analysis, trend analysis, and
+                  forecasting.
                 </p>
               </div>
             </div>
             <div className="mb-4 flex gap-8 px-4">
               <img src={icons} alt="icons" className="h-[150px]" />
               <div className="bg-white px-4 space-y-3 py-4">
-                <p>Data Fundemental</p>
+                <p className="font-bold">Statistical Analysis and Modeling</p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Ratione repellendus reprehenderit, dicta magnam id
-                  perspiciatis tempora tempore asperiores dolorem nemo excepturi
-                  doloremque iure natus illum, pariatur corporis, necessitatibus
-                  quibusdam. Nulla?
+                  You will delve into statistical methods and mathematical
+                  modeling to identify patterns, correlations, and anomalies in
+                  financial data. Regression analysis, time series analysis, and
+                  risk modeling are examples of essential tools in your{" "}
                 </p>
               </div>
             </div>
             <div className="mb-4 flex gap-8 px-4 py-5">
               <img src={icons} alt="icons" className="h-[150px]" />
               <div className="bg-white px-4 space-y-3 py-4">
-                <p>Data Fundemental</p>
+                <p className="font-bold">Data Visualization</p>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Ratione repellendus reprehenderit, dicta magnam id
-                  perspiciatis tempora tempore asperiores dolorem nemo excepturi
-                  doloremque iure natus illum, pariatur corporis, necessitatibus
-                  quibusdam. Nulla?
+                  You will master data visualization techniques using tools like
+                  Excel, Tableau, or Python libraries like Matplotlib and
+                  Seaborn. This skill enables you to present complex financial
+                  data in clear and informative visuals.
                 </p>
               </div>
             </div>

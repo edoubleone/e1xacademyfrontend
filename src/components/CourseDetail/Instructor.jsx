@@ -7,7 +7,9 @@ const Instructor = () => {
     <div className="bg-custom-blue py-20">
       <div className="max-w-5xl mx-auto ">
         <div className="mb-10 space-y-10">
-          <h1 className="font-bold text-5xl  ">Your Instructor(s)</h1>
+          <h1 className="font-bold text-5xl text-white  ">
+            Your Instructor(s)
+          </h1>
           <p className="text-white">
             With Our World Class Tutor With Backed Up Experience in Top
             Companies <br></br>You will Be Equip With The Necessary Learning

@@ -15,9 +15,9 @@ const CourseDetails = () => {
             Become A Financial <br></br> Data Analyst{" "}
           </h1>
           <p className="text-white lg:text-lg md:text-xs">
-            Determine The Current Production And Predict <br></br>Future Trends,
-            Identify The company Financial <br></br>
-            Situation And Recommend Corrective Action
+            Becoming a financial data analyst involves acquiring the skills to
+            gather, analyze, and interpret financial data to support
+            decision-making and provide valuable insights to organizations
           </p>
         </div>
 

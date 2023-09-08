@@ -24,7 +24,7 @@ const Course = () => {
           <div class="lg:w-1/4 w-full  p-4">
             <CourseCard
               imageSrc={Frameres}
-              title="Operation Data Analyst"
+              title="HealthCare Data Analyst"
               duration="30 Hours"
               onViewCourse={() => {}}
             />
@@ -33,7 +33,7 @@ const Course = () => {
           <div class="lg:w-1/4 w-full p-4">
             <CourseCard
               imageSrc={Framers}
-              title="Operation Data Analyst"
+              title="Financial Data Analyst"
               duration="30 Hours"
               onViewCourse={() => {}}
             />
@@ -42,7 +42,7 @@ const Course = () => {
           <div class="lg:w-1/4 w-full p-4">
             <CourseCard
               imageSrc={Framer}
-              title="Operation Data Analyst"
+              title="Business Data Analyst"
               duration="30 Hours"
               onViewCourse={() => {}}
             />

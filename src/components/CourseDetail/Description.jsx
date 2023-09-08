@@ -24,27 +24,25 @@ const Description = () => {
         <p className="font-bold text-2xl">Description</p>
         <div className="space-y-5">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-            nemo, aspernatur deserunt a modi mollitia vitae eligendi ratione.
-            Sunt quae deleniti omnis a, excepturi dolor quos itaque atque?
-            Illum, enim Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Inventore nemo, aspernatur deserunt a modi mollitia vitae eligendi
-            ratione. Sunt quae deleniti omnis a, excepturi dolor quos itaque
-            atque? Illum, enim?
+            Becoming a Financial Data Analyst involves acquiring the skills and
+            knowledge required to analyze and interpret financial data to make
+            informed business decisions. Financial Data Analysts are responsible
+            for collecting, cleaning, and organizing financial data, often
+            utilizing tools such as Excel, SQL, and data visualization software.
           </p>
 
           <p>
             {" "}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-            nemo, aspernatur deserunt a modi mollitia vitae eligendi ratione.
-            Sunt quae deleniti omnis a, excepturi dolor quos itaque atque?
-            Illum, enim?
+            They perform quantitative analysis to identify trends, patterns, and
+            anomalies in financial data to support strategic planning and
+            investment decisions. Strong analytical skills, proficiency in
+            financial modeling, and a solid understanding of financial markets
+            are essential for success in this role.
           </p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
-            nemo, aspernatur deserunt a modi mollitia vitae eligendi ratione.
-            Sunt quae deleniti omnis a, excepturi dolor quos itaque atque?
-            Illum, enim?
+            Financial Data Analysts play a crucial role in helping organizations
+            optimize their financial performance and mitigate risks through
+            data-driven insights.
           </p>
         </div>
         <p className="border-b border-[#e46601] w-[80px] text-[#e46601] ">
