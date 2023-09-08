@@ -4,7 +4,7 @@ import vectorBackground from "../../assets/icons/vectorbackground.png";
 import illustration from "../../assets/images/illustration.png";
 const CourseDetails = () => {
   return (
-    <div className="bg-custom-gradient  h-[800px] ">
+    <div className="bg-custom-gradient  lg:h-[850px] h-full ">
       <div className="container lg:flex mx-auto py-6 px-6">
         <div className="relative  lg:w-1/2 w-full  space-y-8 mt-9   ">
           <button className="border border-blue-300 py-2 px-6 text-white">
