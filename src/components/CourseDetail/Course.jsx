@@ -10,7 +10,9 @@ const Course = () => {
   return (
     <div className="w-full custom-description-background py-24">
       <div class="max-w-5xl mx-auto ">
-        <p className="text-4xl font-bold">Course You May Like</p>
+        <p className="lg:text-4xl text-2xl font-bold px-4">
+          Course You May Like
+        </p>
         <div className="flex flex-col md:flex-row gap-3 mt-7">
           <div class="lg:w-1/4 w-full p-4">
             <CourseCard

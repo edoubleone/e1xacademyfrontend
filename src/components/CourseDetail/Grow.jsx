@@ -6,7 +6,9 @@ const Grow = () => {
       <div className="max-w-3xl mx-auto py-8 p-4">
         <div class="flex justify-center items-center ">
           <div class="text-center md:text-left">
-            <h1 class="font-bold text-4xl">Learn. Grow. Earn. Inspire</h1>
+            <h1 class="font-bold lg:text-4xl text-2xl">
+              Learn. Grow. Earn. Inspire
+            </h1>
             <p class="text-xs text-center">Register for The Plan Suite You</p>
           </div>
         </div>

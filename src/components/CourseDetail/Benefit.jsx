@@ -9,8 +9,8 @@ const Benefit = () => {
     <div className="bg-custom-blue py-20 border-b ">
       <div className="max-w-5xl mx-auto">
         <div>
-          <p className="font-bold text-4xl text-white">
-            Benefit You Get From <br></br> The Program
+          <p className="font-bold lg:text-4xl text-2xl text-white px-4">
+            Benefit You Get From <br className="block"></br> The Program
           </p>
         </div>
         <div class="flex flex-col md:flex-row mt-8">

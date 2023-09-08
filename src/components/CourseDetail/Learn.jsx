@@ -6,7 +6,9 @@ const Learn = () => {
   return (
     <div className="w-full mx-auto custom-gradient">
       <div className="max-w-5xl mx-auto py-10  ">
-        <h1 className="py-8 text-4xl font-bold ">What Will You Learn</h1>
+        <h1 className="py-8 lg:text-4xl text-2xl  font-bold  px-4">
+          What Will You Learn
+        </h1>
         <div className="lg:flex md:flex-row lg:gap-20 md:gap-2 mt-6">
           <div className="lg:w-2/3 w-full ">
             <div className="mb-4 flex gap-8 px-4 ">
@@ -59,9 +61,13 @@ const Learn = () => {
               </div>
             </div>
           </div>
-          <div className="lg:w-1/3  w-full">
-            <div className="flex">
-              <img src={learnImages} alt="learn" className="h-[600px]" />
+          <div className="lg:w-1/3 md:w-1/2">
+            <div className="flex md:justify-center">
+              <img
+                src={learnImages}
+                alt="learn"
+                className="h-[600px] mx-auto"
+              />
             </div>
           </div>
         </div>
