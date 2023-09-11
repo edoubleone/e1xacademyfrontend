@@ -32,7 +32,7 @@ const ResetPassword = () => {
     }
   };
   return (
-    <div className="max-w-4xl mx-auto ">
+    <div className="max-w-4xl mx-auto py-6 ">
       <div className="flex flex-col md:flex-row">
         <div className="lg:w-1/2 w-full px-4 py-5 custom-description-background mx-auto">
           <div className="text-center">
