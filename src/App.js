@@ -10,6 +10,10 @@ import Course from "./page/Courses";
 import About from "./page/About";
 import ContactPage from "./page/ContactPage";
 import LiveCourse from "./page/LiveCourse";
+import Login from "./page/Login";
+import ResetPassword from "./page/ResetPassword";
+import SignUp from "./page/SignUp";
+
 import CourseDetailPage from "./page/CourseDetails";
 
 function App() {
@@ -24,6 +28,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/live-course" element={<LiveCourse />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/sign-in" element={<Login />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
       <Footer />
       <CookieConsent />

@@ -136,12 +136,12 @@ function Navbar() {
         </ul>
 
         <div className="hidden md:flex items-center space-x-4">
-          <NavLink to="/signin" activeClassName="active" className="text-lg">
+          <NavLink to="/sign-in" activeClassName="active" className="text-lg">
             Sign In
           </NavLink>
 
-          <button className="bg-[#e46601] hover:bg-[#e46601] text-white font-bold py-2 px-4 rounded">
-            <NavLink to="/signout" activeClassName="active">
+          <button className="bg-custom-button hover:bg-custom-button text-white font-bold py-2 px-4 rounded">
+            <NavLink to="/sign-up" activeClassName="active">
               Sign Out
             </NavLink>
           </button>
