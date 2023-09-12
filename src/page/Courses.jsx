@@ -4,7 +4,7 @@ import Reviews from "../components/Courses/Reviews";
 
 const Courses = () => {
   return (
-    <div>
+    <div className="custom-grow-background">
       <Course />
       <Reviews />
     </div>
