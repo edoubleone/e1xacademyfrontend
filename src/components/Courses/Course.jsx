@@ -1,9 +1,8 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import CourseCard from "./components/CourseCard";
 import courseImg from "../../assets/images/course-img.png";
-
-import Framer from "../../assets/icons/Frame 36.png";
 import Framers from "../../assets/icons/Frame 35.png";
 import Framerer from "../../assets/icons/Frame 34.png";
 import Frameres from "../../assets/icons/Frame 37.png";
@@ -12,9 +11,9 @@ import { GoSearch } from "react-icons/go";
 const Course = () => {
   return (
     <div>
-      <div className="custom-course-background lg:h-[450px] w-full h-full   ">
-        <div className="max-w-6xl mx-auto px-4 ">
-          <div className="flex flex-col md:flex-row">
+      <div className="custom-course-background lg:h-[450px] w-full h-full    ">
+        <div className="max-w-6xl mx-auto px-4  ">
+          <div className=" relative flex flex-col md:flex-row">
             <div className="  lg:w-1/2 w-full lg:mt-12">
               <div className="flex items-center text-blue-400 ">
                 <p>Home</p>
@@ -64,32 +63,34 @@ const Course = () => {
         </div>
         ;
       </div>
-      <div className="w-full custom-grow-background  ">
-        <div className="mb-6">
-          <div>
+      <div className="w-full custom-grow-background">
+        <div>
+          <div className="mb-6">
+            <div>
+              <CourseCard
+                imageSrc={Framerer}
+                title="Business Data Analyst"
+                beginnerText="Beginner"
+                lessonsText="Lessons"
+                hours="30"
+                videos="30"
+                rating="4.3"
+                courseId="123"
+              />
+            </div>
+          </div>
+          <div className="mb-6">
             <CourseCard
-              imageSrc={Framerer}
-              title="Business Data Analyst"
+              imageSrc={Framers}
+              title="Health Data Analyst"
               beginnerText="Beginner"
               lessonsText="Lessons"
               hours="30"
               videos="30"
               rating="4.3"
+              courseId="123"
             />
           </div>
-        </div>
-        <div className="mb-6">
-          <CourseCard
-            imageSrc={Framers}
-            title="Health Data Analyst"
-            beginnerText="Beginner"
-            lessonsText="Lessons"
-            hours="30"
-            videos="30"
-            rating="4.3"
-          />
-        </div>
-        <div className="mb-6">
           <CourseCard
             imageSrc={Frameres}
             title="Operation Data Analyst"
@@ -98,6 +99,7 @@ const Course = () => {
             hours="30"
             videos="30"
             rating="4.3"
+            courseId="123"
           />
         </div>
       </div>

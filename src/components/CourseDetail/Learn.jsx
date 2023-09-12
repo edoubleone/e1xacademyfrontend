@@ -61,13 +61,13 @@ const Learn = () => {
               </div>
             </div>
           </div>
-          <div className="lg:w-1/3 md:w-1/2">
-            <div className="flex md:justify-center">
+          <div className="lg:w-1/3 w-full">
+            <div className="flex lg:justify-start justify-center">
               <div>
                 <img
                   src={learnImages}
                   alt="learn"
-                  className="h-[600px] mx-auto"
+                  className="lg:h-[600px] h-full w-full mx-auto"
                 />
               </div>
             </div>

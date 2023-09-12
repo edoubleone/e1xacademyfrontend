@@ -1,8 +1,12 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+
 import vector from "../../assets/icons/Vector.png";
-import vectorBackground from "../../assets/icons/vectorbackground.png";
+
 import illustration from "../../assets/images/illustration.png";
 const CourseDetails = () => {
+  const { courseId } = useParams();
+  console.log(courseId);
   return (
     <div className="bg-custom-gradient  lg:h-[850px] h-full ">
       <div className="max-w-6xl lg:flex mx-auto py-6 px-6">

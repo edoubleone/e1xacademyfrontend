@@ -7,6 +7,7 @@ import courseGroup from "../../../assets/images/coursegroupimages.png";
 import { HiOutlineVideoCamera } from "react-icons/hi";
 import { BiRightArrowCircle } from "react-icons/bi";
 import star from "../../../assets/icons/star.png";
+import { useNavigate } from "react-router-dom";
 
 const CourseCard = ({
   imageSrc,
@@ -16,7 +17,13 @@ const CourseCard = ({
   hours,
   videos,
   rating,
+  courseId,
 }) => {
+  const navigate = useNavigate();
+
+  const handleViewCourseClick = () => {
+    navigate(`/courses/${courseId}`);
+  };
   return (
     <div className="max-w-6xl mx-auto bg-white p-4">
       <div className="mb-4">
@@ -38,7 +45,7 @@ const CourseCard = ({
                   {title}
                 </h1>
 
-                <div className="flex items-center gap-6 lg:justify-start justify-center ">
+                <div className="flex items-center  gap-6  lg:justify-start  justify-between lg:px-0 px-4  ">
                   <div className="flex items-center gap-1">
                     <img src={iconBar} alt="icon-bar" />
                     <p className="lg:text-md text-sm ">{beginnerText}</p>
@@ -49,7 +56,7 @@ const CourseCard = ({
                   </div>
                 </div>
 
-                <div className="flex items-center gap-6  lg:justify-start justify-center">
+                <div className="flex items-center gap-6  lg:justify-start justify-between lg:px-0 px-4">
                   <div className="flex items-center gap-1">
                     <LiaClock />
                     <p className="lg:text-md text-sm"> {hours}</p>
@@ -66,7 +73,7 @@ const CourseCard = ({
               </div>
 
               <div className="lg:mt-24 mt-3">
-                <div className="flex justify-between">
+                <div className="flex justify-between lg:px-0 px-4">
                   <div className="flex gap-4">
                     <img src={courseGroup} alt="course-group" />
                     <div className="flex items-center gap-1">
@@ -76,7 +83,12 @@ const CourseCard = ({
                   </div>
                   <div className="flex items-center">
                     <div className="flex items-center gap-1">
-                      <p className="lg:text-lg">View Courses</p>
+                      <button
+                        className="lg:text-lg"
+                        onClick={handleViewCourseClick}
+                      >
+                        View Courses
+                      </button>
                       <BiRightArrowCircle />
                     </div>
                   </div>
