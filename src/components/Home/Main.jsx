@@ -10,7 +10,7 @@ function Main() {
   };
   return (
     <div className="w-full relative" style={backgroundImageStyle}>
-      <div className="container  mx-auto lg:flex  px-4">
+      <div className="max-w-6xl  mx-auto lg:flex  px-4">
         <div className="lg:w-1/2 w-full">
           <div className="lg:mt-20 mt-8">
             <h1 className="pb-8 lg:text-6xl text-4xl font-bold md:flex text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-green-800">
@@ -38,8 +38,8 @@ function Main() {
           />
         </div>
       </div>
-      <div className="lg:absolute container mx-auto flex flex-wrap lg:bottom-12 left-0 right-0 space-y-2 lg:space-y-0">
-        <div className="lg:w-64 w-full bg-blue-200 lg:p-8 p-4 flex justify-center items-center rounded-3xl">
+      <div className="lg:absolute max-w-6xl mx-auto flex flex-wrap lg:bottom-12 left-0 right-0 space-y-2 lg:space-y-0">
+        <div className="lg:w-40 w-full bg-blue-200 lg:p-4 p-2 flex justify-center items-center rounded-3xl">
           <p className="text-center">Tableau</p>
         </div>
 
@@ -47,15 +47,15 @@ function Main() {
           Microsoft SQL Server
         </div>
 
-        <div className="lg:w-64 w-full bg-red-200 p-4 flex justify-center items-center rounded-3xl">
+        <div className="lg:w-40 w-full bg-red-200 p-4 flex justify-center items-center rounded-3xl">
           Google Cloud
         </div>
 
-        <div className="lg:w-64 w-full bg-yellow-200 p-4 flex justify-center items-center rounded-3xl">
+        <div className="lg:w-40 w-full bg-yellow-200 p-4 flex justify-center items-center rounded-3xl">
           Python
         </div>
 
-        <div className="lg:w-64 w-full bg-purple-200 p-4 flex justify-center items-center rounded-3xl">
+        <div className="lg:w-40 w-full bg-purple-200 p-4 flex justify-center items-center rounded-3xl">
           PowerBi
         </div>
       </div>

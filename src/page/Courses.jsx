@@ -1,11 +1,12 @@
 import React from "react";
-import Landing from "../components/Courses/Landing";
 import Course from "../components/Courses/Course";
+import Reviews from "../components/Courses/Reviews";
+
 const Courses = () => {
   return (
     <div>
-      <Landing />
       <Course />
+      <Reviews />
     </div>
   );
 };

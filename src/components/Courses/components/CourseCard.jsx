@@ -1,73 +1,77 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { BiTimeFive, BiBookBookmark } from "react-icons/bi";
-import { BsPersonFill } from "react-icons/bs";
-import { FaCartPlus } from "react-icons/fa";
+import Framer32 from "../../../assets/icons/Frame 37.png";
+import iconBar from "../../../assets/icons/Vector (5).png";
+import bookBar from "../../../assets/icons/Group.png";
+import { LiaClock } from "react-icons/lia";
+import courseGroup from "../../../assets/images/coursegroupimages.png";
+import { HiOutlineVideoCamera } from "react-icons/hi";
+import { BiRightArrowCircle } from "react-icons/bi";
+import star from "../../../assets/icons/star.png";
 
 const CourseCard = ({
-  courseImage,
-  instructorImage,
-  instructorName,
-  rating,
-  price,
+  imageSrc,
   title,
-  students,
-  getEnrolled,
+  beginnerText,
+  lessonsText,
   hours,
-  courseId,
+  videos,
+  rating,
 }) => {
-  const navigate = useNavigate();
-
-  const handleGetEnrolledClick = () => {
-    navigate(`/course/${courseId}`);
-  };
-
   return (
-    <div className="lg:w-1/2 w-full shadow-md">
-      <div className="relative flex justify-center">
-        <img
-          src={courseImage}
-          alt="Course Image"
-          className="w-full h-[280px] object-cover lg:mt-0 md:mt-8"
-        />
-        <div className="absolute bottom-0 left-3 p-2 text-white flex items-center gap-6">
-          <div className="flex items-center gap-1">
-            <BiTimeFive className="font-bold" />
-            <h2 className="font-bold">{hours} Hours</h2>
-          </div>
-          <div className="flex items-center gap-1">
-            <BiBookBookmark className="font-bold" />
-            <h2 className="font-bold">453</h2>
-          </div>
-        </div>
-      </div>
+    <div className="max-w-6xl mx-auto bg-white p-4">
+      <div className="mb-4">
+        <div className="flex space-x-4 md:flex-row">
+          <div className="lg:flex w-full gap-12 ">
+            <img src={imageSrc} width="350" height="600" alt="course-pics" />
+            <div className="w-full">
+              <div className="lg:space-y-6 space-y-3 lg:mt-4 ">
+                <h1 className="font-bold lg:text-2xl">{title}</h1>
 
-      <div className="px-4 mt-6 pb-6 space-y-4">
-        <div className="flex items-center gap-5 border-b-2 pb-4">
-          <img
-            src={instructorImage}
-            alt="Instructor Image"
-            className="h-[40px] w-[40px]   object-cover rounded-full"
-          />
-          <p>{instructorName}</p>
-        </div>
-        <div className="flex justify-between">
-          <p>Rating: {rating}</p>
-          <h2>{price}</h2>
-        </div>
-        <h2>{title}</h2>
-        <div className="flex justify-between">
-          <div className="flex items-center gap-2">
-            <p>{students}</p>
-            <BsPersonFill />
-          </div>
-          <div>
-            <a href="#" onClick={handleGetEnrolledClick}>
-              <div className="flex items-center gap-2">
-                <FaCartPlus />
-                <p>{getEnrolled}</p>
+                <div className="flex items-center gap-6">
+                  <div className="flex items-center gap-1">
+                    <img src={iconBar} alt="icon-bar" />
+                    <p className="lg:text-md text-sm ">{beginnerText}</p>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <img src={bookBar} alt="icon-bar" />
+                    <p className="lg:text-md text-sm">{lessonsText}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-6">
+                  <div className="flex items-center gap-1">
+                    <LiaClock />
+                    <p className="lg:text-md text-sm"> {hours}</p>
+                    <p className="lg:text-md text-sm">Hours</p>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <HiOutlineVideoCamera />
+                    <div className="flex items-center">
+                      <p className="lg:text-md text-sm">{videos}</p>
+                      <p className="lg:text-md text-sm">Videos</p>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </a>
+
+              <div className="lg:mt-24 mt-3">
+                <div className="flex justify-between">
+                  <div className="flex gap-4">
+                    <img src={courseGroup} alt="course-group" />
+                    <div className="flex items-center gap-1">
+                      <p className="lg:text-lg">{rating}</p>
+                      <img src={star} width="15" height="15" alt="star" />
+                    </div>
+                  </div>
+                  <div className="flex items-center">
+                    <div className="flex items-center gap-1">
+                      <p className="lg:text-lg">View Courses</p>
+                      <BiRightArrowCircle />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

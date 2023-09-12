@@ -15,7 +15,7 @@ function Course() {
   };
   return (
     <div className="mt-20 bg-[#D6EBFF] py-4" style={backgroundImageStyle}>
-      <div className="container max-w-6xl mx-auto justify-center items-center px-4 ">
+      <div className="max-w-6xl mx-auto justify-center items-center px-4 ">
         <div>
           <h1 className="text-center font-bold pb-2 lg:text-5xl text-3xl">
             Popular Course

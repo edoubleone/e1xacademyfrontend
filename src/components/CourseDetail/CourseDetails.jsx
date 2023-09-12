@@ -5,7 +5,7 @@ import illustration from "../../assets/images/illustration.png";
 const CourseDetails = () => {
   return (
     <div className="bg-custom-gradient  lg:h-[850px] h-full ">
-      <div className="container lg:flex mx-auto py-6 px-6">
+      <div className="max-w-6xl lg:flex mx-auto py-6 px-6">
         <div className="relative  lg:w-1/2 w-full  space-y-8 mt-9   ">
           <button className="border border-blue-300 py-2 px-6 text-white">
             Live Programme
@@ -37,31 +37,31 @@ const CourseDetails = () => {
         </div>
       </div>
       <div className="absolute mt-[-350px] w-[650px] py-8 md:block hidden space-y-4 bg-blue-600">
-        <div className="flex items-center justify-between w-full px-12 ">
+        <div className="flex items-center justify-between w-full px-4  ">
           <div className="flex items-center  gap-1">
-            <img src={vector} alt="vector" />
+            <img src={vector} alt="vector" className="ml-28" />
             <p className="text-left text-white">Level</p>
           </div>
           <p className="text-right text-white">Beginner</p>
         </div>
 
-        <div className="flex items-center justify-between w-full px-12 ">
+        <div className="flex items-center justify-between w-full px-4  ">
           <div className="flex items-center  gap-1">
-            <img src={vector} alt="vector" />
+            <img src={vector} alt="vector" className="ml-28" />
             <p className="text-left text-white">Level</p>
           </div>
           <p className="text-right text-white">Beginner</p>
         </div>
-        <div className="flex items-center justify-between w-full px-12 ">
-          <div className="flex items-center  gap-1">
-            <img src={vector} alt="vector" />
+        <div className="flex items-center justify-between w-full px-4  ">
+          <div className="flex items-center  ">
+            <img src={vector} alt="vector" className="ml-28" />
             <p className="text-left text-white">Level</p>
           </div>
           <p className="text-right text-white">Beginner</p>
         </div>
-        <div className="flex items-center justify-between w-full px-12 ">
+        <div className="flex items-center justify-between w-full px-4">
           <div className="flex items-center  gap-1">
-            <img src={vector} alt="vector" />
+            <img src={vector} alt="vector" className="ml-28" />
             <p className="text-left text-white">Level</p>
           </div>
           <p className="text-right text-white">Beginner</p>

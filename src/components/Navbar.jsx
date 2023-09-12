@@ -59,7 +59,7 @@ function Navbar() {
 
   return (
     <div className={`p-4 ${isSticky ? "sticky-navbar" : ""}`}>
-      <nav className="container flex items-center justify-between mx-auto md:px-2">
+      <nav className="max-w-6xl flex items-center justify-between mx-auto md:px-2">
         <div>
           <NavLink
             to="/"
@@ -98,7 +98,7 @@ function Navbar() {
             onMouseLeave={handleDropdownClose}
           >
             <NavLink
-              to=""
+              to="/course"
               activeClassName="active"
               className="text-lg cursor-pointer"
             >
@@ -149,9 +149,9 @@ function Navbar() {
 
         <div onClick={handleNav} className="block md:hidden">
           {!nav ? (
-            <FiMenu size={40} style={{ color: "#00AFFF" }} />
+            <FiMenu style={{ color: "#00AFFF" }} />
           ) : (
-            <AiOutlineClose size={40} style={{ color: "#00AFFF" }} />
+            <AiOutlineClose style={{ color: "#00AFFF" }} />
           )}
         </div>
 

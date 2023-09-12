@@ -62,3 +62,11 @@
 .custom-description-background {
   background: rgba(214, 214, 214, 1);
 }
+
+.custom-course-background {
+  background: linear-gradient(
+    245.76deg,
+    rgba(180, 232, 255, 1) 5.48%,
+    rgba(208, 243, 224, 0.4622) 100%
+  );
+}

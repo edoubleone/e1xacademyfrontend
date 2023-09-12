@@ -7,7 +7,7 @@ import CookieConsent from "./components/CookieConstent";
 
 import Home from "./page/Home";
 import Course from "./page/Courses";
-import About from "./page/About";
+
 import ContactPage from "./page/ContactPage";
 import LiveCourse from "./page/LiveCourse";
 import Login from "./page/Login";
@@ -25,7 +25,6 @@ function App() {
         <Route path="/course" element={<Course />} />
         <Route path="/courseDetail" element={<CourseDetailPage />} />
 
-        <Route path="/about" element={<About />} />
         <Route path="/live-course" element={<LiveCourse />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/sign-in" element={<Login />} />

@@ -63,11 +63,13 @@ const Learn = () => {
           </div>
           <div className="lg:w-1/3 md:w-1/2">
             <div className="flex md:justify-center">
-              <img
-                src={learnImages}
-                alt="learn"
-                className="h-[600px] mx-auto"
-              />
+              <div>
+                <img
+                  src={learnImages}
+                  alt="learn"
+                  className="h-[600px] mx-auto"
+                />
+              </div>
             </div>
           </div>
         </div>
