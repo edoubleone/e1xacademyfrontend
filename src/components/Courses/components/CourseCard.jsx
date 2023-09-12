@@ -21,27 +21,35 @@ const CourseCard = ({
     <div className="max-w-6xl mx-auto bg-white p-4">
       <div className="mb-4">
         <div className="flex space-x-4 md:flex-row">
-          <div className="lg:flex w-full gap-12 ">
-            <div className="flex md:justify-center">
-              <img src={imageSrc} width="350" height="600" alt="course-pics" />
+          <div className="lg:flex w-full lg:gap-12 gap-1">
+            <div className="flex justify-center md:justify-start">
+              <img
+                src={imageSrc}
+                width="350"
+                height="600"
+                alt="course-pics"
+                className="mx-auto md:mx-0" // Center on medium devices, align left on others
+              />
             </div>
 
-            <div className="w-full">
-              <div className="lg:space-y-6 space-y-3 lg:mt-4 ">
-                <h1 className="font-bold lg:text-2xl">{title}</h1>
+            <div className="w-full ">
+              <div className="lg:space-y-6 space-y-3 lg:mt-4    ">
+                <h1 className="font-bold lg:text-2xl lg:text-left text-center ">
+                  {title}
+                </h1>
 
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-6 lg:justify-start justify-center ">
                   <div className="flex items-center gap-1">
                     <img src={iconBar} alt="icon-bar" />
                     <p className="lg:text-md text-sm ">{beginnerText}</p>
                   </div>
-                  <div className="flex items-center gap-1">
+                  <div className="flex items-center gap-1  ">
                     <img src={bookBar} alt="icon-bar" />
                     <p className="lg:text-md text-sm">{lessonsText}</p>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-6  lg:justify-start justify-center">
                   <div className="flex items-center gap-1">
                     <LiaClock />
                     <p className="lg:text-md text-sm"> {hours}</p>

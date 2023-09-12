@@ -12,8 +12,8 @@ import { GoSearch } from "react-icons/go";
 const Course = () => {
   return (
     <div>
-      <div className="custom-course-background lg:h-[450px] w-full h-full  ">
-        <div className="max-w-6xl mx-auto px-4">
+      <div className="custom-course-background lg:h-[450px] w-full h-full   ">
+        <div className="max-w-6xl mx-auto px-4 ">
           <div className="flex flex-col md:flex-row">
             <div className="  lg:w-1/2 w-full lg:mt-12">
               <div className="flex items-center text-blue-400 ">
@@ -28,18 +28,18 @@ const Course = () => {
                 </p>
               </div>
               <div className="relative flex items-center gap-6  lg:mt-28 mt-6   ">
-                <p className="w-24 text-center bg-white lg:text-sm text-xs py-3 rounded-lg">
+                <button className="w-24 text-center bg-white lg:text-sm text-xs py-3 rounded-lg text-blue-400">
                   All Course
-                </p>
-                <p className="w-24 text-center bg-white lg:text-sm text-xs py-3 rounded-lg">
+                </button>
+                <button className="w-24 text-center bg-white lg:text-sm text-xs py-3 rounded-lg text-blue-400">
                   Popular{" "}
-                </p>
-                <p className="w-24 text-center bg-white lg:text-sm text-xs py-3 rounded-lg">
+                </button>
+                <button className="w-24 text-center bg-white lg:text-sm text-xs py-3 rounded-lg text-blue-400">
                   Latest
-                </p>
-                <p className="w-24 text-center bg-white lg:text-sm text-xs py-3 rounded-lg ">
+                </button>
+                <button className="w-24 text-center bg-white lg:text-sm text-xs py-3 rounded-lg text-blue-400 ">
                   Trending
-                </p>
+                </button>
               </div>
             </div>
             <div className="lg:w-1/2 w-full">
@@ -64,7 +64,7 @@ const Course = () => {
         </div>
         ;
       </div>
-      <div className="w-full custom-grow-background  py-6">
+      <div className="w-full custom-grow-background  ">
         <div className="mb-6">
           <div>
             <CourseCard
@@ -100,16 +100,6 @@ const Course = () => {
             rating="4.3"
           />
         </div>
-
-        <CourseCard
-          imageSrc={Framer}
-          title="Financial Data Analyst"
-          beginnerText="Beginner"
-          lessonsText="Lessons"
-          hours="30"
-          videos="30"
-          rating="4.3"
-        />
       </div>
     </div>
   );
