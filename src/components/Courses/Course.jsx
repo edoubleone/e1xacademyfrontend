@@ -11,7 +11,7 @@ import { GoSearch } from "react-icons/go";
 const Course = () => {
   return (
     <div className="lg:relative lg:overflow-auto">
-      <div className=" background-card lg:h-[450px] lg:absolute lg:top-0 lg:-z-0  w-full h-full     ">
+      <div className=" background-card h-[450px] lg:absolute lg:top-0 lg:-z-0  w-full      ">
         <div className="max-w-6xl mx-auto px-4  ">
           <div className=" relative flex flex-col md:flex-row">
             <div className="  lg:w-1/2 w-full lg:mt-12">
@@ -66,7 +66,7 @@ const Course = () => {
           </div>
         </div>
       </div>
-      <div className="w-full   lg:mt-[380px] lg:z-50 lg:relative    ">
+      <div className="w-full  lg:mt-[380px] lg:z-50 lg:relative   ">
         <div className="lg:-z-50">
           <div className="mb-6">
             <div>
