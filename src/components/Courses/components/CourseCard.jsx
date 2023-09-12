@@ -22,7 +22,10 @@ const CourseCard = ({
       <div className="mb-4">
         <div className="flex space-x-4 md:flex-row">
           <div className="lg:flex w-full gap-12 ">
-            <img src={imageSrc} width="350" height="600" alt="course-pics" />
+            <div className="flex md:justify-center">
+              <img src={imageSrc} width="350" height="600" alt="course-pics" />
+            </div>
+
             <div className="w-full">
               <div className="lg:space-y-6 space-y-3 lg:mt-4 ">
                 <h1 className="font-bold lg:text-2xl">{title}</h1>
