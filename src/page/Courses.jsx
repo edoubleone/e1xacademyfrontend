@@ -5,11 +5,12 @@ import Pagination from "../components/Pagination";
 
 const Courses = () => {
   return (
-    <div className="custom-grow-background">
-      <Course />
-
+    <>
+      <div className="custom-grow-background">
+        <Course />
+      </div>
       <Pagination />
-    </div>
+    </>
   );
 };
 
