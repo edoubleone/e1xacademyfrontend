@@ -10,7 +10,7 @@ import Frameres from "../../assets/icons/Frame 37.png";
 import { GoSearch } from "react-icons/go";
 const Course = () => {
   return (
-    <div className="lg:relative lg:overflow-auto">
+    <div className="lg:relative lg:overflow-auto py-5">
       <div className=" background-card h-[450px] lg:absolute lg:top-0 lg:-z-0  w-full      ">
         <div className="max-w-6xl mx-auto px-4  ">
           <div className=" relative flex flex-col md:flex-row">
@@ -94,16 +94,18 @@ const Course = () => {
               courseId="123"
             />
           </div>
-          <CourseCard
-            imageSrc={Frameres}
-            title="Operation Data Analyst"
-            beginnerText="Beginner"
-            lessonsText="Lessons"
-            hours="30"
-            videos="30"
-            rating="4.3"
-            courseId="123"
-          />
+          <div className="mb">
+            <CourseCard
+              imageSrc={Frameres}
+              title="Operation Data Analyst"
+              beginnerText="Beginner"
+              lessonsText="Lessons"
+              hours="30"
+              videos="30"
+              rating="4.3"
+              courseId="123"
+            />
+          </div>
         </div>
       </div>
     </div>
