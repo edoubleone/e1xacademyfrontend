@@ -98,14 +98,14 @@ function Navbar() {
             onMouseLeave={handleDropdownClose}
           >
             <NavLink
-              to="/course"
+              to="/"
               activeClassName="active"
               className="text-lg cursor-pointer"
             >
               Course
             </NavLink>
             <div
-              className={`absolute left-[-2] top-full mt-2 w-60 bg-white border border-gray-300 rounded-lg shadow-lg ${
+              className={`absolute left-[-2] top-full mt-2 w-60 bg-white border border-gray-300 rounded-md shadow-lg ${
                 isDropdownOpen ? "" : "hidden"
               }`}
               onMouseEnter={handleDropdownOpen}

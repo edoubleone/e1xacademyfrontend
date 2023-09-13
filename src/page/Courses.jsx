@@ -8,8 +8,8 @@ const Courses = () => {
     <>
       <div className="custom-grow-background">
         <Course />
+        <Pagination />
       </div>
-      <Pagination />
     </>
   );
 };
