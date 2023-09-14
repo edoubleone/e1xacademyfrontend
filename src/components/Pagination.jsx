@@ -35,7 +35,7 @@ const Pagination = () => {
   };
 
   return (
-    <nav className="flex justify-center py-4 ">
+    <nav className=" max-w-6xl mx-auto flex justify-end py-4 ">
       <ul className="flex rounded border border-gray-300 overflow-hidden">
         <li>
           <button
@@ -59,9 +59,9 @@ const Pagination = () => {
                   onClick={handleClick}
                   className={`flex py-2 px-3 ${
                     pageNumber === currentPage
-                      ? "bg-blue-500 text-white"
+                      ? "bg-custom-button text-white"
                       : "bg-white"
-                  } hover:bg-blue-500 hover:text-white`}
+                  } hover:bg-custom-button hover:text-white`}
                   id={pageNumber}
                 >
                   {pageNumber}

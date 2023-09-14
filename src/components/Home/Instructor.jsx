@@ -10,21 +10,25 @@ function Instructor() {
       <div className="lg:flex  md:flex-row md:justify-center">
         <div className="lg:w-1/2  p-4">
           <div className="h-full flex flex-col">
-            <img src={manInstructor} alt="manInstructor" />
+            <img
+              src={manInstructor}
+              alt="manInstructor"
+              className="h-full object-cover lg:mt-0 md:mt-m lg:w-full w-2/3 mx-auto"
+            />
           </div>
         </div>
 
-        <div className="lg:w-1/2 w-full md:justify-center md:items-center p-4 mt-20 ">
+        <div className="lg:w-1/2 w-full md:justify-center md:items-center p-4 lg:mt-20 ">
           <div className="h-full flex flex-col justify-center ">
             <h2 className="p-4 text-4xl font-bold">
               Instructor-Led <br></br>Live Classes
             </h2>
-            <div className="p-4 space-y-10">
-              <div className="flex lg:items-center space-x-2 md:items-center">
+            <div className="p-4 lg:space-y-10 space-y-6">
+              <div className="flex lg:items-center space-x-2 items-center">
                 <BiCheckCircle />
                 <p>Learn From The Comfort Of Your Living Room</p>
               </div>
-              <div className="flex items-center space-x-2 md:items-center">
+              <div className="flex lg:items-center space-x-2 items-center">
                 <BiCheckCircle />
                 <p>Be Matched With Other Learners And Coaches</p>
               </div>
@@ -55,12 +59,12 @@ function Instructor() {
       </div>
 
       <div className="lg:flex  md:flex-row md:justify-center ">
-        <div className=" mt-20 lg:w-1/2  w-full p-4">
+        <div className=" lg:mt-20 lg:w-1/2  w-full p-4">
           <div className="h-full flex flex-col">
             <h1 className="p-4 text-4xl font-bold">
               Your Entire Enterprise <br></br>Transformation
             </h1>
-            <div className="p-4 space-y-10">
+            <div className="p-4 lg:space-y-10 space-y-6">
               <div className="flex items-center justify-between md:items-center">
                 <p>Deliver On Strategic Business Goals By Building Critical</p>
                 <BiCheckCircle />
@@ -94,7 +98,11 @@ function Instructor() {
 
         <div className="lg:w-1/2 md:w-full  p-4">
           <div className="h-full flex flex-col">
-            <img src={womanInstructor} alt="manInstructor" />
+            <img
+              src={womanInstructor}
+              alt="manInstructor"
+              className="h-full object-cover lg:mt-0 md:mt-m lg:w-full w-2/3 mx-auto"
+            />
           </div>
         </div>
       </div>

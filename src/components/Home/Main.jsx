@@ -30,11 +30,18 @@ function Main() {
           </div>
         </div>
 
-        <div className="lg:w-1/2 w-full ">
+        {/* <div className="lg:w-1/2 w-full ">
           <img
             src={HeaderImage}
             alt="headerImage"
             className="h-full object-cover lg:mt-0 md:mt-8"
+          />
+        </div> */}
+        <div className="lg:w-1/2 w-full ">
+          <img
+            src={HeaderImage}
+            alt="headerImage"
+            className="h-full object-cover lg:mt-0 md:mt-m lg:w-full w-2/3 mx-auto"
           />
         </div>
       </div>

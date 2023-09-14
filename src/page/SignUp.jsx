@@ -9,15 +9,20 @@ import validator from "validator";
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [fullName, setFullName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [errors, setErrors] = useState({});
 
   const validateForm = () => {
     let errors = {};
     let isValid = true;
 
-    if (validator.isEmpty(fullName)) {
-      errors.fullName = "Full name is required";
+    if (validator.isEmpty(firstName)) {
+      errors.fullName = "First name is required";
+      isValid = false;
+    }
+    if (validator.isEmpty(lastName)) {
+      errors.fullName = "Last name is required";
       isValid = false;
     }
 
@@ -34,8 +39,11 @@ const SignUp = () => {
     setErrors(errors);
     return isValid;
   };
-  const handleFullNameChange = (e) => {
-    setFullName(e.target.value);
+  const handleFirstNameChange = (e) => {
+    setFirstName(e.target.value);
+  };
+  const handleLastNameChange = (e) => {
+    setLastName(e.target.value);
   };
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -53,39 +61,67 @@ const SignUp = () => {
       // For this example, we'll simply log the username and password.
       console.log("Username:", email);
       console.log("Password:", password);
-      console.log("fullname", fullName);
+      console.log("fullname", firstName);
+      console.log("fullname", lastName);
     }
   };
   return (
-    <div className="max-w-4xl mx-auto py-6">
+    <div className="max-w-6xl mx-auto py-6">
       <div className="flex flex-col md:flex-row">
-        <div className="lg:w-1/2 w-full px-4 py-5 custom-description-background mx-auto">
+        <div className="lg:w-1/2 w-full px-4 py-5  mx-auto">
           <div className="text-center">
-            <h1 className="font-bold text-2xl">Sign Up</h1>
-            <p className="text-xs">
-              Learn on your own time from <br></br> top universities and
-              businesses.
-            </p>
+            <h1 className="font-bold text-4xl text-red-700">
+              Create A New Account
+            </h1>
           </div>
-          <form onSubmit={handleSubmit} className="border-b pb-3">
+          <form onSubmit={handleSubmit} className="border-b pb-3 mt-3">
             <div className="mb-4">
-              <label htmlFor="FullName ">FullName</label>
-              <input
-                type="FullName"
-                name="FullName"
-                value={fullName}
-                onChange={handleFullNameChange}
-                required
-                className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
-              />
-              {errors.fullName && <p className="error">{errors.fullName}</p>}
+              <div className="flex flex-col md:flex-row gap-4">
+                <div className="lg:w-1/2 ">
+                  <label htmlFor="FirstName " className="text-red-700  ">
+                    First Name
+                  </label>
+                  <input
+                    type="FirstName"
+                    name="FirstName"
+                    value={firstName}
+                    onChange={handleFirstNameChange}
+                    placeholder="FIRST NAME"
+                    required
+                    className="w-full border border-gray-300 rounded px-3 py-2   focus:outline-none focus:border-blue-400"
+                  />
+                  {errors.fullName && (
+                    <p className="error">{errors.fullName}</p>
+                  )}
+                </div>
+                <div className="lg:w-1/2">
+                  <label htmlFor="LastName " className="text-red-700  ">
+                    Last Name
+                  </label>
+                  <input
+                    type="LastName"
+                    name="LastName"
+                    value={lastName}
+                    onChange={handleLastNameChange}
+                    placeholder="LAST NAME"
+                    required
+                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                  />
+                  {errors.fullName && (
+                    <p className="error">{errors.fullName}</p>
+                  )}
+                </div>
+              </div>
             </div>
             <div className="mb-4">
-              <label htmlFor="email ">Email</label>
+              <label htmlFor="email " className="text-red-700  ">
+                Email
+              </label>
               <input
                 type="email"
                 name="email"
                 value={email}
+                placeholder="EMAIL"
                 onChange={handleEmailChange}
                 required
                 className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
@@ -93,12 +129,13 @@ const SignUp = () => {
               {errors.email && <p className="error">{errors.email}</p>}
             </div>
             <div className="mb-4">
-              <label htmlFor="password" className="block">
+              <label htmlFor="password" className="text-red-700  ">
                 Password
               </label>
               <input
                 type="password"
                 name="password"
+                placeholder="PASSWORD"
                 value={password}
                 onChange={handlePasswordChange}
                 required
@@ -108,31 +145,22 @@ const SignUp = () => {
 
             <button
               type="submit"
-              className="w-full  bg-custom-button text-white rounded py-2 hover:bg-blue-600"
+              className="w-40  bg-custom-button text-white rounded py-2 hover:bg-blue-600"
             >
               Login
             </button>
           </form>
 
-          <div className="space-y-2">
-            <button class="flex items-center w-full border py-3 px-2 border-white hover:bg-[#d8c1ae]">
-              <p class="text-left">
-                <FcGoogle className="w-5 h-5 " />
-              </p>
-              <p class="mx-auto">Continue with google</p>
+          <div className="flex items-center justify-center space-x-4 mt-4">
+            <button class="border rounded-full py-2 px-2  hover:bg-[#d8c1ae]">
+              <FcGoogle />
             </button>
 
-            <button className="flex items-center w-full border py-4 px-2 border-white hover:bg-[#d8c1ae]">
-              <p className="text-left  text-blue-900 ">
-                <FaFacebook className="w-5 h-5" />
-              </p>
-              <NavLink className="mx-auto">Continue with facebook</NavLink>
+            <button className="border rounded-full py-2 px-2  hover:bg-[#d8c1ae]">
+              <FaFacebook />
             </button>
-            <button className=" flex items-center w-full border py-3 px-2 border-white hover:bg-[#d8c1ae]">
-              <p className="text-left ">
-                <AiFillApple className="w-5 h-5 " />
-              </p>
-              <p className="mx-auto">Continue with Apple</p>
+            <button className="border rounded-full py-2 px-2   hover:bg-[#d8c1ae]">
+              <AiFillApple />
             </button>
           </div>
           <div>

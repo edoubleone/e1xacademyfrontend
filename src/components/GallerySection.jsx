@@ -18,7 +18,7 @@ const GallerySection = ({ backgroundImg, title, content, minHeight }) => {
         className="bg-cover bg-center relative object-cover"
         style={sectionStyle}
       >
-        {/* Transparent black overlay */}
+      
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
         <div className="max-w-4xl mx-auto py-16 text-white relative z-10 text-center">

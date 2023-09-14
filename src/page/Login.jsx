@@ -47,19 +47,17 @@ const Login = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto py-6 ">
+    <div className="max-w-6xl mx-auto py-6 ">
       <div className="flex flex-col md:flex-row">
-        <div className="lg:w-1/2 w-full px-4 py-5 custom-description-background mx-auto">
+        <div className="lg:w-1/2 w-full px-4 py-5  mx-auto">
           <div className="text-center">
-            <h1 className="font-bold text-2xl">Login</h1>
-            <p className="text-xs">
-              Learn on your own time from <br></br> top universities and
-              businesses.
-            </p>
+            <h1 className="font-bold text-4xl text-red-600">Login</h1>
           </div>
           <form onSubmit={handleSubmit} className="border-b pb-3">
             <div className="mb-4">
-              <label htmlFor="email ">Email</label>
+              <label htmlFor="email " className="text-red-600">
+                Email
+              </label>
               <input
                 type="email"
                 name="email"
@@ -71,7 +69,7 @@ const Login = () => {
               {errors.username && <p className="error">{errors.username}</p>}
             </div>
             <div className="mb-4">
-              <label htmlFor="password" className="block ">
+              <label htmlFor="password" className="text-red-600">
                 Password
               </label>
               <input
@@ -83,38 +81,29 @@ const Login = () => {
                 className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
               />
               {errors.password && <p className="error">{errors.password}</p>}
-              <NavLink to="/reset-password" className="text-xs">
+              <NavLink to="/reset-password" className="text-xs ">
                 Forgot password
               </NavLink>
             </div>
 
             <button
               type="submit"
-              className="w-full  bg-custom-button text-white rounded py-2 hover:bg-blue-600"
+              className="w-40  bg-custom-button text-white rounded py-2 hover:bg-blue-600"
             >
               Login
             </button>
           </form>
 
-          <div className="space-y-2">
-            <button class="flex items-center w-full border py-3 px-2 border-white hover:bg-[#d8c1ae]">
-              <p class="text-left">
-                <FcGoogle className="w-5 h-5 " />
-              </p>
-              <p class="mx-auto">Continue with google</p>
+          <div className="flex items-center justify-center space-x-4 mt-4">
+            <button class="border rounded-full py-2 px-2  hover:bg-[#d8c1ae]">
+              <FcGoogle />
             </button>
 
-            <button className="flex items-center w-full border py-3 px-2 border-white hover:bg-[#d8c1ae]">
-              <p className="text-left   text-blue-600 ">
-                <FaFacebook className="w-5 h-5" />
-              </p>
-              <NavLink className="mx-auto">Continue with facebook</NavLink>
+            <button className="border rounded-full py-2 px-2  hover:bg-[#d8c1ae]">
+              <FaFacebook />
             </button>
-            <button className=" flex items-center w-full border py-3 px-2 border-white hover:bg-[#d8c1ae]">
-              <p className="text-left ">
-                <AiFillApple className="w-5 h-5 " />
-              </p>
-              <p className="mx-auto">Continue with Apple</p>
+            <button className="border rounded-full py-2 px-2   hover:bg-[#d8c1ae]">
+              <AiFillApple />
             </button>
           </div>
           <div>
