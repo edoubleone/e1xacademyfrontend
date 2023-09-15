@@ -1,14 +1,27 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { motion } from "framer-motion";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import CourseCard from "./components/CourseCard";
 import courseImg from "../../assets/images/course-img.png";
-import Framers from "../../assets/icons/Frame 35.png";
-import Framerer from "../../assets/icons/Frame 34.png";
-import Frameres from "../../assets/icons/Frame 37.png";
-
+import businessImage from "../../assets/images/businessman-with-graph-laptop.jpg";
+import healthImage from "../../assets/images/health.png";
+import operationImage from "../../assets/images/operation.png";
+import financeImage from "../../assets/images/financce.png";
 import { GoSearch } from "react-icons/go";
 const Course = () => {
+  const imgVariants = {
+    initial: {
+      opacity: 0,
+      y: 100, // Move the image 100px down initially
+    },
+    animate: {
+      opacity: 1,
+      y: 0, // Move the image back to its original position
+      transition: {
+        duration: 1, // Adjust the duration as needed
+      },
+    },
+  };
   return (
     <div className="lg:relative lg:overflow-auto ">
       <div className=" background-card h-[450px] lg:absolute lg:top-0 lg:-z-0  w-full      ">
@@ -69,9 +82,13 @@ const Course = () => {
       <div className="w-full  lg:mt-[380px] lg:z-50 lg:relative   ">
         <div className="lg:-z-50">
           <div className="mb-6">
-            <div>
+            <motion.div
+              variants={imgVariants} // Apply animation variants
+              initial="initial"
+              animate="animate"
+            >
               <CourseCard
-                imageSrc={Framerer}
+                imageSrc={businessImage}
                 title="Business Data Analyst"
                 beginnerText="Beginner"
                 lessonsText="Lessons"
@@ -80,11 +97,11 @@ const Course = () => {
                 rating="4.3"
                 courseId="123"
               />
-            </div>
+            </motion.div>
           </div>
           <div className="mb-6">
             <CourseCard
-              imageSrc={Framers}
+              imageSrc={healthImage}
               title="Health Data Analyst"
               beginnerText="Beginner"
               lessonsText="Lessons"
@@ -96,7 +113,7 @@ const Course = () => {
           </div>
           <div className="mb">
             <CourseCard
-              imageSrc={Frameres}
+              imageSrc={operationImage}
               title="Operation Data Analyst"
               beginnerText="Beginner"
               lessonsText="Lessons"

@@ -1,5 +1,6 @@
 import React from "react";
 import LearningInfo from "./components/LearningInfo";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Start() {
   return (

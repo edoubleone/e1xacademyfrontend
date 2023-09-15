@@ -1,6 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Description = () => {
+  const [animateImage, setAnimateImage] = useState(false);
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Only trigger once when the element comes into view
+  });
+
+  useEffect(() => {
+    if (inView) {
+      // When the component is in view, trigger the animation
+      controls.start({
+        y: 0, // The final position in the y-axis
+        opacity: 1, // Set opacity to 1 to make it visible
+        transition: {
+          duration: 0.5, // Adjust the duration as needed
+        },
+      });
+      setAnimateImage(true);
+    }
+  }, [controls, inView]);
   return (
     <div className="w-full custom-description-background h mx-auto  ">
       <div className="max-w-4xl mx-auto">
@@ -20,7 +41,12 @@ const Description = () => {
         </div>
       </div>
       <div className="border-t pb-6"></div>
-      <div className="max-w-5xl mx-auto space-y-5 mt-6 py-12 p-4">
+      <motion.div
+        className="max-w-5xl mx-auto space-y-5 mt-6 py-12 p-4"
+        initial={{ y: 100, opacity: 0 }}
+        animate={controls}
+        ref={ref}
+      >
         <p className="font-bold text-2xl">Description</p>
         <div className="space-y-5">
           <p>
@@ -48,7 +74,7 @@ const Description = () => {
         <p className="border-b border-[#e46601] w-[80px] text-[#e46601] ">
           Show Less
         </p>
-      </div>
+      </motion.div>
     </div>
   );
 };

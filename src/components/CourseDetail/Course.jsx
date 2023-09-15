@@ -1,9 +1,9 @@
 import React from "react";
 import CourseCard from "./components/CourseCard";
-import Framer from "../../assets/icons/Frame 36.png";
-import Framers from "../../assets/icons/Frame 35.png";
-import Framerer from "../../assets/icons/Frame 34.png";
-import Frameres from "../../assets/icons/Frame 37.png";
+import businessImage from "../../assets/images/businessman-with-graph-laptop.jpg";
+import healthImage from "../../assets/images/health.png";
+import operationImage from "../../assets/images/operation.png";
+import financeImage from "../../assets/images/financce.png";
 import background from "../../assets/images/wave.png";
 
 const Course = () => {
@@ -16,7 +16,7 @@ const Course = () => {
         <div className="flex flex-col md:flex-row gap-3 mt-7">
           <div class="lg:w-1/4 w-full p-4">
             <CourseCard
-              imageSrc={Framerer}
+              imageSrc={operationImage}
               title="Operation Data Analyst"
               duration="30 Hours"
               onViewCourse={() => {}}
@@ -25,7 +25,7 @@ const Course = () => {
 
           <div class="lg:w-1/4 w-full  p-4">
             <CourseCard
-              imageSrc={Frameres}
+              imageSrc={healthImage}
               title="HealthCare Data Analyst"
               duration="30 Hours"
               onViewCourse={() => {}}
@@ -34,7 +34,7 @@ const Course = () => {
 
           <div class="lg:w-1/4 w-full p-4">
             <CourseCard
-              imageSrc={Framers}
+              imageSrc={financeImage}
               title="Financial Data Analyst"
               duration="30 Hours"
               onViewCourse={() => {}}
@@ -43,7 +43,7 @@ const Course = () => {
 
           <div class="lg:w-1/4 w-full p-4">
             <CourseCard
-              imageSrc={Framer}
+              imageSrc={businessImage}
               title="Business Data Analyst"
               duration="30 Hours"
               onViewCourse={() => {}}

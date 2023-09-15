@@ -10,6 +10,7 @@ import Course from "./page/Courses";
 
 import ContactPage from "./page/ContactPage";
 import LiveCourse from "./page/LiveCourse";
+import About from "./page/About";
 import Login from "./page/Login";
 import ResetPassword from "./page/ResetPassword";
 import SignUp from "./page/SignUp";
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path="/course" element={<Course />} />
         <Route path="/courseDetail" element={<CourseDetailPage />} />
+        <Route path="/about" element={<About />} />
 
         <Route path="/live-course" element={<LiveCourse />} />
         <Route path="/contact" element={<ContactPage />} />

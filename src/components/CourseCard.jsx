@@ -5,7 +5,12 @@ function CourseCard({ imageSrc, title, duration, onViewCourse }) {
   return (
     <div className="lg:w-96 md:w-80 p-3">
       <div className="h-full bg-white p-3">
-        <img src={imageSrc} alt="course" />
+        <img
+          src={imageSrc}
+          alt="course"
+          className="hover:brightness-110 transition-brightness duration-300"
+        />
+
         <div>
           <p className="text-center font-bold py-3">{title}</p>
 

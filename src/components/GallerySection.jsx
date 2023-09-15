@@ -13,12 +13,11 @@ const GallerySection = ({ backgroundImg, title, content, minHeight }) => {
   };
 
   return (
-    <div className="mt-12">
+    <div>
       <div
         className="bg-cover bg-center relative object-cover"
         style={sectionStyle}
       >
-      
         <div className="absolute inset-0 bg-black opacity-50"></div>
 
         <div className="max-w-4xl mx-auto py-16 text-white relative z-10 text-center">

@@ -1,17 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CourseCard from "../CourseCard";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import CustomButton from "./components/CustomButton";
-import Framer from "../../assets/icons/Frame 36.png";
-import Framers from "../../assets/icons/Frame 35.png";
-import Framerer from "../../assets/icons/Frame 34.png";
-import Frameres from "../../assets/icons/Frame 37.png";
+import businessImage from "../../assets/images/businessman-with-graph-laptop.jpg";
+import healthImage from "../../assets/images/health.png";
+import operationImage from "../../assets/images/operation.png";
+import financeImage from "../../assets/images/financce.png";
 import background from "../../assets/images/wave.png";
 
 function Course() {
+  const [animateImage, setAnimateImage] = useState(false);
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Only trigger once when the element comes into view
+  });
+
+  useEffect(() => {
+    if (inView) {
+      // When the component is in view, trigger the animation
+      controls.start({
+        y: 0, // The final position in the y-axis
+        opacity: 1, // Set opacity to 1 to make it visible
+        transition: {
+          duration: 0.5, // Adjust the duration as needed
+        },
+      });
+      setAnimateImage(true);
+    }
+  }, [controls, inView]);
+
   const backgroundImageStyle = {
     backgroundImage: `url(${background})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+  };
+
+  const buttonVariants = {
+    hover: {
+      y: -5, // Move the button 5 pixels up on hover
+    },
+    tap: {
+      scale: 0.95, // Scale the button down when clicked
+    },
   };
   return (
     <div className="mt-20 bg-[#D6EBFF] py-4" style={backgroundImageStyle}>
@@ -25,31 +56,37 @@ function Course() {
             Explore From All Your Online Course
           </p>
         </div>
-        <div className="lg:flex lg:justify-center lg:items-center md:flex md:flex-row md:justify-center md:items-center md:px-4">
+
+        <motion.div
+          className="lg:flex lg:justify-center lg:items-center md:flex md:flex-row md:justify-center md:items-center md:px-4"
+          initial={{ y: 100, opacity: 0 }}
+          animate={controls}
+          ref={ref}
+        >
           <CourseCard
-            imageSrc={Framers}
+            imageSrc={healthImage}
             title="HealthCare Data Analyst"
             duration="30 Hours"
             onViewCourse={() => {}}
           />
 
           <CourseCard
-            imageSrc={Framerer}
+            imageSrc={operationImage}
             title="Operation Data Analyst"
             duration="30 Hours"
             onViewCourse={() => {}}
           />
-        </div>
+        </motion.div>
 
         <div className="lg:flex lg:justify-center lg:items-center md:flex md:flex-row md:justify-center">
           <CourseCard
-            imageSrc={Frameres}
+            imageSrc={financeImage}
             title=" Financial Data Analyst"
             duration="30 Hours"
             onViewCourse={() => {}}
           />
           <CourseCard
-            imageSrc={Framer}
+            imageSrc={businessImage}
             title=" Business Data Analyst"
             duration="30 Hours"
             onViewCourse={() => {
@@ -57,9 +94,15 @@ function Course() {
             }}
           />
         </div>
-        <div className="text-center  mt-12 mb-9">
+
+        <motion.div
+          className="text-center  mt-12 mb-9"
+          variants={buttonVariants}
+          whileHover="hover"
+          whileTap="tap"
+        >
           <CustomButton text="See All" />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

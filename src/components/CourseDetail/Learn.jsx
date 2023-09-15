@@ -1,15 +1,41 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import icons from "../../assets/icons/icons.png";
 import learnImages from "../../assets/images/syllabus.png";
-
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 const Learn = () => {
+  const [animateImage, setAnimateImage] = useState(false);
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Only trigger once when the element comes into view
+  });
+
+  useEffect(() => {
+    if (inView) {
+      // When the component is in view, trigger the animation
+      controls.start({
+        y: 0, // The final position in the y-axis
+        opacity: 1, // Set opacity to 1 to make it visible
+        transition: {
+          duration: 0.5, // Adjust the duration as needed
+        },
+      });
+      setAnimateImage(true);
+    }
+  }, [controls, inView]);
+
   return (
     <div className="w-full mx-auto custom-gradient">
       <div className="max-w-5xl mx-auto py-10  ">
         <h1 className="py-8 lg:text-4xl text-2xl  font-bold  px-4">
           What Will You Learn
         </h1>
-        <div className="lg:flex md:flex-row lg:gap-20 md:gap-2 mt-6">
+        <motion.div
+          className="lg:flex md:flex-row lg:gap-20 md:gap-2 mt-6"
+          initial={{ y: 100, opacity: 0 }}
+          animate={controls}
+          ref={ref}
+        >
           <div className="lg:w-2/3 w-full ">
             <div className="mb-4 flex gap-8 px-4 ">
               <img src={icons} alt="icons" className="h-[150px]" />
@@ -67,12 +93,13 @@ const Learn = () => {
                 <img
                   src={learnImages}
                   alt="learn"
+                  loading="lazy"
                   className="lg:h-[600px] h-full w-full mx-auto"
                 />
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

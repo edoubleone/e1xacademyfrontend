@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import ImageTwo from "../../assets/images/frame.png";
 import Frame from "../../assets/icons/Frame 70.png";
 import FrameTwo from "../../assets/icons/Frame 71.png";
@@ -6,8 +8,28 @@ import FrameThree from "../../assets/icons/Frame 72.png";
 import ImageLeaning from "../../assets/images/imageCrew.png";
 
 function Learning() {
+  const [animateImage, setAnimateImage] = useState(false);
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Only trigger once when the element comes into view
+  });
+
+  useEffect(() => {
+    if (inView) {
+      // When the component is in view, trigger the animation
+      controls.start({
+        y: 0, // The final position in the y-axis
+        opacity: 1, // Set opacity to 1 to make it visible
+        transition: {
+          duration: 0.5, // Adjust the duration as needed
+        },
+      });
+      setAnimateImage(true);
+    }
+  }, [controls, inView]);
+
   return (
-    <div className="container max-w-6xl mx-auto mt-12 px-4 ">
+    <div className=" max-w-6xl mx-auto mt-12 px-4 ">
       <div className="lg:w-5/6 md:w-full">
         <div className="flex flex-col mb-8">
           <h1 className="text-center lg:text-6xl text-2xl font-bold mb-4">
@@ -24,7 +46,12 @@ function Learning() {
             <img src={ImageTwo} alt="image" className="md:w-full" />
           </div>
           <div className=" lg:w-2/3 md:w-full p-4 bg-gray-100 ">
-            <div className="flex flex-col space-y-10 md:justify-center">
+            <motion.div
+              className="flex flex-col space-y-10 md:justify-center"
+              initial={{ y: 100, opacity: 0 }}
+              animate={controls}
+              ref={ref}
+            >
               <div className="p-8 bg-[#256bdb] text-white mb-3 flex  items-center">
                 <div className="pr-4 ">
                   <img src={Frame} alt="frame" />
@@ -74,7 +101,7 @@ function Learning() {
                   </p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

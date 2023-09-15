@@ -98,7 +98,7 @@ function Navbar() {
             onMouseLeave={handleDropdownClose}
           >
             <NavLink
-              to="/#"
+              to="#"
               activeClassName="active"
               className="text-lg cursor-pointer"
             >
