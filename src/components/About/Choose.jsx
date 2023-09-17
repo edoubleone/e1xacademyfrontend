@@ -8,15 +8,15 @@ import { PiStudentLight } from "react-icons/pi";
 const Choose = () => {
   return (
     <div className="custom-description-background">
-      <div className="max-w-6xl mx-auto py-24 ">
+      <div className="max-w-6xl mx-auto lg:py-24 py-12 ">
         <div className="text-center space-y-5">
-          <p className="font-bold text-6xl ">WHY CHO0SE US</p>
+          <p className="font-bold lg:text-6xl text-2xl ">WHY CHO0SE US</p>
           <p className=" text-md ">
             Everything you Need for your Institute or University
           </p>
         </div>
         <div className="lg:flex md:flex-row gap-8 mt-20 ">
-          <div className="lg:w-2/5 h-[450px] px-4 py-8 shadow-lg bg-white">
+          <div className="lg:w-2/5 h-[450px] px-4 py-8 shadow-lg bg-white  mb-4">
             <div className="flex items-center justify-between  ">
               <p className="font-bold text-3xl">01</p>
               <LuSchool className="w-9 h-9" />
@@ -35,7 +35,7 @@ const Choose = () => {
               </div>
             </div>
           </div>
-          <div className="lg:w-2/5 h-[450px] px-4 py-8 shadow-md bg-white">
+          <div className="lg:w-2/5 h-[450px] px-4 py-8 shadow-md bg-white mb-4">
             <div className="flex items-center justify-between   ">
               <p className="font-bold text-3xl">02</p>
               <PiStudentLight className="w-9 h-9" />
@@ -59,6 +59,7 @@ const Choose = () => {
               src={chooseImage}
               alt="headerImage"
               className="w-full h-full object-cover  lg:mt-0 md:mt-8"
+              loading="lazy"
             />
           </div>
         </div>

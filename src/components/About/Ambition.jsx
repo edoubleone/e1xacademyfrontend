@@ -6,9 +6,9 @@ const Ambition = () => {
     <div className="custom-course-background py-20">
       <div className="max-w-6xl mx-auto ">
         <div className="lg:flex lg:justify-center lg:items-center md:flex md:flex-row md:justify-center md:items-center md:px-4 gap-3">
-          <div className="w-full lg:w-1/2">
+          <div className="w-full lg:w-1/2 px-4">
             <div className="space-y-6">
-              <p className="text-4xl font-bold  ">
+              <p className="lg:text-4xl font-bold  ">
                 Turn Your Ambition Into A <br></br> Success Story
               </p>
               <p className="text-md">
@@ -29,7 +29,7 @@ const Ambition = () => {
                   <p className="font-bold"> Students</p>
                 </div>
               </div>
-              <button className="py-4 px-12 bg-custom-button text-white font-bold rounded-3xl">
+              <button className="flex py-4 px-12 bg-custom-button text-white font-bold rounded lg:justify-start justify-center mx-auto lg:mx-0">
                 Explore Course
               </button>
             </div>
@@ -39,6 +39,7 @@ const Ambition = () => {
               src={pics}
               alt="headerImage"
               className="h-full object-cover lg:mt-0 md:mt-8"
+              loading="lazy"
             />
           </div>
         </div>

@@ -22,7 +22,10 @@ const CookieConsent = () => {
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-gray-800 p-4 text-white">
       <p className="text-center">
-        We use cookies to improve your experience. Accept?
+        We use cookies on our website to give you the most relevant experience
+        by remembering your preferences and repeat visits. By clicking "Accept
+        All", you consent to the use of ALL the cookies. However, you may visit
+        "Cookie Settings" to provide a controlled consent.
       </p>
       <div className="flex justify-center mt-2">
         <button

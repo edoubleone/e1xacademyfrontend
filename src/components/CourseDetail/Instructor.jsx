@@ -1,8 +1,30 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import instructor1 from "../../assets/images/instructor.png";
 import instructor2 from "../../assets/images/instructor.png";
 import instructor3 from "../../assets/images/instructor.png";
 const Instructor = () => {
+  const [animateImage, setAnimateImage] = useState(false);
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Only trigger once when the element comes into view
+  });
+
+  useEffect(() => {
+    if (inView) {
+      // When the component is in view, trigger the animation
+      controls.start({
+        y: 0, // The final position in the y-axis
+        opacity: 1, // Set opacity to 1 to make it visible
+        transition: {
+          duration: 0.5, // Adjust the duration as needed
+        },
+      });
+      setAnimateImage(true);
+    }
+  }, [controls, inView]);
+
   return (
     <div className="bg-custom-blue py-20">
       <div className="max-w-5xl mx-auto ">
@@ -18,7 +40,12 @@ const Instructor = () => {
             You will Be Equip With The Necessary Learning Direction
           </p>
         </div>
-        <div class="flex flex-col md:flex-row items-center justify-center md:justify-start">
+        <motion.div
+          class="flex flex-col md:flex-row items-center justify-center md:justify-start"
+          initial={{ y: 100, opacity: 0 }}
+          animate={controls}
+          ref={ref}
+        >
           <div class="md:w-1/3 p-4 space-y-4">
             <img src={instructor1} alt="thumbs" />
             <div className="space-y-2">
@@ -40,7 +67,7 @@ const Instructor = () => {
               <p className="text-white text-xs">Financial Data Analyst</p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
