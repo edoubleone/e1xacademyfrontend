@@ -84,6 +84,15 @@ function Navbar() {
           </li>
           <li>
             <NavLink
+              to="/checkout"
+              activeClassName="active"
+              className="text-lg"
+            >
+              checkOut
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
               to="/courseDetail"
               activeClassName="active"
               className="text-lg"
