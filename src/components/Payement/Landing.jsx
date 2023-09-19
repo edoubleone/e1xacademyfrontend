@@ -8,12 +8,10 @@ const Landing = () => {
         <div className=" flex justify-between">
           <div className="mt-5">
             <button className="border  py-2 px-4 text-white text-sm ">
-              Back To Courses
+              Back To Payment Option
             </button>
             <div className="mt-4 space-y-2">
-              <h1 className="font-bold lg:text-5xl text-3xl text-white">
-                Check Out
-              </h1>
+              <h1 className="font-bold text-5xl text-white">Check Out</h1>
               <p className="text-white">Financial Data Analyst</p>
             </div>
           </div>

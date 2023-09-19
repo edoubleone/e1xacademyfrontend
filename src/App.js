@@ -7,9 +7,11 @@ import CookieConsent from "./components/CookieConstent";
 
 import Home from "./page/Home";
 import Course from "./page/Courses";
+import SuccessfulPage from "./page/SuccessfulPage";
 
 import ContactPage from "./page/ContactPage";
 import LiveCourse from "./page/LiveCourse";
+import Payement from "./page/Payement";
 import CheckOutPage from "./page/CheckOutPage";
 import About from "./page/About";
 import Login from "./page/Login";
@@ -28,8 +30,11 @@ function App() {
         <Route path="/courseDetail" element={<CourseDetailPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/checkout" element={<CheckOutPage />} />
+        <Route path="/payment" element={<Payement />} />
+        <Route path="/success" element={<SuccessfulPage />} />
 
         <Route path="/live-course" element={<LiveCourse />} />
+
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/sign-in" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />

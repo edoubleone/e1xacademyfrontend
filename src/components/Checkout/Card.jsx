@@ -6,14 +6,14 @@ import stripeIcon from "../../assets/images/Stripe svg.png";
 
 const Card = () => {
   return (
-    <div className="custom-grow-background ">
-      <div className="max-w-6xl mx-auto py-12">
-        <p>Already have an account? sign-in </p>
-        <div className="flex gap-5 ">
-          <div className="w-1/2 bg-white px-6 py-4 mt-6 ">
+    <div className="custom-grow-background py-24 ">
+      <div className="max-w-6xl mx-auto ">
+        <p className="px-6">Already have an account? sign-in </p>
+        <div className="lg:flex gap-5 ">
+          <div className="lg:w-1/2 w-full bg-white px-6 py-4 mt-6 ">
             <div className="  mb-8 ">
-              <div className="flex gap-3 hover:bg-custom-grow-background ">
-                <div className="flex items-center gap-2 py-2   border hover:border-blue-400 hover:bg-blue-100 rounded-lg w-1/5  justify-center cursor-pointer">
+              <div className="flex  gap-3 hover:bg-custom-grow-background ">
+                <div className="flex items-center gap-2 py-2   border hover:border-blue-400 hover:bg-blue-100 rounded-lg lg:w-1/5 w-1/4  justify-center cursor-pointer">
                   <img
                     src={CardIcon}
                     alt="cardi-image"
@@ -21,14 +21,14 @@ const Card = () => {
                   />
                   <img src={Cardtext} alt="card-text" className="object-full" />
                 </div>
-                <div className=" py-2 border w-1/5 hover:border-blue-400 hover:bg-custom-grow-background hover:bg-blue-100  rounded-lg  cursor-pointer ">
+                <div className=" py-2 border lg:w-1/5 w-1/4 hover:border-blue-400 hover:bg-custom-grow-background hover:bg-blue-100  rounded-lg  cursor-pointer ">
                   <img
                     src={paypalIcon}
                     alt="cardi-image"
                     className="object-full"
                   />
                 </div>
-                <div className="flex border w-1/5 hover:border-blue-400 rounded-lg cursor-pointer hover:bg-blue-100 justify-center   ">
+                <div className="flex border lg:w-1/5 w-1/4 hover:border-blue-400 rounded-lg cursor-pointer hover:bg-blue-100 justify-center   ">
                   <img
                     src={stripeIcon}
                     alt="cardi-image"
@@ -101,7 +101,7 @@ const Card = () => {
               </p>
             </div>
           </div>
-          <div className="w-1/2 bg-white  py-4 mt-6 ">
+          <div className="lg:w-1/2 w-full bg-white  py-4 mt-6 ">
             <div className="px-6">
               <div>
                 <p className="font-bold text-3xl">Financial Data Analyst</p>
@@ -131,7 +131,7 @@ const Card = () => {
               </form>
             </div>
 
-            <div className="w-full flex justify-between px-6 py-6 border-b-2 border-t-2 mt-16 font-bold">
+            <div className="w-full flex justify-between px-6 py-6 border-b-2 border-t-2 mt-16 space-x-2 font-bold">
               <h1>Total </h1>
               <h1>200USD</h1>
             </div>

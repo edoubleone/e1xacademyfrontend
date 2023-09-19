@@ -82,15 +82,7 @@ function Navbar() {
               About
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/checkout"
-              activeClassName="active"
-              className="text-lg"
-            >
-              checkOut
-            </NavLink>
-          </li>
+
           <li>
             <NavLink
               to="/courseDetail"
@@ -134,6 +126,29 @@ function Navbar() {
                 className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
               >
                 Live Course
+              </NavLink>
+              <NavLink
+                to="/checkout"
+                activeClassName="active-link"
+                className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+              >
+                checkout
+              </NavLink>
+
+              <NavLink
+                to="/payment"
+                activeClassName="active-link"
+                className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+              >
+                payment
+              </NavLink>
+
+              <NavLink
+                to="/success"
+                activeClassName="active-link"
+                className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+              >
+                Success
               </NavLink>
             </div>
           </li>
