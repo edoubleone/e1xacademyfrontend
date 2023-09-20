@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import CardIcon from "../../assets/images/ion_card.png";
 import Cardtext from "../../assets/images/card.png";
 import paypalIcon from "../../assets/images/PayPal svg.png";
@@ -12,6 +13,20 @@ const Card = () => {
 
   const [discountCode, setDiscountCode] = useState("");
   const [isValid, setIsValid] = useState(true);
+
+  const imgVariants = {
+    initial: {
+      opacity: 0,
+      y: 100, // Move the image 100px down initially
+    },
+    animate: {
+      opacity: 1,
+      y: 0, // Move the image back to its original position
+      transition: {
+        duration: 1, // Adjust the duration as needed
+      },
+    },
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -58,7 +73,12 @@ const Card = () => {
       <div className="max-w-6xl mx-auto ">
         <p className="px-6">Already have an account? sign-in </p>
         <div className="lg:flex gap-5 ">
-          <div className="lg:w-1/2 w-full bg-white px-6 py-4 mt-6 ">
+          <motion.div
+            className="lg:w-1/2 w-full bg-white px-6 py-4 mt-6 "
+            variants={imgVariants} // Apply animation variants
+            initial="initial"
+            animate="animate"
+          >
             <div className="  mb-8 ">
               <div className="flex  gap-3 hover:bg-custom-grow-background ">
                 <div className="flex items-center gap-2 py-2   border hover:border-blue-400 hover:bg-blue-100 rounded-lg lg:w-1/5 w-1/4  justify-center cursor-pointer">
@@ -162,8 +182,13 @@ const Card = () => {
                 Policy
               </p>
             </div>
-          </div>
-          <div className="lg:w-1/2 w-full bg-white  py-4 mt-6 ">
+          </motion.div>
+          <motion.div
+            className="lg:w-1/2 w-full bg-white  py-4 mt-6 "
+            variants={imgVariants} // Apply animation variants
+            initial="initial"
+            animate="animate"
+          >
             <div className="px-6">
               <div>
                 <p className="font-bold text-3xl">Financial Data Analyst</p>
@@ -201,7 +226,7 @@ const Card = () => {
               <h1>Total </h1>
               <h1>200USD</h1>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       ;

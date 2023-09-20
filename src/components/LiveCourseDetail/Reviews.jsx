@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 import { NavLink } from "react-router-dom";
 
 import reviewImage from "../../assets/images/review.png";
@@ -7,6 +10,25 @@ import { HiArrowSmRight } from "react-icons/hi";
 
 const Reviews = () => {
   const [message, setMessage] = useState("");
+  const [animateImage, setAnimateImage] = useState(false);
+  const controls = useAnimation();
+  const [ref, inView] = useInView({
+    triggerOnce: true, // Only trigger once when the element comes into view
+  });
+
+  useEffect(() => {
+    if (inView) {
+      // When the component is in view, trigger the animation
+      controls.start({
+        y: 0, // The final position in the y-axis
+        opacity: 1, // Set opacity to 1 to make it visible
+        transition: {
+          duration: 0.5, // Adjust the duration as needed
+        },
+      });
+      setAnimateImage(true);
+    }
+  }, [controls, inView]);
 
   const sendMessage = () => {
     setMessage("");
@@ -15,7 +37,12 @@ const Reviews = () => {
   return (
     <div className="border-t">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="lg:w-3/5 py-12">
+        <motion.div
+          className="lg:w-3/5 py-12"
+          initial={{ y: 100, opacity: 0 }}
+          animate={controls}
+          ref={ref}
+        >
           <div className="flex flex-col">
             <img src={reviewImage} alt="reviewImage" />
             <div className="py-8">
@@ -57,7 +84,7 @@ const Reviews = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

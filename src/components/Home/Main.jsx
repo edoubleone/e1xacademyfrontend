@@ -67,13 +67,13 @@ function Main() {
           <img
             src={HeaderImage}
             alt="headerImage"
-            className="h-full object-cover lg:mt-0 md:mt-m lg:w-full w-2/3 mx-auto"
+            className="h-full object-cover lg:mt-0 mt-3 lg:w-full w-1/2 mx-auto"
             loading="lazy" // Add this line for lazy loading
           />
         </div>
       </div>
-      <div className="lg:absolute max-w-6xl mx-auto flex flex-wrap lg:bottom-12 left-0 right-0 space-y-2 lg:space-y-0">
-        <div className="lg:w-40 w-full bg-blue-200 lg:p-4 p-2 flex justify-center items-center rounded-3xl">
+      <div className="lg:absolute max-w-6xl mx-auto flex flex-wrap lg:bottom-12 left-0 right-0 space-y-2 lg:space-y-0 lg:mt-0 mt-3  px-4">
+        <div className="lg:w-40 w-full bg-blue-200 p-4  flex justify-center items-center rounded-3xl">
           <p className="text-center">Tableau</p>
         </div>
 

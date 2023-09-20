@@ -55,6 +55,9 @@
   background: linear-gradient(245.76deg, #e3fbff 5.48%, #f8f8d2 100%);
 }
 
+.custom-course-card {
+  background: rgba(231, 245, 255, 0.1);
+}
 .custom-grow-background {
   background: rgba(234, 246, 255, 1);
 }

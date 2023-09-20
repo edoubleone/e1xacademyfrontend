@@ -45,7 +45,7 @@ function Learning() {
             <img src={ImageLeaning} alt="image" className="md:w-full" />
             <img src={ImageTwo} alt="image" className="md:w-full" />
           </div>
-          <div className=" lg:w-2/3 md:w-full p-4 bg-gray-100 ">
+          <div className=" lg:w-2/3 w-full p-4 bg-gray-100 ">
             <motion.div
               className="flex flex-col space-y-10 md:justify-center"
               initial={{ y: 100, opacity: 0 }}

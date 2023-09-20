@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import CardIcon from "../../assets/images/ion_card.png";
 import Cardtext from "../../assets/images/card.png";
 import paypalIcon from "../../assets/images/PayPal svg.png";
@@ -13,6 +14,20 @@ const Card = () => {
 
   const [discountCode, setDiscountCode] = useState("");
   const [isValid, setIsValid] = useState(true);
+
+  const imgVariants = {
+    initial: {
+      opacity: 0,
+      y: 100, // Move the image 100px down initially
+    },
+    animate: {
+      opacity: 1,
+      y: 0, // Move the image back to its original position
+      transition: {
+        duration: 1, // Adjust the duration as needed
+      },
+    },
+  };
 
   const handleConfirmPayment = () => {
     // Check if the 4 digits match your expected value (e.g., '1234' in this example)
@@ -35,7 +50,12 @@ const Card = () => {
   };
   return (
     <div className="custom-grow-background py-24">
-      <div className="max-w-6xl mx-auto ">
+      <motion.div
+        className="max-w-6xl mx-auto "
+        variants={imgVariants} // Apply animation variants
+        initial="initial"
+        animate="animate"
+      >
         <div className="lg:flex gap-5 ">
           <div className="lg:w-1/2 w-full bg-white px-6 py-4 lg:mt-6 md:mt-2 ">
             <div className="mt-9">
@@ -149,7 +169,7 @@ const Card = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
       ;
     </div>
   );
