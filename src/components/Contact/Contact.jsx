@@ -9,8 +9,8 @@ const Contact = () => {
   return (
     <div>
       <BackgroundImage imageUrl={contact} text="Contact Us" />;
-      <div className="max-w-5xl mt-12 mx-auto shadow-md">
-        <div className="lg:flex mmd:flex-row ">
+      <div className="max-w-5xl  mx-auto shadow-md py-12">
+        <div className="lg:flex ">
           <div className="lg:w-1/2 w-full  space-y-8 py-12 px-6">
             <div className="flex items-center  gap-4">
               <FaMapMarkerAlt className="w-[40px] h-[40px] text-[#e46601]" />
@@ -51,7 +51,7 @@ const Contact = () => {
                 placeholder="Type here"
                 className="w-full h-[80px] border-0 outline-none border-b pb-4 "
               />
-              <button className="bg-[#e46601]  flex items-center gap-3 py-3 px-6 font-bold text-white rounded-md">
+              <button className="bg-custom-button  flex items-center gap-3 py-3 px-6 font-bold text-white rounded-md">
                 SEND MESSAGE
                 <LuNavigation />
               </button>
