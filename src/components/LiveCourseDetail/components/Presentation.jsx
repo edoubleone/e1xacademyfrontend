@@ -1,12 +1,27 @@
 import React from "react";
+import { useState } from "react";
 
 const PresentationItem = ({ icon, title, duration, action }) => {
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = () => {
+    setIsClicked(!isClicked);
+  };
+
+  const titleStyle = {
+    color: isClicked ? "gray" : "blue", // Set the color based on the click state
+    cursor: "pointer", // Add a pointer cursor to indicate it's clickable
+  };
+
   return (
     <div className="mb-5">
-      <div className="flex items-center gap-3 text-blue-600">
+      <div
+        className="flex items-center gap-3 text-blue-600"
+        onClick={handleClick}
+      >
         {icon}
         <div>
-          <p>{title}</p>
+          <p style={titleStyle}>{title}</p>
         </div>
       </div>
       <div className="ml-8 mt-3">

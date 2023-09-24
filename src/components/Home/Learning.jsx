@@ -42,8 +42,18 @@ function Learning() {
         </div>
         <div className="lg:flex md:justify-center md:items-center">
           <div className="lg:w-1/2   w-full p-4 bg-gray-100 ">
-            <img src={ImageLeaning} alt="image" className="md:w-full" />
-            <img src={ImageTwo} alt="image" className="md:w-full" />
+            <img
+              src={ImageLeaning}
+              alt="Person learning"
+              className="md:w-full"
+              loading="lazy"
+            />
+            <img
+              src={ImageTwo}
+              alt="Two people discussing"
+              className="md:w-full"
+              loading="lazy"
+            />
           </div>
           <div className=" lg:w-2/3 w-full p-4 bg-gray-100 ">
             <motion.div
@@ -110,56 +120,3 @@ function Learning() {
 }
 
 export default Learning;
-
-<div className="lg:flex">
-  <div className="w-1/2 md:w-full p-4 bg-gray-100 ">
-    <img src={ImageLeaning} alt="image" />
-  </div>
-  <div className="w-2/3 p-4 bg-gray-100 ">
-    <div className="flex flex-col space-y-10">
-      <div className="p-8 bg-[#256bdb] text-white mb-3 flex  items-center">
-        <div className="pr-4">
-          <img src={Frame} alt="frame" />
-        </div>
-        <div>
-          <p className="pb-3 font-semibold">Fun & Easy To Follow</p>
-          <p>
-            Learn New Knowledge And Skill In a Variety Of Way. From Engaging
-            Video Lectures And Dynamics Graphics To Data Visualization And
-            Interactive Elements
-          </p>
-        </div>
-      </div>
-      <div className="flex flex-col space-y-4">
-        <div className="p-8 bg-[#021b76] text-white mb-3 flex items-center">
-          <div className="pr-4">
-            <img src={FrameTwo} alt="frame" />
-          </div>
-          <div>
-            <p className="pb-3 font-semibold">Learn At Your Own Pace</p>
-            <p>
-              Demonstrating your Knowledge is a critical part of learning
-              e-double one academy courses and programs provide a space to
-              practice with open response assessments, virtual enivornments and
-              more{" "}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="p-8 bg-[#061445] text-white mb-3 flex items-center">
-        <div className="pr-4">
-          <img src={FrameThree} alt="frame" />
-        </div>
-        <div>
-          <p className="pb-3 font-semibold">Continous Learning</p>
-          <p>
-            learning On E-DoubleOne Academy Transform How You Think And What You
-            can Do And it Translate Directly Into Tje Real World immediately By
-            Applying Your Capability Into Your Job{" "}
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>;

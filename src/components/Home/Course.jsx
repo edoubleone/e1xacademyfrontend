@@ -3,10 +3,10 @@ import CourseCard from "../CourseCard";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import CustomButton from "./components/CustomButton";
-import businessImage from "../../assets/images/businessman-with-graph-laptop.jpg";
-import healthImage from "../../assets/images/health.png";
-import operationImage from "../../assets/images/operation.png";
-import financeImage from "../../assets/images/financce.png";
+import businessImage from "../../assets/images/business.jpg";
+import healthImage from "../../assets/images/health.jpg";
+import operationImage from "../../assets/images/operation.jpg";
+import financeImage from "../../assets/images/financial.jpg";
 import background from "../../assets/images/wave.png";
 
 function Course() {
@@ -62,12 +62,14 @@ function Course() {
           initial={{ y: 100, opacity: 0 }}
           animate={controls}
           ref={ref}
+
         >
           <CourseCard
             imageSrc={healthImage}
             title="HealthCare Data Analyst"
             duration="30 Hours"
             onViewCourse={() => {}}
+            loading="lazy"
           />
 
           <CourseCard
@@ -75,6 +77,7 @@ function Course() {
             title="Operation Data Analyst"
             duration="30 Hours"
             onViewCourse={() => {}}
+            loading="lazy"
           />
         </motion.div>
 

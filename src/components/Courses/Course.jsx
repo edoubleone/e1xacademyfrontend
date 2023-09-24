@@ -3,10 +3,11 @@ import { motion } from "framer-motion";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import CourseCard from "./components/CourseCard";
 import courseImg from "../../assets/images/course-img.png";
-import businessImage from "../../assets/images/businessman-with-graph-laptop.jpg";
-import healthImage from "../../assets/images/health.png";
-import operationImage from "../../assets/images/operation.png";
-import financeImage from "../../assets/images/financce.png";
+import businessImage from "../../assets/images/business.jpg";
+import healthImage from "../../assets/images/health.jpg";
+import operationImage from "../../assets/images/operation.jpg";
+import financeImage from "../../assets/images/financial.jpg";
+import background from "../../assets/images/wave.png";
 import { GoSearch } from "react-icons/go";
 const Course = () => {
   const imgVariants = {

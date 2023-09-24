@@ -8,6 +8,7 @@ function Navbar() {
   const [nav, setNav] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
+  const [activeLink, setActiveLink] = useState("/");
   const navRef = useRef(null);
   const timeoutRef = useRef(null); // Ref for the timeout
 
@@ -73,12 +74,25 @@ function Navbar() {
 
         <ul className="hidden md:flex space-x-10">
           <li>
-            <NavLink to="/" exact activeClassName="active" className="text-lg">
+            <NavLink
+              to="/"
+              exact
+              className={`text-lg ${
+                activeLink === "/" ? "text-blue-500" : "text-black"
+              } hover:text-blue-500`}
+              onClick={() => setActiveLink("/")}
+            >
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/about" activeClassName="active" className="text-lg">
+            <NavLink
+              to="/about"
+              className={`text-lg ${
+                activeLink === "/about" ? "text-blue-500" : "text-black"
+              } hover:text-blue-500`}
+              onClick={() => setActiveLink("/about")}
+            >
               About
             </NavLink>
           </li>
@@ -92,8 +106,11 @@ function Navbar() {
               courseDetail
             </NavLink>
           </li>
+
           <li
-            className="relative group"
+            className={`relative group ${
+              activeLink === "/course" ? "text-blue-500" : "text-black"
+            }`}
             ref={navRef}
             onMouseEnter={handleDropdownOpen}
             onMouseLeave={handleDropdownClose}
@@ -101,7 +118,7 @@ function Navbar() {
             <NavLink
               to="#"
               activeClassName="active"
-              className="text-lg cursor-pointer"
+              className={`text-lg cursor-pointer hover:text-blue-500`}
             >
               Course
             </NavLink>
@@ -114,46 +131,58 @@ function Navbar() {
               style={{ zIndex: isDropdownOpen ? 1 : -1 }}
             >
               <NavLink
-                to="/course "
+                to="/course"
                 activeClassName="active-link"
-                className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 ${
+                  activeLink === "/course" ? "text-blue-500" : "text-black"
+                }`}
+                onClick={() => setActiveLink("/course")}
               >
                 Online Course
               </NavLink>
               <NavLink
                 to="/live-course"
                 activeClassName="active-link"
-                className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 ${
+                  activeLink === "/live-course" ? "text-blue-500" : "text-black"
+                }`}
+                onClick={() => setActiveLink("/live-course")}
               >
                 Live Course
               </NavLink>
               <NavLink
                 to="/checkout"
                 activeClassName="active-link"
-                className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 ${
+                  activeLink === "/checkout" ? "text-blue-500" : "text-black"
+                }`}
+                onClick={() => setActiveLink("/checkout")}
               >
-                checkout
+                Checkout
               </NavLink>
 
               <NavLink
                 to="/payment"
                 activeClassName="active-link"
-                className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 ${
+                  activeLink === "/payment" ? "text-blue-500" : "text-black"
+                }`}
+                onClick={() => setActiveLink("/payment")}
               >
-                payment
+                Payment
               </NavLink>
-
-              <NavLink
-                to="/success"
-                activeClassName="active-link"
-                className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
-              >
-                Success
-              </NavLink>
+              {/* Add similar code for other links in the dropdown menu */}
             </div>
           </li>
+
           <li>
-            <NavLink to="/contact" activeClassName="active" className="text-lg">
+            <NavLink
+              to="/contact"
+              className={`text-lg ${
+                activeLink === "/contact" ? "text-blue-500" : "text-black"
+              } hover:text-blue-500`}
+              onClick={() => setActiveLink("/contact")}
+            >
               Contact
             </NavLink>
           </li>
@@ -206,20 +235,25 @@ function Navbar() {
             </div>
             <li href="./" className="p-4">
               <NavLink
-                to="/sign-up"
-                className="p-4 text-customBlue"
-                activeClassName="active-link"
+                to="/"
+                exact
+                className={`text-lg ${
+                  activeLink === "/" ? "text-blue-500" : "text-black"
+                }`}
+                onClick={() => setActiveLink("/")}
               >
                 Home
               </NavLink>
             </li>
             <li href="./" className="p-4">
               <NavLink
-                to="/sign-up"
-                className="p-4 text-customBlue"
-                activeClassName="active-link"
+                to="/about"
+                className={`text-lg ${
+                  activeLink === "/about" ? "text-blue-500" : "text-black"
+                }`}
+                onClick={() => setActiveLink("/about")}
               >
-                About Us
+                About
               </NavLink>
             </li>
             <li className="p-4">

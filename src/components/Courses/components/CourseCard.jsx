@@ -32,10 +32,10 @@ const CourseCard = ({
             <div className="flex justify-center md:justify-start">
               <img
                 src={imageSrc}
-                width="350"
+                width="600"
                 height="600"
                 alt="course-pics"
-                className="mx-auto md:mx-0" // Center on medium devices, align left on others
+                className="mx-auto md:mx-0 object-fill" // Center on medium devices, align left on others
               />
             </div>
 

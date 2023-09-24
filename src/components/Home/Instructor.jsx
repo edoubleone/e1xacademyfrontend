@@ -40,13 +40,12 @@ function Instructor() {
       <div className="lg:flex  md:flex-row md:justify-center">
         <div className="lg:w-1/2  p-4">
           <div className="h-full flex flex-col">
-            {animateImage && (
-              <motion.img
-                src={manInstructor}
-                alt="manInstructor"
-                className="h-full object-cover lg:mt-0 md:mt-m lg:w-full w-2/3 mx-auto"
-              />
-            )}
+            <img
+              src={manInstructor}
+              alt="manInstructor"
+              className="h-full object-cover lg:mt-0 md:mt-m lg:w-full w-2/3 mx-auto"
+              loading="lazy"
+            />
           </div>
         </div>
 
@@ -149,6 +148,7 @@ function Instructor() {
               src={womanInstructor}
               alt="manInstructor"
               className="h-full object-cover lg:mt-0 md:mt-m lg:w-full w-2/3 mx-auto"
+              loading="lazy"
             />
           </div>
         </div>

@@ -9,6 +9,7 @@ function CourseCard({ imageSrc, title, duration, onViewCourse }) {
           src={imageSrc}
           alt="course"
           className="hover:brightness-110 transition-brightness duration-300"
+          loading="lazy"
         />
 
         <div>

@@ -25,8 +25,7 @@ const Choose = () => {
             <div className="space-y-6 mt-4">
               <p className="font-bold text-xl">Certified Teachers</p>
               <p>
-                Absolute required of reserved in offering no. How sense found
-                our those gay again taken the preserved ikewise law.
+                E1X 1 Academy: Fostering responsible learning and excellence.
               </p>
               <div className="space-y-4 font-bold">
                 <p>Professional training</p>
@@ -44,8 +43,8 @@ const Choose = () => {
             <div className="space-y-6 mt-4">
               <p className="font-bold text-xl">Books & Library</p>
               <p>
-                Absolute required of reserved in offering no. How sense found
-                our those gay again taken the preserved ikewise law.
+                "E1X 1 Academy's extensive library enhances our diverse courses,
+                providing students a comprehensive learning experience."
               </p>
               <div className="space-y-4 font-bold">
                 <p>Carrel Booking</p>

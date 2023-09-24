@@ -31,9 +31,9 @@ const CourseDetails = () => {
   };
   return (
     <div className="bg-custom-gradient  lg:h-[850px] h-full ">
-      <div className="max-w-6xl lg:flex mx-auto py-6 px-6">
+      <div className="max-w-6xl lg:flex mx-auto py-6 lg:px-0 px-6 ">
         <motion.div
-          className="relative  lg:w-1/2 w-full  space-y-8 mt-9   "
+          className="  lg:w-1/2 w-full  space-y-8 mt-9   "
           variants={imgVariants} // Apply animation variants
           initial="initial"
           animate="animate"
@@ -50,6 +50,53 @@ const CourseDetails = () => {
             gather, analyze, and interpret financial data to support
             decision-making and provide valuable insights to organizations
           </p>
+
+          <div className="mt-4">
+            <div className="py-8  bg-blue-600 space-y-4">
+              <div className="flex px-4">
+                <div className="flex items-center justify-between border-b pb-2 w-full">
+                  <div className="flex items-center text-start gap-2">
+                    <img src={vector} alt="vector" />
+                    <p className="text-left text-white">Level</p>
+                  </div>
+
+                  <p className="text-white">Beginner</p>
+                </div>
+              </div>
+
+              <div className="flex px-4">
+                <div className="flex items-center justify-between border-b pb-2 w-full">
+                  <div className="flex items-center text-start gap-2">
+                    <img src={vector} alt="vector" />
+                    <p className="text-left text-white">Level</p>
+                  </div>
+
+                  <p className="text-white">Beginner</p>
+                </div>
+              </div>
+              <div className="flex px-4">
+                <div className="flex items-center justify-between border-b pb-2 w-full">
+                  <div className="flex items-center text-start gap-2">
+                    <img src={vector} alt="vector" />
+                    <p className="text-left text-white">Level</p>
+                  </div>
+
+                  <p className="text-white">Beginner</p>
+                </div>
+              </div>
+              <div className="flex px-4">
+                <div className="flex items-center justify-between border-b pb-2 w-full">
+                  <div className="flex items-center text-start gap-2">
+                    <img src={vector} alt="vector" />
+                    <p className="text-left text-white">Level</p>
+                  </div>
+
+                  <p className="text-white">Beginner</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-[#021B76] w-full h-[200px]"></div>
+          </div>
         </motion.div>
 
         <div className="lg:w-1/2 w-full flex flex-col items-center justify-center">
@@ -75,37 +122,6 @@ const CourseDetails = () => {
               Add To Cart
             </motion.button>
           </div>
-        </div>
-      </div>
-      <div className="absolute mt-[-350px] w-[650px] py-8 md:block hidden space-y-4 bg-blue-600">
-        <div className="flex items-center justify-between w-full px-4  ">
-          <div className="flex items-center  gap-1">
-            <img src={vector} alt="vector" className="ml-28" loading="lazy" />
-            <p className="text-left text-white">Level</p>
-          </div>
-          <p className="text-right text-white">Beginner</p>
-        </div>
-
-        <div className="flex items-center justify-between w-full px-4  ">
-          <div className="flex items-center  gap-1">
-            <img src={vector} alt="vector" className="ml-28" />
-            <p className="text-left text-white">Level</p>
-          </div>
-          <p className="text-right text-white">Beginner</p>
-        </div>
-        <div className="flex items-center justify-between w-full px-4  ">
-          <div className="flex items-center  ">
-            <img src={vector} alt="vector" className="ml-28" />
-            <p className="text-left text-white">Level</p>
-          </div>
-          <p className="text-right text-white">Beginner</p>
-        </div>
-        <div className="flex items-center justify-between w-full px-4">
-          <div className="flex items-center  gap-1">
-            <img src={vector} alt="vector" className="ml-28" />
-            <p className="text-left text-white">Level</p>
-          </div>
-          <p className="text-right text-white">Beginner</p>
         </div>
       </div>
     </div>
