@@ -20,7 +20,7 @@ const CookieConsent = () => {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-gray-800 p-4 text-white">
+    <div className="fixed bottom-0 left-0 right-0 bg-gray-800 p-4 text-white z-50">
       <p className="text-center">
         We use cookies on our website to give you the most relevant experience
         by remembering your preferences and repeat visits. By clicking "Accept
