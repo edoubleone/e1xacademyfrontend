@@ -35,13 +35,13 @@ const Pagination = () => {
   };
 
   return (
-    <nav className=" max-w-6xl mx-auto flex justify-end  py-4   ">
+    <nav className=" max-w-6xl mx-auto flex justify-end  py-10  px-4  ">
       <ul className="flex rounded border border-gray-300 overflow-hidden">
         <li>
           <button
             onClick={handlePrevbtn}
             className={`block py-2 px-3 ${
-              currentPage === pages[0] ? "bg-gray-300" : "bg-white"
+              currentPage === pages[0] ? "bg-blue" : "bg-white"
             } hover:bg-blue-500 hover:text-white`}
             disabled={currentPage === pages[0] ? true : false}
           >
@@ -59,9 +59,9 @@ const Pagination = () => {
                   onClick={handleClick}
                   className={`flex py-2 px-3 ${
                     pageNumber === currentPage
-                      ? "bg-custom-button text-white"
+                      ? "bg-custom-button text-black"
                       : "bg-white"
-                  } hover:bg-custom-button hover:text-white`}
+                  } hover:bg-custom-button hover:text-black`}
                   id={pageNumber}
                 >
                   {pageNumber}

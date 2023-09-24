@@ -26,7 +26,7 @@ const Ambition = () => {
         <div className="lg:flex lg:justify-center lg:items-center md:flex md:flex-row md:justify-center md:items-center md:px-4 gap-3">
           <div className="w-full lg:w-1/2 px-4">
             <div className="space-y-6">
-              <p className="lg:text-4xl font-bold  ">
+              <p className="lg:text-4xl font-bold   ">
                 Turn Your Ambition Into A <br></br> Success Story
               </p>
               <p className="text-md">

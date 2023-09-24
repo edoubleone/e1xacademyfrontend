@@ -9,7 +9,7 @@ function Start() {
         <div className="pt-12 py-3">
           <h1 className="text-center text-5xl font-bold pb-4 relative">
             <span
-              className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 absolute top-0 left-0 h-full w-full"
+              className="text-transparent bg-clip-text bg-gradient-to-r gradient-text-combined absolute top-0 left-0 h-full w-full"
               aria-hidden="true"
             >
               Start Learning With Us Now

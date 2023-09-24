@@ -22,9 +22,9 @@ const Advisor = () => {
           <div className="lg:w-1/2 w-full">
             <div className="space-y-4">
               <p className="text-lg text-white">
-                Everything melancholy uncommonly but solicitude inhabiting
-                projection off. Connection stimulated estimating excellence an
-                to impression.
+                At E1X Academy, our lectures are anything but melancholy. We
+                pride ourselves on offering exceptional and stimulating content
+                that leaves a lasting impression on our students.
               </p>
 
               <button className="py-3 px-8 text-lg  font-bold flex items-center gap-3 rounded  text-white bg-custom-button border-6    ">

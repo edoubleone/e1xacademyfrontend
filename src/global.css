@@ -81,3 +81,60 @@
     rgba(0, 98, 255, 1) 100%
   );
 }
+
+/* styles.css (or your custom CSS file) */
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 27, 118, 1),
+    rgba(37, 107, 219, 1)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Set text color to transparent */
+}
+
+/* styles.css (or your custom CSS file) */
+.gradient-text-blue {
+  background: linear-gradient(90deg, #0264ff, #0f59cd, #5f9dff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Set text color to transparent */
+}
+
+/* styles.css (or your custom CSS file) */
+.gradient-text-combined {
+  background: linear-gradient(
+    90deg,
+    #0264ff,
+    #0f59cd,
+    #5f9dff,
+    #6100ff,
+    #a400cd,
+    #7203ff,
+    #00b2ff
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Set text color to transparent */
+}
+
+/* styles.css (or your custom CSS file) */
+.gradient-text-combined {
+  background: linear-gradient(
+    90deg,
+    #0264ff,
+    #0f59cd,
+    #5f9dff,
+    #6100ff,
+    #a400cd,
+    #7203ff,
+    #00b2ff,
+    #577cff,
+    #79f7ff,
+    #f4ffb1
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Set text color to transparent */
+}

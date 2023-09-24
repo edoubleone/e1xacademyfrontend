@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import StudentReviews from "../../assets/images/studentReviews.png";
 import { motion, useAnimation } from "framer-motion";
+
 import { useInView } from "react-intersection-observer";
+
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 const Reviews = () => {
   const [animateImage, setAnimateImage] = useState(false);
   const controls = useAnimation();
@@ -23,54 +27,199 @@ const Reviews = () => {
     }
   }, [controls, inView]);
   return (
-    <div className="max-w-4xl mx-auto flex flex-col md:flex-row mt-14 ">
-      {/* Column 1 */}
-      <motion.div
-        className="md:w-1/2 p-4"
-        initial={{ y: 100, opacity: 0 }}
-        animate={controls}
-        ref={ref}
-      >
-        <div className="mb-11 text-4xl font-bold">Student Reviews</div>
-        <div className="background-card  mb-4 px-4 py-10 space-y-8">
-          <p className="text-xs">
-            The courses are well-structured, and the instructors are
-            knowledgeable and supportive. I've gained practical skills that have
-            already made a positive impact on my career. I highly recommend
-            Academy to anyone looking to advance their education
-          </p>
-          <div className="flex items-center justify-between border-b pb-1  ">
-            <div>
-              <p className="font-bold">Jessica Akoh</p>
-              <p className="text-xs">21 days ago</p>
-            </div>
-            <div>
-              <img src={StudentReviews} alt="student Reviews" />
-            </div>
-          </div>
-        </div>
-        <div className="background-card  mb-4 px-4 py-10 space-y-8">
-          <p className="text-xs">
-            I've been a student at Ex1 Academy for the past year, and I've found
-            the variety of courses to be impressive. The instructors are
-            engaging, and the online platform is user-friendly. The only reason
-            I didn't give it five stars is that I wish there were more
-            opportunities for hands-on projects.
-          </p>
-          <div className="flex items-center justify-between border-b pb-1 ">
-            <div>
-              <p className="font-bold">Jane Smith</p>
-              <p className="text-xs">21 days ago</p>
-            </div>
-            <div>
-              <img src={StudentReviews} alt="student Reviews" />
-            </div>
-          </div>
-        </div>
-      </motion.div>
+    <div className="max-w-5xl mx-auto mt-14 py-10 ">
+      <div className="flex items-center justify-between px-16">
+        <div className="text-4xl font-bold">Student Reviews</div>
+        <p>
+          see What student all over the world are <br /> about Ex1 Academy
+        </p>
+      </div>
 
-      {/* Column 2 */}
-      <motion.div
+      <div className="max-w-4xl mx-auto lg:py-6 py-0 px-4">
+        <Carousel
+          infiniteLoop
+          autoPlay
+          interval={3000}
+          showArrows
+          showStatus={false}
+          showThumbs={false}
+        >
+          <div className="flex flex-col">
+            <div className="flex flex-col md:flex-row gap-4 py-6">
+              <div className="lg:w-1/2 w-full">
+                <div className="background-card  mb-4 px-4 py-10 space-y-8">
+                  <p className="text-xs">
+                    The courses are well-structured, and the instructors are
+                    knowledgeable and supportive. I've gained practical skills
+                    that have already made a positive impact on my career. I
+                    highly recommend Academy to anyone looking to advance their
+                    education
+                  </p>
+                  <div className="flex items-center justify-between border-b pb-1  ">
+                    <div>
+                      <p className="font-bold">Jessica Akoh</p>
+                      <p className="text-xs">21 days ago</p>
+                    </div>
+                    <div>
+                      <img src={StudentReviews} alt="student Reviews" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:w-1/2 w-full">
+                <div className="background-card  mb-3 px-4 py-10 space-y-8">
+                  <p className="text-xs">
+                    I've been a student at Ex1 Academy for the past year, and
+                    I've found the variety of courses to be impressive. The
+                    instructors are engaging, and the online platform is
+                    user-friendly. The only reason I didn't give it five stars
+                    is that I wish there were more
+                  </p>
+                  <div className="flex items-center justify-between border-b pb-1 ">
+                    <div>
+                      <p className="font-bold">Jane Smith</p>
+                      <p className="text-xs">21 days ago</p>
+                    </div>
+                    <div>
+                      <img src={StudentReviews} alt="student Reviews" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row gap-4 py-6">
+              <div className="lg:w-1/2 w-full">
+                <div className="background-card  mb-4 px-4 py-10 space-y-8">
+                  <p className="text-xs">
+                    The courses are well-structured, and the instructors are
+                    knowledgeable and supportive. I've gained practical skills
+                    that have already made a positive impact on my career. I
+                    highly recommend Academy to anyone looking to advance their
+                    education
+                  </p>
+                  <div className="flex items-center justify-between border-b pb-1  ">
+                    <div>
+                      <p className="font-bold">Jessica Akoh</p>
+                      <p className="text-xs">21 days ago</p>
+                    </div>
+                    <div>
+                      <img src={StudentReviews} alt="student Reviews" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:w-1/2 w-full">
+                <div className="background-card  mb-3 px-4 py-10 space-y-8">
+                  <p className="text-xs">
+                    I've been a student at Ex1 Academy for the past year, and
+                    I've found the variety of courses to be impressive. The
+                    instructors are engaging, and the online platform is
+                    user-friendly. The only reason I didn't give it five stars
+                    is that I wish there were more
+                  </p>
+                  <div className="flex items-center justify-between border-b pb-1 ">
+                    <div>
+                      <p className="font-bold">Jane Smith</p>
+                      <p className="text-xs">21 days ago</p>
+                    </div>
+                    <div>
+                      <img src={StudentReviews} alt="student Reviews" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col">
+            <div className="flex flex-col md:flex-row gap-4 py-6">
+              <div className="lg:w-1/2 w-full">
+                <div className="background-card  mb-4 px-4 py-10 space-y-8">
+                  <p className="text-xs">
+                    The courses are well-structured, and the instructors are
+                    knowledgeable and supportive. I've gained practical skills
+                    that have already made a positive impact on my career. I
+                    highly recommend Academy to anyone looking to advance their
+                    education
+                  </p>
+                  <div className="flex items-center justify-between border-b pb-1  ">
+                    <div>
+                      <p className="font-bold">Jessica Akoh</p>
+                      <p className="text-xs">21 days ago</p>
+                    </div>
+                    <div>
+                      <img src={StudentReviews} alt="student Reviews" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:w-1/2 w-full">
+                <div className="background-card  mb-3 px-4 py-10 space-y-8">
+                  <p className="text-xs">
+                    I've been a student at Ex1 Academy for the past year, and
+                    I've found the variety of courses to be impressive. The
+                    instructors are engaging, and the online platform is
+                    user-friendly. The only reason I didn't give it five stars
+                    is that I wish there were more
+                  </p>
+                  <div className="flex items-center justify-between border-b pb-1 ">
+                    <div>
+                      <p className="font-bold">Jane Smith</p>
+                      <p className="text-xs">21 days ago</p>
+                    </div>
+                    <div>
+                      <img src={StudentReviews} alt="student Reviews" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col md:flex-row gap-4 py-6">
+              <div className="lg:w-1/2 w-full">
+                <div className="background-card  mb-4 px-4 py-10 space-y-8">
+                  <p className="text-xs">
+                    The courses are well-structured, and the instructors are
+                    knowledgeable and supportive. I've gained practical skills
+                    that have already made a positive impact on my career. I
+                    highly recommend Academy to anyone looking to advance their
+                    education
+                  </p>
+                  <div className="flex items-center justify-between border-b pb-1  ">
+                    <div>
+                      <p className="font-bold">Jessica Akoh</p>
+                      <p className="text-xs">21 days ago</p>
+                    </div>
+                    <div>
+                      <img src={StudentReviews} alt="student Reviews" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="lg:w-1/2 w-full">
+                <div className="background-card  mb-3 px-4 py-10 space-y-8">
+                  <p className="text-xs">
+                    I've been a student at Ex1 Academy for the past year, and
+                    I've found the variety of courses to be impressive. The
+                    instructors are engaging, and the online platform is
+                    user-friendly. The only reason I didn't give it five stars
+                    is that I wish there were more
+                  </p>
+                  <div className="flex items-center justify-between border-b pb-1 ">
+                    <div>
+                      <p className="font-bold">Jane Smith</p>
+                      <p className="text-xs">21 days ago</p>
+                    </div>
+                    <div>
+                      <img src={StudentReviews} alt="student Reviews" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </Carousel>
+      </div>
+
+      {/* <motion.div
         className="md:w-1/2 p-4"
         initial={{ y: 100, opacity: 0 }}
         animate={controls}
@@ -115,9 +264,146 @@ const Reviews = () => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };
 
 export default Reviews;
+
+// import React from "react";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
+// import { Carousel } from "react-responsive-carousel";
+
+// const Reviews = () => {
+//   return (
+//     <div className="max-w-5xl mx-auto mt-14 relative">
+//       <div className="text-4xl font-bold">Student Reviews</div>
+
+//       <div className="max-w-4xl mx-auto">
+//         <Carousel
+//           infiniteLoop
+//           autoPlay
+//           interval={3000} // Change slide every 3 seconds (adjust as needed)
+//           showArrows
+//           showStatus={false}
+//           showThumbs={false}
+//           renderArrowPrev={(onClickHandler, hasPrev, label) =>
+//             hasPrev && (
+//               <button
+//                 className="absolute top-1/2 transform -translate-y-1/2 left-0 text-3xl text-white bg-blue-500 rounded-full w-10 h-10 flex items-center justify-center"
+//                 onClick={onClickHandler}
+//                 style={{ zIndex: 2 }}
+//               >
+//                 &lt;
+//               </button>
+//             )
+//           }
+//           renderArrowNext={(onClickHandler, hasNext, label) =>
+//             hasNext && (
+//               <button
+//                 className="absolute top-1/2 transform -translate-y-1/2 right-0 text-3xl text-white bg-blue-500 rounded-full w-10 h-10 flex items-center justify-center"
+//                 onClick={onClickHandler}
+//                 style={{ zIndex: 2 }}
+//               >
+//                 &gt;
+//               </button>
+//             )
+//           }
+//         >
+//           {/* Slide 1 */}
+//           <div className="flex flex-col md:flex-row gap-4 py-6">
+//             <div className="w-1/2">
+//               <div className="background-card  mb-4 px-4 py-10 space-y-8">
+//                 <p className="text-xs">
+//                   The courses are well-structured, and the instructors are
+//                   knowledgeable and supportive. I've gained practical skills
+//                   that have already made a positive impact on my career. I
+//                   highly recommend Academy to anyone looking to advance their
+//                   education
+//                 </p>
+//                 <div className="flex items-center justify-between border-b pb-1  ">
+//                   <div>
+//                     <p className="font-bold">Jessica Akoh</p>
+//                     <p className="text-xs">21 days ago</p>
+//                   </div>
+//                   <div>
+//                     <img src={StudentReviews} alt="student Reviews" />
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//             <div className="w-1/2">
+//               <div className="background-card  mb-3 px-4 py-10 space-y-8">
+//                 <p className="text-xs">
+//                   I've been a student at Ex1 Academy for the past year, and I've
+//                   found the variety of courses to be impressive. The instructors
+//                   are engaging, and the online platform is user-friendly. The
+//                   only reason I didn't give it five stars is that I wish there
+//                   were more
+//                 </p>
+//                 <div className="flex items-center justify-between border-b pb-1 ">
+//                   <div>
+//                     <p className="font-bold">Jane Smith</p>
+//                     <p className="text-xs">21 days ago</p>
+//                   </div>
+//                   <div>
+//                     <img src={StudentReviews} alt="student Reviews" />
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//           {/* End of Slide 1 */}
+
+//           {/* Slide 2 */}
+//           <div className="flex flex-col md:flex-row gap-4 py-6">
+//             <div className="w-1/2">
+//               <div className="background-card  mb-4 px-4 py-10 space-y-8">
+//                 <p className="text-xs">
+//                   The courses are well-structured, and the instructors are
+//                   knowledgeable and supportive. I've gained practical skills
+//                   that have already made a positive impact on my career. I
+//                   highly recommend Academy to anyone looking to advance their
+//                   education
+//                 </p>
+//                 <div className="flex items-center justify-between border-b pb-1  ">
+//                   <div>
+//                     <p className="font-bold">Jessica Akoh</p>
+//                     <p className="text-xs">21 days ago</p>
+//                   </div>
+//                   <div>
+//                     <img src={StudentReviews} alt="student Reviews" />
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//             <div className="w-1/2">
+//               <div className="background-card  mb-3 px-4 py-10 space-y-8">
+//                 <p className="text-xs">
+//                   I've been a student at Ex1 Academy for the past year, and I've
+//                   found the variety of courses to be impressive. The instructors
+//                   are engaging, and the online platform is user-friendly. The
+//                   only reason I didn't give it five stars is that I wish there
+//                   were more
+//                 </p>
+//                 <div className="flex items-center justify-between border-b pb-1 ">
+//                   <div>
+//                     <p className="font-bold">Jane Smith</p>
+//                     <p className="text-xs">21 days ago</p>
+//                   </div>
+//                   <div>
+//                     <img src={StudentReviews} alt="student Reviews" />
+//                   </div>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//           {/* End of Slide 2 */}
+//         </Carousel>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Reviews;

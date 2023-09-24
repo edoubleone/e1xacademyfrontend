@@ -7,8 +7,7 @@ const Gallery = () => {
     <GallerySection
       backgroundImg={backgroundImg}
       title="Take a short tour in our campus"
-      content="Tolerably behaviour may admitting daughters offending her ask own. Praise effect wishes change way and any wanted. Lively use looked latter regard had. Do he it part more last in. Merits ye if mr narrow points. Melancholy particular devonshire alteration it favourable appearance"
-      // height="300px"
+      content="E1X Academy is far from ordinary; it thrives on extraordinary educational experiences. We are dedicated to providing exceptional lectures that inspire and stimulate the minds of our students."
     />
   );
 };

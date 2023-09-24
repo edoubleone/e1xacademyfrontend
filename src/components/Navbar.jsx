@@ -72,7 +72,7 @@ function Navbar() {
           </NavLink>
         </div>
 
-        <ul className="hidden md:flex space-x-10">
+        <ul className="hidden md:flex space-x-10 text-md">
           <li>
             <NavLink
               to="/"

@@ -32,7 +32,7 @@ function Learning() {
     <div className=" max-w-6xl mx-auto mt-12 px-4 ">
       <div className="lg:w-5/6 md:w-full">
         <div className="flex flex-col mb-8">
-          <h1 className="text-center lg:text-6xl text-2xl font-bold mb-4">
+          <h1 className="text-center lg:text-6xl text-2xl font-bold mb-4 gradient-text">
             Why We Are The Best <br /> Online Learning Platform
           </h1>
           <p className="text-center lg:text-sm text-xs ">
