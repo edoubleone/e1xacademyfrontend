@@ -4,6 +4,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { AiFillApple } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
+import imagePage from "../assets/images/pretty-black-woman-feeling-happy-facing-challenge-celebrating-agenda-concept_1194-339851.jpg";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -48,8 +49,15 @@ const Login = () => {
 
   return (
     <div className="custom-course-background ">
-      <div className="max-w-4xl mx-auto py-6 ">
+      <div className="max-w-4xl mx-auto py-12 ">
         <div className="flex flex-col md:flex-row">
+          <div className="lg:w-1/2 w-full">
+            <img
+              src={imagePage}
+              alt="image"
+              className="w-full h-full object-cover"
+            />
+          </div>
           <div className="lg:w-1/2 w-full px-4 py-5  mx-auto bg-white shadow-sm ">
             <div className="text-center">
               <h1 className="font-bold text-4xl text-red-700">Login</h1>

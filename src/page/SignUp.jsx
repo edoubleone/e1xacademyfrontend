@@ -3,6 +3,8 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { AiFillApple } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
+import imagePage from "../assets/images/pretty-black-woman-feeling-happy-facing-challenge-celebrating-agenda-concept_1194-339851.jpg";
+
 import validator from "validator";
 
 const SignUp = () => {
@@ -79,11 +81,21 @@ const SignUp = () => {
 
   return (
     <div className="custom-course-background">
-      <div className="max-w-5xl mx-auto py-6">
-        <div className="flex flex-col md:flex-row">
+      <div className="max-w-5xl mx-auto py-12 px-4">
+        <div className="flex flex-col md:flex-row ">
+          <div className="lg:w-1/2 w-full">
+            <img
+              src={imagePage}
+              alt="signImage"
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
           <div className="lg:w-1/2 w-full px-4 py-5 mx-auto bg-white shadow-sm">
             <div className="text-center">
-              <h1 className="font-bold text-4xl ">Create A New Account</h1>
+              <h1 className="font-bold lg:text-4xl text-red-700 ">
+                Create A New Account
+              </h1>
             </div>
             <form onSubmit={handleSubmit} className="border-b pb-3 mt-6">
               <div className="mb-4">
