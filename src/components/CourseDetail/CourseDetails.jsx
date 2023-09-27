@@ -52,7 +52,7 @@ const CourseDetails = () => {
           </p>
 
           <div className="mt-4">
-            <div className="py-8  bg-blue-600 space-y-4">
+            <div className="py-8  bg-[#256BDB] space-y-4">
               <div className="flex px-4">
                 <div className="flex items-center justify-between border-b pb-2 w-full">
                   <div className="flex items-center text-start gap-2">

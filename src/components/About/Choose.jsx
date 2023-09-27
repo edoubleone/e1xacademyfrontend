@@ -8,7 +8,7 @@ import { PiStudentLight } from "react-icons/pi";
 const Choose = () => {
   return (
     <div className="custom-description-background">
-      <div className="max-w-6xl mx-auto lg:py-24 py-12 ">
+      <div className="max-w-6xl mx-auto lg:py-24 py-12 px-4 ">
         <div className="text-center space-y-5">
           <p className="font-bold lg:text-6xl text-2xl gradient-text-blue  ">
             WHY CHO0SE US

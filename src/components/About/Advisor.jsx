@@ -35,30 +35,30 @@ const Advisor = () => {
           </div>
         </div>
 
-        <div className="lg:flex md:flex-row md:flex md:justify-center   gap-5 mt-20 ">
-          <div className="lg:w-2/5 w-full px-3 shadow-md py-3">
-            <img src={instructor2} alt="thumbs" />
+        <div className="lg:flex md:flex-row md:flex md:justify-center gap-5 mt-20  ">
+          <div className="lg:w-2/5 w-full px-3 shadow-md py-3 mb-4">
+            <img src={instructor2} alt="thumbs" className="mx-auto" />
             <div className="space-y-2 text-center">
               <p className="text-white font-bold"> Danile Eniron</p>
               <p className="text-white text-xs">Financial Data Analyst</p>
             </div>
           </div>
-          <div className="lg:w-2/5 w-full px-3 shadow-md py-3">
-            <img src={instructor2} alt="thumbs" />
+          <div className="lg:w-2/5 w-full px-3 shadow-md py-3 mb-4">
+            <img src={instructor2} alt="thumbs" className="mx-auto" />
             <div className="space-y-2 text-center">
               <p className="text-white font-bold"> Danile Eniron</p>
               <p className="text-white text-xs">Financial Data Analyst</p>
             </div>
           </div>
-          <div className="lg:w-2/5 w-full px-3 shadow-md py-3">
-            <img src={instructor2} alt="thumbs" />
+          <div className="lg:w-2/5 w-full px-3 shadow-md py-3 mb-4">
+            <img src={instructor2} alt="thumbs" className="mx-auto" />
             <div className="space-y-2 text-center">
               <p className="text-white font-bold"> Danile Eniron</p>
               <p className="text-white text-xs">Financial Data Analyst</p>
             </div>
           </div>
-          <div className="lg:w-2/5 w-full px-3 shadow-md py-3">
-            <img src={instructor2} alt="thumbs" />
+          <div className="lg:w-2/5 w-full px-3 shadow-md py-3 mb-4">
+            <img src={instructor2} alt="thumbs" className="mx-auto" />
             <div className="space-y-2 text-center">
               <p className="text-white font-bold"> Danile Eniron</p>
               <p className="text-white text-xs">Financial Data Analyst</p>

@@ -106,6 +106,15 @@ function Navbar() {
               courseDetail
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/dashboard"
+              activeClassName="active"
+              className="text-lg"
+            >
+              dashboard
+            </NavLink>
+          </li>
 
           <li
             className={`relative group ${

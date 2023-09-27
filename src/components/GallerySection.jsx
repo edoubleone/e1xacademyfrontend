@@ -5,6 +5,7 @@ const GallerySection = ({ backgroundImg, title, content, minHeight }) => {
     backgroundImage: `url(${backgroundImg})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
+    
   };
 
   const sectionStyle = {
