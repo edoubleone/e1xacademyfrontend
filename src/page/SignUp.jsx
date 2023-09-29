@@ -1,19 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { AiFillApple } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import imagePage from "../assets/images/pretty-black-woman-feeling-happy-facing-challenge-celebrating-agenda-concept_1194-339851.jpg";
 
 import validator from "validator";
+import { AuthProvider } from "../services/AuthContext";
 
 const SignUp = () => {
+  // const { user, setUser, apiData, isLoading, error } = useContext(AuthProvider);
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [agreed, setAgreed] = useState(false); // State for checkbox
   const [errors, setErrors] = useState({});
+
+  // useEffect(() => {
+  //   if (!isLoading && apiData) {
+  //     console.log("API Data:", apiData);
+  //   }
+  // }, [apiData, isLoading]);
 
   const validateForm = () => {
     let errors = {};
@@ -71,11 +82,7 @@ const SignUp = () => {
     e.preventDefault();
 
     if (validateForm()) {
-      // Form submission logic
-      console.log("Username:", email);
-      console.log("Password:", password);
-      console.log("First Name:", firstName);
-      console.log("Last Name:", lastName);
+      navigate("/dashboard");
     }
   };
 

@@ -67,7 +67,7 @@ function Main() {
           <img
             src={HeaderImage}
             alt="headerImage"
-            className="h-full object-cover lg:mt-0 mt-3 lg:w-full w-1/2 mx-auto"
+            className="h-full object-cover lg:mt-0 mt-3 lg:w-full w-2/3 mx-auto"
             loading="lazy" // Add this line for lazy loading
           />
         </div>

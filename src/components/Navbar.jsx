@@ -97,7 +97,7 @@ function Navbar() {
             </NavLink>
           </li>
 
-          <li>
+          {/* <li>
             <NavLink
               to="/courseDetail"
               activeClassName="active"
@@ -105,7 +105,7 @@ function Navbar() {
             >
               courseDetail
             </NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink
               to="/dashboard"

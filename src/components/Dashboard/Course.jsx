@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import CourseCard from "./course/CourseCard";
 import { GoSearch } from "react-icons/go";
 
@@ -10,9 +10,9 @@ const DashboardCourse = () => {
   return (
     <div className="custom-course-background py-10">
       <div className="max-w-6xl mx-auto">
-        <div className="flex justify-between items-center px-4">
-          <p className="text-4xl font-bold ">My Courses</p>
-          <div className=" flex lg:justify-end justify-center ">
+        <div className="lg:flex lg:justify-between flex-row  items-center px-4">
+          <p className="text-4xl font-bold lg:mb-0 mb-4 ">My Courses</p>
+          <div className="lg:flex  lg:justify-end justify-center ">
             <div class="relative ">
               <input
                 type="text"
@@ -25,7 +25,7 @@ const DashboardCourse = () => {
             </div>
           </div>
         </div>
-        <div className="flex gap-8 mb-6 mt-12">
+        <div className="lg:flex flex-row gap-8 mb-6 mt-12">
           <CourseCard
             imageSrc={operationImage}
             title="Operation Data Analyst"
@@ -45,7 +45,7 @@ const DashboardCourse = () => {
             onViewCourse={() => {}}
           />
         </div>
-        <div className="flex gap-8 mb-6">
+        <div className="lg:flex flex-row gap-8 mb-6">
           <CourseCard
             imageSrc={businessImage}
             title="Operation Data Analyst"

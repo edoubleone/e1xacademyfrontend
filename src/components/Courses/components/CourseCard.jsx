@@ -1,5 +1,5 @@
-import React from "react";
-import Framer32 from "../../../assets/icons/Frame 37.png";
+import React, { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import iconBar from "../../../assets/icons/Vector (5).png";
 import bookBar from "../../../assets/icons/Group.png";
 import { LiaClock } from "react-icons/lia";
@@ -8,6 +8,7 @@ import { HiOutlineVideoCamera } from "react-icons/hi";
 import { BiRightArrowCircle } from "react-icons/bi";
 import star from "../../../assets/icons/star.png";
 import { useNavigate } from "react-router-dom";
+import { CourseContext } from "../../../services/CourseContext";
 
 const CourseCard = ({
   imageSrc,
@@ -17,13 +18,10 @@ const CourseCard = ({
   hours,
   videos,
   rating,
-  courseId,
+  course,
 }) => {
-  const navigate = useNavigate();
+  // const { courses, isLoading, error } = useContext(CourseContext);
 
-  const handleViewCourseClick = () => {
-    navigate(`/courses/${courseId}`);
-  };
   return (
     <div className="max-w-6xl mx-auto bg-white p-4">
       <div className="mb-4">
@@ -82,15 +80,16 @@ const CourseCard = ({
                     </div>
                   </div>
                   <div className="flex items-center">
-                    <div className="flex items-center gap-1">
-                      <button
-                        className="lg:text-lg"
-                        onClick={handleViewCourseClick}
-                      >
-                        View Courses
-                      </button>
-                      <BiRightArrowCircle />
-                    </div>
+                    <button className="flex items-center gap-1 lg:text-lg">
+                      <NavLink to={`/course/${course.id}`}>
+                        {" "}
+                        View Details
+                      </NavLink>
+
+                      <span>
+                        <BiRightArrowCircle />
+                      </span>
+                    </button>
                   </div>
                 </div>
               </div>

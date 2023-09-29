@@ -1,14 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import Course from "../components/Courses/Course";
-import Reviews from "../components/Courses/Reviews";
-import Pagination from "../components/Pagination";
+import { CourseContext } from "../services/CourseContext";
 
 const Courses = () => {
   return (
     <>
       <div className="custom-grow-background">
         <Course />
-        <Pagination />
       </div>
     </>
   );

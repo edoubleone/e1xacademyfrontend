@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Billing from "./Billing";
-import History from "./History";
+
 import Password from "./Password";
 import Notification from "./Notification";
 import Certificate from "./Certificate";
@@ -53,8 +53,8 @@ const Profile = () => {
   return (
     <div className="custom-course-background">
       <div className="max-w-6xl mx-auto py-10">
-        <div className="flex gap-14">
-          <div className="w-1/5 ">
+        <div className="lg:flex flex-wrap gap-14 px-4 ">
+          <div className="lg:w-1/5 w-full mb-4 ">
             <ul className="bg-gray-300">
               <li
                 className={`hover:border-l-4 ${
@@ -129,16 +129,16 @@ const Profile = () => {
               </li>
             </ul>
           </div>
-          <div className="w-3/4">
+          <div className="lg:w-3/4 w-full">
             {activeTab === "profile" && (
               <>
                 <h1 className="text-4xl font-bold ">Edit Profile </h1>
                 <div className="flex">
-                  <div className="w-1/5">
+                  <div className="w-1/5 ">
                     <img
                       src={imageUrl}
                       alt="image-url"
-                      className="h-32 w-32 rounded-full mx-auto"
+                      className="lg:h-32 lg:w-32 h-16 w-16 rounded-full mx-auto"
                     />
                   </div>
                   <div className="w-3/4 px-4">

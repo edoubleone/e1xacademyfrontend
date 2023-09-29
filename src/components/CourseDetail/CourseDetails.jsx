@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import vector from "../../assets/icons/Vector.png";
-
 import illustration from "../../assets/images/illustration.png";
+import { CourseDetailContext } from "../../services/CourseDetails";
+
 const CourseDetails = () => {
   const { courseId } = useParams();
   console.log(courseId);
-
+  const { course, isLoading, error } = useContext(CourseDetailContext);
   const imgVariants = {
     initial: {
       opacity: 0,
@@ -52,7 +53,7 @@ const CourseDetails = () => {
           </p>
 
           <div className="mt-4">
-            <div className="py-8  bg-[#256BDB] space-y-4">
+            <div className="py-8 bg-[#256BDB] space-y-4">
               <div className="flex px-4">
                 <div className="flex items-center justify-between border-b pb-2 w-full">
                   <div className="flex items-center text-start gap-2">

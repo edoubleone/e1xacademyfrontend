@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import CourseCard from "./components/CourseCard";
 import businessImage from "../../assets/images/business.jpg";
 import healthImage from "../../assets/images/health.jpg";
@@ -6,7 +6,10 @@ import operationImage from "../../assets/images/operation.jpg";
 import financeImage from "../../assets/images/financial.jpg";
 import background from "../../assets/images/wave.png";
 
+// import { CourseContext } from "../../services/CourseContext";
+
 const Course = () => {
+  // const { courses, isLoading, error } = useContext(CourseContext);
   return (
     <div className="w-full custom-description-background py-24">
       <div class="max-w-5xl mx-auto ">

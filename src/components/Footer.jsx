@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import {
   FaDribbbleSquare,
   FaFacebookSquare,
@@ -46,10 +47,16 @@ function Footer() {
             <div className="h-full  flex flex-col">
               <h2 className="font-bold mb-5">Product</h2>
               <ul className="space-y-2">
-                <li> Home</li>
-                <li>About</li>
+                <li>
+                  <NavLink to="/">Home</NavLink>
+                </li>
+                <li>
+                  <NavLink to="/about">About</NavLink>
+                </li>
                 <li>Services</li>
-                <li>Contact</li>
+                <li>
+                  <NavLink to="/contact">Contact</NavLink>
+                </li>
               </ul>
             </div>
           </div>

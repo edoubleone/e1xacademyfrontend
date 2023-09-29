@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import CourseCard from "./components/CourseCard";
@@ -6,10 +6,30 @@ import courseImg from "../../assets/images/course-img.png";
 import businessImage from "../../assets/images/business.jpg";
 import healthImage from "../../assets/images/health.jpg";
 import operationImage from "../../assets/images/operation.jpg";
-import financeImage from "../../assets/images/financial.jpg";
-import background from "../../assets/images/wave.png";
 import { GoSearch } from "react-icons/go";
+import Pagination from "../Pagination";
+import { NavLink } from "react-router-dom";
+import { CourseContext } from "../../services/CourseContext";
+
 const Course = () => {
+  const { courses, isLoading, error, fetchPaginatedData } =
+    useContext(CourseContext);
+
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const itemsPerPage = 10;
+
+  useEffect(() => {
+    // Fetch the initial page of course data
+    fetchPaginatedData(currentPage, itemsPerPage);
+  }, [currentPage, itemsPerPage, fetchPaginatedData]);
+
+  const totalPages = Math.ceil(courses.length / itemsPerPage);
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+  };
+
   const imgVariants = {
     initial: {
       opacity: 0,
@@ -31,7 +51,7 @@ const Course = () => {
             <div className="  lg:w-1/2 w-full lg:mt-12">
               <div className="flex flex-col">
                 <div className="flex items-center text-blue-400 ">
-                  <p>Home</p>
+                  <NavLink to="/">Home</NavLink>
                   <MdOutlineNavigateNext />
                   <p>Courses</p>
                 </div>
@@ -102,7 +122,7 @@ const Course = () => {
                 hours="30"
                 videos="30"
                 rating="4.3"
-                courseId="123"
+                course="123"
               />
             </motion.div>
           </div>
@@ -115,7 +135,7 @@ const Course = () => {
               hours="30"
               videos="30"
               rating="4.3"
-              courseId="123"
+              course="123"
             />
           </div>
           <div className="mb">
@@ -127,11 +147,16 @@ const Course = () => {
               hours="30"
               videos="30"
               rating="4.3"
-              courseId="123"
+              course="123"
             />
           </div>
         </div>
       </div>
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+      />
     </div>
   );
 };

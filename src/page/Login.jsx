@@ -1,15 +1,22 @@
 import React, { useState } from "react";
+
 import validator from "validator";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { AiFillApple } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import imagePage from "../assets/images/pretty-black-woman-feeling-happy-facing-challenge-celebrating-agenda-concept_1194-339851.jpg";
+import { LoginProvider } from "../services/LoginAuthContext";
 
 const Login = () => {
+  // const { user, login, isLoading, error } = useContext(LoginProvider);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
+
+  // useEffect(() => {
+
+  // }, [isLoading, error]);
 
   const validateForm = () => {
     let errors = {};
@@ -40,8 +47,6 @@ const Login = () => {
     e.preventDefault();
 
     if (validateForm()) {
-      // You can perform authentication here, e.g., make an API call to validate credentials.
-      // For this example, we'll simply log the username and password.
       console.log("Username:", email);
       console.log("Password:", password);
     }

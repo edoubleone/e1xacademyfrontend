@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BsArrowRightCircle } from "react-icons/bs";
+import { CourseContext } from "../../../services/CourseContext";
 
 function CourseCard({ imageSrc, title, duration, onViewCourse }) {
+  // const { courses, isLoading, error } = useContext(CourseContext);
+
   return (
     <div className="lg:w-96 md:w-80 p-3">
       <div className="h-full bg-white p-3">
