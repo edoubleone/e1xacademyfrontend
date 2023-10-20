@@ -1,0 +1,140 @@
+/* Add this to your CSS */
+.sticky-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #ffffff; /* Replace with your desired background color */
+}
+
+.bg-custom-gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 27, 118, 1),
+    rgba(37, 107, 219, 1)
+  );
+}
+
+/* custom-grad.css */
+.custom-gradient {
+  background: linear-gradient(
+    222.64deg,
+    #b4e8ff -4.8%,
+    rgba(208, 243, 224, 0.46218) 52.92%,
+    #fffacd 102.53%
+  );
+}
+
+.instructor {
+  background: linear-gradient(
+    90.59deg,
+    #577cff 0.36%,
+    #91d9df 49.58%,
+    #f4ffb1 102.86%
+  );
+}
+
+.bg-custom-blue {
+  background-color: rgba(2, 27, 118, 1);
+}
+
+.bg-custom-button {
+  background: linear-gradient(90deg, rgba(246, 133, 0, 1), rgba(210, 76, 0, 1));
+}
+
+.custom-level {
+  background: linear-gradient(90deg, rgba(37, 107, 219, 0.5));
+}
+
+.custom-blue {
+  background-color: rgba(124, 248, 254, 1);
+}
+
+.background-card {
+  background: linear-gradient(245.76deg, #e3fbff 5.48%, #f8f8d2 100%);
+}
+
+.custom-course-card {
+  background: rgba(231, 245, 255, 0.1);
+}
+.custom-grow-background {
+  background: rgba(234, 246, 255, 1);
+}
+
+.custom-description-background {
+  background: rgba(214, 214, 214, 1);
+}
+
+.custom-course-background {
+  background: linear-gradient(
+    245.76deg,
+    rgba(180, 232, 255, 1) 5.48%,
+    rgba(208, 243, 224, 0.4622) 100%
+  );
+}
+
+.bg-custom-gradient-course {
+  background: linear-gradient(
+    90deg,
+    rgba(97, 158, 255, 1) 100%,
+    rgba(0, 98, 255, 1) 100%
+  );
+}
+
+/* styles.css (or your custom CSS file) */
+.gradient-text {
+  background: linear-gradient(
+    90deg,
+    rgba(2, 27, 118, 1),
+    rgba(37, 107, 219, 1)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Set text color to transparent */
+}
+
+/* styles.css (or your custom CSS file) */
+.gradient-text-blue {
+  background: linear-gradient(90deg, #0264ff, #0f59cd, #5f9dff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Set text color to transparent */
+}
+
+/* styles.css (or your custom CSS file) */
+.gradient-text-combined {
+  background: linear-gradient(
+    90deg,
+    #0264ff,
+    #0f59cd,
+    #5f9dff,
+    #6100ff,
+    #a400cd,
+    #7203ff,
+    #00b2ff
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Set text color to transparent */
+}
+
+/* styles.css (or your custom CSS file) */
+.gradient-text-combined {
+  background: linear-gradient(
+    90deg,
+    #0264ff,
+    #0f59cd,
+    #5f9dff,
+    #6100ff,
+    #a400cd,
+    #7203ff,
+    #00b2ff,
+    #577cff,
+    #79f7ff,
+    #f4ffb1
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Set text color to transparent */
+}
