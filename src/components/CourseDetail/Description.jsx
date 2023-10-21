@@ -8,6 +8,7 @@ import { GoDeviceCameraVideo } from "react-icons/go";
 import { useInView } from "react-intersection-observer";
 import StudentReviews from "../../assets/images/studentReviews.png";
 import instructor1 from "../../assets/images/instructor.png";
+
 const Description = () => {
   const [animateImage, setAnimateImage] = useState(false);
   const [activeTab, setActiveTab] = useState("description");

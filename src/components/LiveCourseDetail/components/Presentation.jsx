@@ -9,8 +9,8 @@ const PresentationItem = ({ icon, title, duration, action }) => {
   };
 
   const titleStyle = {
-    color: isClicked ? "gray" : "blue", // Set the color based on the click state
-    cursor: "pointer", // Add a pointer cursor to indicate it's clickable
+    color: isClicked ? "gray" : "blue",
+    cursor: "pointer",
   };
 
   return (

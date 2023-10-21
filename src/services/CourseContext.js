@@ -24,10 +24,6 @@ export function CourseProvider({ children }) {
       });
   };
 
-  // useEffect(() => {
-  //   fetchOnlineCourse();
-  // }, []);
-
   const fetchPaginatedData = (page, perPage) => {
     setIsLoading(true);
     axios
@@ -44,7 +40,13 @@ export function CourseProvider({ children }) {
 
   return (
     <CourseContext.Provider
-      value={{ courses, isLoading, error, fetchOnlineCourse }}
+      value={{
+        courses,
+        isLoading,
+        error,
+        fetchOnlineCourse,
+        fetchPaginatedData,
+      }}
     >
       {children}
     </CourseContext.Provider>

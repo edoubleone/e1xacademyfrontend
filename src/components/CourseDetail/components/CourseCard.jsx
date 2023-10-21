@@ -1,9 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { BsArrowRightCircle } from "react-icons/bs";
 
-function CourseCard({ imageSrc, title, duration, onViewCourse }) {
+function CourseCard({ imageSrc, title, duration, uuid }) {
+  const navigate = useNavigate();
+
+  const handleViewDetails = (uuid) => {
+    navigate(`/course/${uuid}`);
+  };
   return (
-    
     <div className="h-full bg-white p-3">
       <img src={imageSrc} alt="course" />
       <div>
@@ -13,7 +18,7 @@ function CourseCard({ imageSrc, title, duration, onViewCourse }) {
           <p className="text-xs">{duration}</p>
           <button
             className="flex items-center space-x-2  "
-            onClick={onViewCourse}
+            onClick={() => handleViewDetails(uuid)}
           >
             <p className="text-xs">View Course</p>
             <BsArrowRightCircle className="text-sm" />

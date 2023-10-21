@@ -9,6 +9,7 @@ import { CourseDetailContext } from "../../services/CourseDetails";
 
 const CourseDetails = () => {
   const { uuid } = useParams();
+
   const { courses, isLoading, error, fetchCourseDetails } =
     useContext(CourseDetailContext);
 
@@ -17,7 +18,7 @@ const CourseDetails = () => {
       fetchCourseDetails(uuid);
     }
   }, []);
-  console.log(courses);
+  console.log(" i am checking ", courses);
 
   const imgVariants = {
     initial: {
@@ -54,7 +55,7 @@ const CourseDetails = () => {
           </button>
 
           <h1 className="font-bold text-white lg:text-6xl md:text-3xl">
-            {courses.title}
+            {courses?.title}
           </h1>
           <p className="text-white lg:text-lg md:text-xs">
             Becoming a financial data analyst involves acquiring the skills to
