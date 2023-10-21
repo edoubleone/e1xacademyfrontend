@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
 import axios from "axios";
 
 export const CourseContext = createContext();
@@ -8,18 +8,25 @@ export function CourseProvider({ children }) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+  const fetchOnlineCourse = () => {
     axios
-      .get("/api/courses")
+      .get("https://e1x.nueoffshore.com/api/courses/online/online-courses/all")
       .then((response) => {
-        setCourses(response.data);
+        if (response.data) {
+          setCourses(response.data);
+          console.log("let me check", response.data);
+        }
         setIsLoading(false);
       })
       .catch((err) => {
         setError(err);
         setIsLoading(false);
       });
-  }, []);
+  };
+
+  // useEffect(() => {
+  //   fetchOnlineCourse();
+  // }, []);
 
   const fetchPaginatedData = (page, perPage) => {
     setIsLoading(true);
@@ -37,7 +44,7 @@ export function CourseProvider({ children }) {
 
   return (
     <CourseContext.Provider
-      value={{ courses, isLoading, error, fetchPaginatedData }}
+      value={{ courses, isLoading, error, fetchOnlineCourse }}
     >
       {children}
     </CourseContext.Provider>

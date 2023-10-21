@@ -7,6 +7,7 @@ import healthImage from "../../assets/images/health.jpg";
 import operationImage from "../../assets/images/operation.jpg";
 
 const DashboardCourse = () => {
+
   return (
     <div className="custom-course-background py-10">
       <div className="max-w-6xl mx-auto">

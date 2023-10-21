@@ -2,7 +2,7 @@ import React from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import instructor2 from "../../assets/images/instructor.png";
 
-import pic from "../../assets/images/woman.png";
+
 
 const Advisor = () => {
   return (

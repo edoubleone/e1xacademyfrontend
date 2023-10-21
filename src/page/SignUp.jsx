@@ -13,6 +13,7 @@ import { AuthProvider } from "../services/AuthContext";
 const SignUp = () => {
   // const { user, setUser, apiData, isLoading, error } = useContext(AuthProvider);
   const navigate = useNavigate();
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");

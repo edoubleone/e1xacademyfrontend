@@ -1,14 +1,24 @@
-import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import axios from "axios";
+
 import { motion } from "framer-motion";
 import vector from "../../assets/icons/Vector.png";
 import illustration from "../../assets/images/illustration.png";
+import { useParams } from "react-router-dom";
 import { CourseDetailContext } from "../../services/CourseDetails";
 
 const CourseDetails = () => {
-  const { courseId } = useParams();
-  console.log(courseId);
-  const { course, isLoading, error } = useContext(CourseDetailContext);
+  const { uuid } = useParams();
+  const { courses, isLoading, error, fetchCourseDetails } =
+    useContext(CourseDetailContext);
+
+  useEffect(() => {
+    if (uuid) {
+      fetchCourseDetails(uuid);
+    }
+  }, []);
+  console.log(courses);
+
   const imgVariants = {
     initial: {
       opacity: 0,
@@ -44,7 +54,7 @@ const CourseDetails = () => {
           </button>
 
           <h1 className="font-bold text-white lg:text-6xl md:text-3xl">
-            Become A Financial <br></br> Data Analyst{" "}
+            {courses.title}
           </h1>
           <p className="text-white lg:text-lg md:text-xs">
             Becoming a financial data analyst involves acquiring the skills to

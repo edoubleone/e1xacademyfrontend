@@ -6,10 +6,12 @@ import Password from "./Password";
 import Notification from "./Notification";
 import Certificate from "./Certificate";
 import Order from "./Order";
+import { useNavigate } from "react-router-dom";
 
 import imageUrl from "../../assets/images/user-image-with-black-background.png";
 
 const Profile = () => {
+  const navigate = useNavigate()
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -44,6 +46,7 @@ const Profile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
 
     console.log("Username:", email);
 

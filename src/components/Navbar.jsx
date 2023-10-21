@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import Logo from "../assets/images/logo.jpeg";
 import { AiOutlineClose } from "react-icons/ai";
 import { FiMenu } from "react-icons/fi";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 function Navbar() {
   const [nav, setNav] = useState(false);
@@ -10,7 +11,7 @@ function Navbar() {
   const [isSticky, setIsSticky] = useState(false);
   const [activeLink, setActiveLink] = useState("/");
   const navRef = useRef(null);
-  const timeoutRef = useRef(null); // Ref for the timeout
+  const timeoutRef = useRef(null);
 
   const handleScroll = () => {
     if (window.scrollY > 200) {
@@ -39,10 +40,9 @@ function Navbar() {
   const handleDropdownClose = () => {
     clearTimeout(timeoutRef.current);
 
-    // Set a timeout to close the dropdown after 1 second (adjust as needed)
     timeoutRef.current = setTimeout(() => {
       setDropdownOpen(false);
-    }, 1000); // 1000 milliseconds = 1 second
+    }, 1000);
   };
 
   useEffect(() => {
@@ -124,13 +124,17 @@ function Navbar() {
             onMouseEnter={handleDropdownOpen}
             onMouseLeave={handleDropdownClose}
           >
-            <NavLink
-              to="#"
-              activeClassName="active"
-              className={`text-lg cursor-pointer hover:text-blue-500`}
-            >
-              Course
-            </NavLink>
+            <div className="flex items-center space-x-2">
+              <NavLink
+                to="#"
+                activeClassName="active"
+                className={`text-lg cursor-pointer hover:text-blue-500`}
+              >
+                Course
+              </NavLink>
+              <MdKeyboardArrowDown />
+            </div>
+
             <div
               className={`absolute left-[-2] top-full mt-2 w-60 bg-white border border-gray-300 rounded-md shadow-lg ${
                 isDropdownOpen ? "" : "hidden"

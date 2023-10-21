@@ -1,32 +1,34 @@
-// CourseDetailContext.js
-
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
 
 export const CourseDetailContext = createContext();
 
 export function CourseDetailProvider({ children }) {
-  const [course, setCourse] = useState(null);
+  const [courses, setCourses] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const { courseId } = useParams();
-  useEffect(() => {
+  const fetchCourseDetails = (uuid) => {
     axios
-      .get(`/api/courses/${courseId}`)
+      .get(
+        `
+      https://e1x.nueoffshore.com/api/courses/live/live-courses/details/${uuid}
+      `
+      )
       .then((response) => {
-        setCourse(response.data);
+        setCourses(response.data);
         setIsLoading(false);
       })
       .catch((err) => {
         setError(err);
         setIsLoading(false);
       });
-  }, [courseId]);
+  };
 
   return (
-    <CourseDetailContext.Provider value={{ course, isLoading, error }}>
+    <CourseDetailContext.Provider
+      value={{ courses, isLoading, error, fetchCourseDetails }}
+    >
       {children}
     </CourseDetailContext.Provider>
   );

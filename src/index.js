@@ -5,10 +5,16 @@ import "./global.css";
 import App from "./App";
 import { AuthProvider } from "./services/AuthContext";
 import { LoginProvider } from "./services/LoginAuthContext";
+import { CourseDetailProvider } from "./services/CourseDetails";
+import { CourseProvider } from "./services/CourseContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <CourseProvider>
+      <CourseDetailProvider>
+        <App />
+      </CourseDetailProvider>
+    </CourseProvider>
   </React.StrictMode>
 );
