@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
+import { LiveCourseDetailContext } from "../../services/LiveCourseDetail";
+import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import imageLivePics from "../../assets/images/video image container.png";
 import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
@@ -6,13 +8,28 @@ import { MdSlowMotionVideo } from "react-icons/md";
 import PresentationItem from "./components/Presentation";
 
 const Course = () => {
+  const { uuid } = useParams();
+  const { courses, isLoading, error, fetchLiveCourseDetails } = useContext(
+    LiveCourseDetailContext
+  );
+  console.log("uuis", uuid);
   const [expandedSection, setExpandedSection] = useState(null);
+  const [videoUrl, setVideoUrl] = useState(null);
+
+  useEffect(() => {
+    if (uuid) {
+      fetchLiveCourseDetails(uuid);
+    }
+  }, []);
+
+  console.log("make", courses);
 
   const toggleExpand = (section) => {
     if (expandedSection === section) {
-      setExpandedSection(null); // Close the section if it's already open
+      setExpandedSection(null);
+      setVideoUrl(null);
     } else {
-      setExpandedSection(section); // Open the clicked section
+      setExpandedSection(section);
     }
   };
 
@@ -32,6 +49,8 @@ const Course = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4">
+      <button className="border py-2 px-5 text-sm">Back To Courses</button>
+
       <div className="lg:flex justify-between">
         <motion.div
           className="lg:w-3/5 w-full mt-12 space-y-6"
@@ -39,16 +58,11 @@ const Course = () => {
           initial="initial"
           animate="animate"
         >
-          <button className="border py-2 px-5 text-sm">Back To Courses</button>
-          <h1 className="font-bold lg:text-6xl md:text-3xl">
-            Ultimate Financial <br></br> Data Analyst course{" "}
-          </h1>
-          <div>
-            <img src={imageLivePics} alt="imageLive" loading="lazy" />
-          </div>
-          <p className="lg:py-6 py-0">Introduction to the user</p>
+          <img src={imageLivePics} alt="imageLive" loading="lazy" />
+
+          <p className="lg:py-6 py-0">{courses?.title}</p>
         </motion.div>
-        <div className="lg:w-1/3 w-full lg:mt-32 mt-12 ">
+        <div className="lg:w-1/3 w-full  mt-12 ">
           <div className="border border-blue-300 rounded-lg">
             <div className="bg-custom-blue py-3">
               <p className="text-white p-4">Course Content</p>
@@ -71,6 +85,7 @@ const Course = () => {
                   title="Another Presentation"
                   duration="10:30min"
                   action="continue"
+                  onClick={() => setVideoUrl("your-video-url-here")}
                 />
                 <PresentationItem
                   icon={<MdSlowMotionVideo />}
@@ -291,8 +306,6 @@ const Course = () => {
                 />
               </div>
             )}
-
-            {/* Add more sections following the same pattern */}
           </div>
         </div>
       </div>

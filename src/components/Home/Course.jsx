@@ -120,7 +120,7 @@ function Course() {
             whileHover="hover"
             whileTap="tap"
           >
-            <CustomButton text="See All" />
+            <CustomButton text="See All" link="/course" />
           </motion.div>
         </div>
       )}

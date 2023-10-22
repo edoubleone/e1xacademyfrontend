@@ -14,7 +14,6 @@ export function CourseProvider({ children }) {
       .then((response) => {
         if (response.data) {
           setCourses(response.data);
-          console.log("let me check", response.data);
         }
         setIsLoading(false);
       })

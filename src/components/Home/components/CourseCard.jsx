@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { CourseContext } from "../../../services/CourseContext";
 
-function CourseCard({ imageSrc, title, duration, onViewCourse, uuid }) {
+function CourseCard({ imageSrc, title, duration,  uuid }) {
   const navigate = useNavigate();
 
   const handleViewDetails = (uuid) => {

@@ -1,10 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+import { useParams } from "react-router-dom";
+import { CourseDetailContext } from "../../services/CourseDetails";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import instructor1 from "../../assets/images/instructor.png";
 import instructor2 from "../../assets/images/instructor.png";
 import instructor3 from "../../assets/images/instructor.png";
 const Instructor = () => {
+  const { uuid } = useParams();
+
+  const { courses, isLoading, error, fetchCourseDetails } =
+    useContext(CourseDetailContext);
+
+  useEffect(() => {
+    if (uuid) {
+      fetchCourseDetails(uuid);
+    }
+  }, []);
+
   const [animateImage, setAnimateImage] = useState(false);
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -47,10 +60,14 @@ const Instructor = () => {
           ref={ref}
         >
           <div class="md:w-1/3 p-4 space-y-4">
-            <img src={instructor1} alt="thumbs" />
+            {/* {courses.images.map((img) => (
+              <img key={img.id} src={instructor1} alt="thumbs" />
+            ))} */}
+
             <div className="space-y-2">
-              <p className="text-white font-bold ">Danile Eniron</p>
-              <p className="text-white text-xs">Financial Data Analyst</p>
+              {/* {courses.instructors.map((instructor) => (
+                <p className="text-white font-bold ">{instructor}</p>
+              ))} */}
             </div>
           </div>
           <div class="md:w-1/3 p-4 space-y-4">

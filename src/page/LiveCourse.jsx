@@ -1,18 +1,14 @@
 import React from "react";
-import Course from "../components/LiveCourseDetail/Course";
-import Overview from "../components/LiveCourseDetail/Overview";
-import Reviews from "../components/LiveCourseDetail/Reviews";
-import StudentReviews from "../components/LiveCourseDetail/StudentReviews";
+import LiveCourse from "../components/LiveCourse.jsx/Course";
 
-const LiveCourse = () => {
+const LiveCourses = () => {
   return (
-    <div>
-      <Course />
-      <Overview />
-      <Reviews />
-      <StudentReviews />
-    </div>
+    <>
+      <div className="custom-grow-background">
+        <LiveCourse />
+      </div>
+    </>
   );
 };
 
-export default LiveCourse;
+export default LiveCourses;

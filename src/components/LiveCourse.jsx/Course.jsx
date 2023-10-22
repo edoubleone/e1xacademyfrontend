@@ -5,15 +5,14 @@ import CourseCard from "./components/CourseCard";
 import courseImg from "../../assets/images/course-img.png";
 import { GoSearch } from "react-icons/go";
 import { NavLink } from "react-router-dom";
-import { CourseContext } from "../../services/CourseContext";
+import { LiveCourseContext } from "../../services/LiveContext";
 
-const Course = () => {
-  const { courses, isLoading, error, fetchOnlineCourse } =
-    useContext(CourseContext);
-  console.log("cjheckprice", courses);
+const LiveCourse = () => {
+  const { courses, isLoading, error, fetchLiveCourse } =
+    useContext(LiveCourseContext);
 
   useEffect(() => {
-    fetchOnlineCourse();
+    fetchLiveCourse();
   }, []);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -60,10 +59,10 @@ const Course = () => {
                   </div>
                   <div className="lg:mt-12 mt-4 lg:space-y-2">
                     <h1 className="font-bold lg:text-5xl text-2xl">
-                      All Courses
+                      Live Courses
                     </h1>
                     <p className="l:font-bold ">
-                      Course That would Help you Become a Unicorn
+                      {/* Course That would Help you Become a Unicorn */}
                     </p>
                   </div>
                   <div className="relative flex items-center gap-6 lg:mt-28 mt-6">
@@ -121,7 +120,7 @@ const Course = () => {
               >
                 {courses.map((course) => (
                   <CourseCard
-                    key={course.uuid}
+                    key={course.id}
                     imageSrc="images"
                     title={course.title}
                     beginnerText="Beginner"
@@ -129,7 +128,6 @@ const Course = () => {
                     hours={course.duration}
                     videos="30"
                     rating="4.3"
-                    price={course.currency}
                     uuid={course.uuid}
                   />
                 ))}
@@ -142,4 +140,4 @@ const Course = () => {
   );
 };
 
-export default Course;
+export default LiveCourse;

@@ -18,13 +18,12 @@ const CourseCard = ({
   videos,
   rating,
   uuid,
-  price,
 }) => {
   const navigate = useNavigate();
 
   const handleViewDetails = (uuid) => {
     console.log(uuid);
-    navigate(`/course/${uuid}`);
+    navigate(`/live-course/${uuid}`);
   };
   return (
     <div className="max-w-6xl mx-auto  bg-white p-4">
@@ -46,8 +45,6 @@ const CourseCard = ({
                 <h1 className="font-bold lg:text-2xl lg:text-left text-center ">
                   {title}
                 </h1>
-
-                <div>${price}</div>
 
                 <div className="flex items-center  gap-6  lg:justify-start  justify-between lg:px-0 px-4  ">
                   <div className="flex items-center gap-1">

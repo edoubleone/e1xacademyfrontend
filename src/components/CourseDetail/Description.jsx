@@ -1,4 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
+import { CourseDetailContext } from "../../services/CourseDetails";
+
 import { motion, useAnimation } from "framer-motion";
 import { BiCheckCircle } from "react-icons/bi";
 import { FcRating } from "react-icons/fc";
@@ -10,6 +13,19 @@ import StudentReviews from "../../assets/images/studentReviews.png";
 import instructor1 from "../../assets/images/instructor.png";
 
 const Description = () => {
+  const { uuid } = useParams();
+
+  const { courses, isLoading, error, fetchCourseDetails } =
+    useContext(CourseDetailContext);
+
+  // const { course_description, images, instructors } = courses;
+
+  useEffect(() => {
+    if (uuid) {
+      fetchCourseDetails(uuid);
+    }
+  }, []);
+  console.log(" i am checking ", courses);
   const [animateImage, setAnimateImage] = useState(false);
   const [activeTab, setActiveTab] = useState("description");
   const controls = useAnimation();
@@ -77,14 +93,7 @@ const Description = () => {
         <div className="max-w-5xl mx-auto space-y-5  py-12 p-4">
           <p className="font-bold text-2xl">Description</p>
           <div className="space-y-5">
-            <p>
-              Becoming a Financial Data Analyst involves acquiring the skills
-              and knowledge required to analyze and interpret financial data to
-              make informed business decisions. Financial Data Analysts are
-              responsible for collecting, cleaning, and organizing financial
-              data, often utilizing tools such as Excel, SQL, and data
-              visualization software.
-            </p>
+            {/* <p>{courses.course_description}</p> */}
 
             <p>
               {" "}
@@ -171,18 +180,25 @@ const Description = () => {
         <div className="max-w-5xl mx-auto space-y-5  py-12 p-4">
           <p className="font-bold text-2xl">Instructor </p>
           <div className="space-y-5">
-            <div>
-              <p Al Sweigart></p>
-              <p>Software developer, tech book author</p>
-            </div>
-            <div className="flex gap-8">
+            {courses.instructors.map((instructor) => (
               <div>
-                <img
-                  src={instructor1}
-                  alt="instructor"
-                  className="w-24 h-24 rounded-full"
-                />
+                <p></p>
+                <p>{instructor}</p>
               </div>
+            ))}
+
+            <div className="flex gap-8">
+              {courses.images.map((img) => (
+                <div>
+                  <img
+                    key={img.id}
+                    src={img}
+                    alt="instructor"
+                    className="w-24 h-24 rounded-full"
+                  />
+                </div>
+              ))}
+
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <FcRating />

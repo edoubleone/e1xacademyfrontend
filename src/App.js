@@ -13,14 +13,16 @@ import Course from "./page/Courses";
 import SuccessfulPage from "./page/SuccessfulPage";
 import DashboardCourse from "./components/Dashboard/Course";
 import ContactPage from "./page/ContactPage";
-import LiveCourse from "./page/LiveCourse";
+
 import Payement from "./page/Payement";
 import CheckOutPage from "./page/CheckOutPage";
 import About from "./page/About";
 import Login from "./page/Login";
 import ResetPassword from "./page/ResetPassword";
+import LiveCourseDetail from "./page/LiveCourseDetail";
 import Dashboard from "./components/Dashboard/Dashboard";
 import SignUp from "./page/SignUp";
+import LiveCourses from "./page/LiveCourse";
 
 import CourseDetailPage from "./page/CourseDetails";
 
@@ -48,7 +50,8 @@ function AppContent() {
         <Route path="/checkout" element={<CheckOutPage />} />
         <Route path="/payment" element={<Payement />} />
         <Route path="/success" element={<SuccessfulPage />} />
-        <Route path="/live-course" element={<LiveCourse />} />
+        <Route path="/live-course" element={<LiveCourses />} />
+        <Route path="/live-course/:uuid" element={<LiveCourseDetail />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/sign-in" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />

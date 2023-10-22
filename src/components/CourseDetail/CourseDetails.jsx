@@ -58,9 +58,7 @@ const CourseDetails = () => {
             {courses?.title}
           </h1>
           <p className="text-white lg:text-lg md:text-xs">
-            Becoming a financial data analyst involves acquiring the skills to
-            gather, analyze, and interpret financial data to support
-            decision-making and provide valuable insights to organizations
+            {/* {courses.course_description} */}
           </p>
 
           <div className="mt-4">
