@@ -24,6 +24,8 @@ import SignUp from "./page/SignUp";
 
 import CourseDetailPage from "./page/CourseDetails";
 
+// require('dotenv').config()
+
 function App() {
   return (
     <BrowserRouter>

@@ -11,7 +11,7 @@ export function AuthProvider({ children }) {
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch("your-api-endpoint");
+      const response = await fetch("https://e1x.nueoffshore.com/api/auth/register");
       if (!response.ok) {
         throw new Error("Failed to fetch data");
       }

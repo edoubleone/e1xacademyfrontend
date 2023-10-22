@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useContext } from "react";
+import axios from 'axios';
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { AiFillApple } from "react-icons/ai";
@@ -17,8 +18,17 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [telephone, setTelephone] = useState("");
   const [agreed, setAgreed] = useState(false); // State for checkbox
   const [errors, setErrors] = useState({});
+  const [csrfToken, setCsrfToken] = useState('');
+  useEffect(() => {
+    // Fetch the CSRF token from the server
+    fetch(`process.env.REACT_APP_DOMAIN_URL}/api/csrf-token`)
+      .then(response => response.json())
+      .then(data => setCsrfToken(data.token))
+      .catch(error => console.error('Error fetching CSRF token:', error));
+  }, []);
 
   // useEffect(() => {
   //   if (!isLoading && apiData) {
@@ -44,6 +54,11 @@ const SignUp = () => {
       isValid = false;
     }
 
+    if (!validator.isEmpty(telephone)) {
+      errors.telephone = "Invalid telephone number";
+      isValid = false;
+    }
+
     if (validator.isEmpty(password)) {
       errors.password = "Password is required";
       isValid = false;
@@ -58,28 +73,35 @@ const SignUp = () => {
     return isValid;
   };
 
-  const handleFirstNameChange = (e) => {
-    setFirstName(e.target.value);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    validateForm();
+    const formData = new FormData();
+    formData.set('firstname', firstName);
+    formData.set('lastname', lastName);
+    formData.set('email', email);
+    formData.set('telephone', telephone);
+    formData.set('password', password);
+
+
+  let headers = {
+    'Content-Type': 'application/json',
+    'X-CSRF-Token': csrfToken  // Include the CSRF token in the request headers
   };
 
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
+    axios.post(`${process.env.REACT_APP_DOMAIN_URL}/api/auth/register`, formData, headers).then(function (response) {
+      if(response.status === true){
 
-  const handlePasswordChange = (e) => {
-    setPassword(e.target.value);
-  };
-
-  const handleLastNameChange = (e) => {
-    setLastName(e.target.value);
-  };
-
-  const handleCheckboxChange = () => {
-    setAgreed(!agreed); // Toggle checkbox state
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
+        let data = response;
+       console.log(data);
+      }else{
+         console.log('errors');
+      }
+  });
+    
+    
+    console.log(formData);
 
     if (validateForm()) {
       navigate("/dashboard");
@@ -88,35 +110,35 @@ const SignUp = () => {
 
   return (
     <div className="custom-course-background">
-      <div className="max-w-5xl mx-auto py-12 px-4">
+      <div className="max-w-5xl px-4 py-12 mx-auto">
         <div className="flex flex-col md:flex-row ">
-          <div className="lg:w-1/2 w-full">
+          <div className="w-full lg:w-1/2">
             <img
               src={imagePage}
               alt="signImage"
-              className="w-full h-full object-cover"
+              className="object-cover w-full h-full"
               loading="lazy"
             />
           </div>
-          <div className="lg:w-1/2 w-full px-4 py-5 mx-auto bg-white shadow-sm">
+          <div className="w-full px-4 py-5 mx-auto bg-white shadow-sm lg:w-1/2">
             <div className="text-center">
-              <h1 className="font-bold lg:text-4xl text-red-700 ">
+              <h1 className="font-bold text-red-700 lg:text-4xl ">
                 Create A New Account
               </h1>
             </div>
-            <form onSubmit={handleSubmit} className="border-b pb-3 mt-6">
+            <form onSubmit={handleSubmit} className="pb-3 mt-6 border-b">
               <div className="mb-4">
-                <div className="flex flex-col md:flex-row gap-4">
+                <div className="flex flex-col gap-4 md:flex-row">
                   <div className="lg:w-1/2">
                     <label htmlFor="FirstName">First Name</label>
                     <input
                       type="text"
                       name="FirstName"
                       value={firstName}
-                      onChange={handleFirstNameChange}
+                      onChange={(e) => setFirstName(e.target.value)}
                       placeholder="First Name"
                       required
-                      className="w-full border bg-gray-100 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                      className="w-full px-3 py-2 bg-gray-100 border rounded focus:outline-none focus:border-blue-400"
                     />
                     {errors.fullName && (
                       <p className="error">{errors.fullName}</p>
@@ -128,10 +150,10 @@ const SignUp = () => {
                       type="LastName"
                       name="LastName"
                       value={lastName}
-                      onChange={handleLastNameChange}
+                      onChange={(e) => setLastName(e.target.value)}
                       placeholder="Last Name"
                       required
-                      className="w-full border bg-gray-100 border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                      className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:border-blue-400"
                     />
                     {errors.fullName && (
                       <p className="error">{errors.fullName}</p>
@@ -140,17 +162,34 @@ const SignUp = () => {
                 </div>
               </div>
               <div className="mb-4">
+              <div className="flex flex-col gap-4 md:flex-row">
+              <div className="lg:w-1/2">
                 <label htmlFor="email">Email</label>
                 <input
                   type="email"
                   name="email"
                   value={email}
                   placeholder="Email"
-                  onChange={handleEmailChange}
+                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full border bg-gray-100 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                  className="w-full px-3 py-2 bg-gray-100 border rounded focus:outline-none focus:border-blue-400"
                 />
                 {errors.email && <p className="error">{errors.email}</p>}
+              </div>
+              <div className="lg:w-1/2">
+                <label htmlFor="telephone">Telephone</label>
+                <input
+                  type="text"
+                  name="telephone"
+                  value={telephone}
+                  placeholder="Telephone"
+                  onChange={(e) => setTelephone(e.target.value)}
+                  required
+                  className="w-full px-3 py-2 bg-gray-100 border rounded focus:outline-none focus:border-blue-400"
+                />
+                {errors.telephone && <p className="error">{errors.telephone}</p>}
+              </div>
+              </div>
               </div>
               <div className="mb-4">
                 <label htmlFor="password">Password</label>
@@ -159,9 +198,9 @@ const SignUp = () => {
                   name="password"
                   placeholder="Password"
                   value={password}
-                  onChange={handlePasswordChange}
+                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full border bg-gray-100 border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                  className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:border-blue-400"
                 />
                 {errors.password && <p className="error">{errors.password}</p>}
               </div>
@@ -170,28 +209,28 @@ const SignUp = () => {
                 <input
                   type="checkbox"
                   id="agree"
-                  className="form-checkbox h-4 w-4 text-indigo-600 transition duration-150 ease-in-out"
+                  className="w-4 h-4 text-indigo-600 transition duration-150 ease-in-out form-checkbox"
                   checked={agreed}
-                  onChange={handleCheckboxChange}
+                   onChange={(e) => setAgreed(e.target.value)}
                 />
-                <label htmlFor="agree" className="ml-2 block text-sm leading-5">
+                <label htmlFor="agree" className="block ml-2 text-sm leading-5">
                   I agree to the terms and conditions
                 </label>
               </div>
 
               {errors.agreed && (
-                <p className="error text-sm mt-2">{errors.agreed}</p>
+                <p className="mt-2 text-sm error">{errors.agreed}</p>
               )}
 
               <button
                 type="submit"
-                className="w-40 bg-custom-button text-white rounded py-2 hover:bg-blue-600 mt-4"
+                className="w-40 py-2 mt-4 text-white rounded bg-custom-button hover:bg-blue-600"
               >
                 Sign Up
               </button>
             </form>
 
-            <div className="flex items-center justify-center space-x-4 mt-4">
+            <div className="flex items-center justify-center mt-4 space-x-4">
               <button className="border rounded-full py-2 px-2 hover:bg-[#d8c1ae]">
                 <FcGoogle />
               </button>
@@ -204,7 +243,7 @@ const SignUp = () => {
               </button>
             </div>
             <div>
-              <p className="text-center mt-3 text-sm">
+              <p className="mt-3 text-sm text-center">
                 Already have an account?{" "}
                 <NavLink to="/sign-in" className="text-sm">
                   Sign-in
