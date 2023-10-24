@@ -2,7 +2,9 @@ import React, { useEffect, useState, useContext } from "react";
 import CourseCard from "./components/CourseCard";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import LoadingSpinner from "../LoadingSpinner";
 import { CourseContext } from "../../services/CourseContext";
+import ErrorPage from "../../page/ErrorPage";
 import CustomButton from "./components/CustomButton";
 import businessImage from "../../assets/images/business.jpg";
 import healthImage from "../../assets/images/health.jpg";
@@ -57,17 +59,9 @@ function Course() {
   };
   return (
     <div className="mt-20 bg-[#D6EBFF] py-4" style={backgroundImageStyle}>
-      {isLoading && (
-        <div className="text-center p-4">
-          <p>Loading...</p>
-        </div>
-      )}
+      {isLoading && <LoadingSpinner />}
 
-      {error && (
-        <div className="text-center p-4">
-          <p>Error: {error.message}</p>
-        </div>
-      )}
+      {error && <ErrorPage errors={error} />}
 
       {!isLoading && !error && (
         <div className="max-w-6xl mx-auto justify-center items-center px-4 ">

@@ -29,8 +29,8 @@ const CourseCard = ({
   return (
     <div className="max-w-6xl mx-auto  bg-white p-4">
       <div className="mb-4">
-        <div className="flex space-x-4 md:flex-row ">
-          <div className="flex w-full lg:gap-12 gap-1 mb-10">
+        <div className="flex space-x-4   ">
+          <div className="lg:flex w-full lg:gap-12 gap-1 mb-10">
             <div className="lg:flex justify-center md:justify-start">
               <img
                 src="images"
@@ -41,13 +41,11 @@ const CourseCard = ({
               />
             </div>
 
-            <div className="w-full ">
+            <div className="w-full  ">
               <div className="lg:space-y-6 space-y-3 lg:mt-4    ">
                 <h1 className="font-bold lg:text-2xl lg:text-left text-center ">
                   {title}
                 </h1>
-
-                <div>${price}</div>
 
                 <div className="flex items-center  gap-6  lg:justify-start  justify-between lg:px-0 px-4  ">
                   <div className="flex items-center gap-1">
@@ -58,6 +56,9 @@ const CourseCard = ({
                     <img src={bookBar} alt="icon-bar" />
                     <p className="lg:text-md text-sm">{lessonsText}</p>
                   </div>
+                </div>
+                <div className="flex lg:justify-start justify-center">
+                  {price}
                 </div>
 
                 <div className="flex items-center gap-6  lg:justify-start justify-between lg:px-0 px-4">

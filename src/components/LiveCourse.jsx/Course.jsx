@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
+import { ClipLoader } from "react-spinners";
+import LoadingSpinner from "../LoadingSpinner";
+import ErrorPage from "../../page/ErrorPage";
 import { motion } from "framer-motion";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import CourseCard from "./components/CourseCard";
@@ -34,17 +37,9 @@ const LiveCourse = () => {
 
   return (
     <div className="lg:relative lg:overflow-auto">
-      {isLoading && (
-        <div className="text-center p-4">
-          <p>Loading...</p>
-        </div>
-      )}
+      {isLoading && <LoadingSpinner />}
 
-      {error && (
-        <div className="text-center p-4">
-          <p>Error: {error.message}</p>
-        </div>
-      )}
+      {error && <ErrorPage errors={error} />}
 
       {!isLoading && !error && (
         <div className="background-card h-[450px] lg:absolute lg:top-0 lg:-z-0 w-full">
@@ -110,7 +105,7 @@ const LiveCourse = () => {
       )}
 
       {!isLoading && !error && (
-        <div className="w-full  lg:mt-[380px] lg:z-50 lg:relative px-2">
+        <div className="w-full lg:mt-[380px] lg:z-50 lg:relative px-2">
           <div className="lg:-z-50">
             <div className="mb-6">
               <motion.div

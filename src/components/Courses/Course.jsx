@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
+import { ClipLoader } from "react-spinners";
+import LoadingSpinner from "../LoadingSpinner";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import CourseCard from "./components/CourseCard";
 import courseImg from "../../assets/images/course-img.png";
 import { GoSearch } from "react-icons/go";
 import { NavLink } from "react-router-dom";
 import { CourseContext } from "../../services/CourseContext";
-
+import ErrorPage from "../../page/ErrorPage";
 const Course = () => {
   const { courses, isLoading, error, fetchOnlineCourse } =
     useContext(CourseContext);
@@ -35,17 +37,9 @@ const Course = () => {
 
   return (
     <div className="lg:relative lg:overflow-auto">
-      {isLoading && (
-        <div className="text-center p-4">
-          <p>Loading...</p>
-        </div>
-      )}
+      {isLoading && <LoadingSpinner />}
 
-      {error && (
-        <div className="text-center p-4">
-          <p>Error: {error.message}</p>
-        </div>
-      )}
+      {error && <ErrorPage errors={error} />}
 
       {!isLoading && !error && (
         <div className="background-card h-[450px] lg:absolute lg:top-0 lg:-z-0 w-full">
@@ -111,7 +105,7 @@ const Course = () => {
       )}
 
       {!isLoading && !error && (
-        <div className="w-full  lg:mt-[380px] lg:z-50 lg:relative px-2">
+        <div className="w-full lg:mt-[380px] lg:z-50 lg:relative px-2">
           <div className="lg:-z-50">
             <div className="mb-6">
               <motion.div
@@ -121,7 +115,7 @@ const Course = () => {
               >
                 {courses.map((course) => (
                   <CourseCard
-                    key={course.uuid}
+                    key={course.id}
                     imageSrc="images"
                     title={course.title}
                     beginnerText="Beginner"
@@ -129,7 +123,6 @@ const Course = () => {
                     hours={course.duration}
                     videos="30"
                     rating="4.3"
-                    price={course.currency}
                     uuid={course.uuid}
                   />
                 ))}
