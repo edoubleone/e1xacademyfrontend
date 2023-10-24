@@ -163,7 +163,7 @@ function Navbar() {
               >
                 Live Course
               </NavLink>
-              <NavLink
+              {/* <NavLink
                 to="/checkout"
                 activeClassName="active-link"
                 className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 ${
@@ -183,7 +183,7 @@ function Navbar() {
                 onClick={() => setActiveLink("/payment")}
               >
                 Payment
-              </NavLink>
+              </NavLink> */}
               {/* Add similar code for other links in the dropdown menu */}
             </div>
           </li>

@@ -1,11 +1,14 @@
 import React, { useState, useContext, useEffect } from "react";
 import { LiveCourseDetailContext } from "../../services/LiveCourseDetail";
+
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import imageLivePics from "../../assets/images/video image container.png";
 import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 import { MdSlowMotionVideo } from "react-icons/md";
 import PresentationItem from "./components/Presentation";
+import ErrorPage from "../../page/ErrorPage";
+import LoadingSpinner from "../LoadingSpinner";
 
 const Course = () => {
   const { uuid } = useParams();
@@ -49,6 +52,9 @@ const Course = () => {
 
   return (
     <div className="max-w-6xl mx-auto px-4">
+      {isLoading && <LoadingSpinner />}
+
+      {error && <ErrorPage errors={error} />}
       <button className="border py-2 px-5 text-sm">Back To Courses</button>
 
       <div className="lg:flex justify-between">
