@@ -56,7 +56,7 @@ function DashboardNavbar() {
       <nav className="max-w-6xl flex items-center justify-between mx-auto   md:px-2">
         <div className="flex items-center gap-8">
           <NavLink
-            to="/"
+            to="/dashboard"
             exact
             activeClassName="active"
             className="text-4xl font-semibold text-[#e46601] flex items-center"
@@ -95,42 +95,40 @@ function DashboardNavbar() {
 
         <ul className="hidden md:flex space-x-10 text-md"></ul>
 
-        {user && (
-          <div className="hidden md:flex items-center space-x-4">
-            <div
-              to="/sign-in"
-              activeClassName="active"
-              className="text-lg relative"
-              onClick={toggleDropdown}
-            >
-              <div className="flex items-center gap-2">
-                <p>{user.username}</p>
-                <img src="" alt="profile" className="h-4 w-4 rounded-full" />
-                <div>
-                  <IoIosArrowDown />
-                </div>
+        <div className="hidden md:flex items-center space-x-4">
+          <div
+            to="/sign-in"
+            activeClassName="active"
+            className="text-lg relative"
+            onClick={toggleDropdown}
+          >
+            <div className="flex items-center gap-2">
+              <p></p>
+              <img src="" alt="profile" className="h-4 w-4 rounded-full" />
+              <div>
+                <IoIosArrowDown />
               </div>
-              {isDropdownOpen && (
-                <div className="text-sm absolute top-full left-8 bg-white border rounded-lg shadow-lg p-4">
-                  <ul className="space-y-2">
-                    <li>
-                      <NavLink> Profile</NavLink>
-                    </li>
-                    <li>
-                      <NavLink> Notification</NavLink>
-                    </li>
-                    <li>
-                      <NavLink> Billing</NavLink>
-                    </li>
-                    <li>
-                      <NavLink> Logout</NavLink>
-                    </li>
-                  </ul>
-                </div>
-              )}
             </div>
+            {isDropdownOpen && (
+              <div className="text-sm absolute top-full left-8 bg-white border rounded-lg shadow-lg p-4">
+                <ul className="space-y-2">
+                  <li>
+                    <NavLink> Profile</NavLink>
+                  </li>
+                  <li>
+                    <NavLink> Notification</NavLink>
+                  </li>
+                  <li>
+                    <NavLink> Billing</NavLink>
+                  </li>
+                  <li>
+                    <NavLink> Logout</NavLink>
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
-        )}
+        </div>
 
         <div onClick={handleNav} className="block md:hidden">
           {!nav ? (

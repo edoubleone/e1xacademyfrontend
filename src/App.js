@@ -59,12 +59,13 @@ function AppContent() {
         <Route path="/sign-up" element={<SignUp />} />
 
         <Route
-          path="/dashboard/*"
-          element={<PrivateRoute element={<Dashboard />} />}
+          path="/dashboard"
+          element={<PrivateRoute Element={<Dashboard />} />}
         />
+
         <Route
           path="/dashboard/course"
-          element={<PrivateRoute element={<DashboardCourse />} />}
+          element={<PrivateRoute Element={<DashboardCourse />} />}
         />
 
         <Route path="/reset-password" element={<ResetPassword />} />

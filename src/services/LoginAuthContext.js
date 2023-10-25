@@ -7,29 +7,24 @@ export function LoginProvider({ children }) {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [csrfToken, setCsrfToken] = useState(null); // New state for CSRF token
 
-  const login = async (username, password) => {
+  const login = async (email, password) => {
     try {
-      // Include the CSRF token in the request headers
       const response = await axios.post(
         "https://e1x.nueoffshore.com/api/auth/login",
         {
-          username,
+          email,
           password,
-        },
-        {
-          headers: {
-            "X-CSRF-Token": csrfToken,
-          },
         }
       );
 
-      const userData = response.data;
-      console.log(userData);
+      const { token, ...userData } = response.data;
+
+      // Save the token to local storage
+      localStorage.setItem("authToken", token);
+
       setUser(userData);
     } catch (error) {
-      console.log(error.message);
       setError(error.message);
     } finally {
       setIsLoading(false);
@@ -45,6 +40,7 @@ export function LoginProvider({ children }) {
         const userData = response.data;
 
         setUser(userData);
+        console.log("better", userData);
       } catch (error) {
         setError(error.message);
       }

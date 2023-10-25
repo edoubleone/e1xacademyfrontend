@@ -10,7 +10,7 @@ import { FaFacebook } from "react-icons/fa";
 import { AiFillApple } from "react-icons/ai";
 
 const Login = () => {
-  const navigate = useNavigate;
+  const navigate = useNavigate();
   const { user, error, login } = useContext(AuthContext);
 
   const [email, setEmail] = useState("");
@@ -92,6 +92,12 @@ const Login = () => {
                   className="w-full bg-slate-100 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
                 />
                 {errors.password && <p className="error">{errors.password}</p>}
+                {/* {error && (
+                  <p className="text-red-400 text-sm">
+                    An error occurred. Please try again later.
+                  </p>
+                )} */}
+
                 <NavLink to="/reset-password" className="text-xs">
                   Forgot password
                 </NavLink>
