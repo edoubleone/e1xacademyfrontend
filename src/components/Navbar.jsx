@@ -106,7 +106,7 @@ function Navbar() {
               courseDetail
             </NavLink>
           </li> */}
-          <li>
+          {/* <li>
             <NavLink
               to="/dashboard"
               activeClassName="active"
@@ -114,7 +114,7 @@ function Navbar() {
             >
               dashboard
             </NavLink>
-          </li>
+          </li> */}
 
           <li
             className={`relative group ${

@@ -24,7 +24,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import SignUp from "./page/SignUp";
 import LiveCourses from "./page/LiveCourse";
 import NotFound from "./page/NotFound";
-import ErrorPage from "./page/ErrorPage";
+import PrivateRoute from "./components/PrivateRoute";
 
 import CourseDetailPage from "./page/CourseDetails";
 
@@ -57,8 +57,16 @@ function AppContent() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/sign-in" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboard/course" element={<DashboardCourse />} />
+
+        <Route
+          path="/dashboard/*"
+          element={<PrivateRoute element={<Dashboard />} />}
+        />
+        <Route
+          path="/dashboard/course"
+          element={<PrivateRoute element={<DashboardCourse />} />}
+        />
+
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

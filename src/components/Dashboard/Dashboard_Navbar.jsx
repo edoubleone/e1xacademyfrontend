@@ -1,11 +1,14 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/images/logo.jpeg";
 import { AiOutlineClose } from "react-icons/ai";
 import { FiMenu } from "react-icons/fi";
+import { AuthContext } from "../../services/LoginAuthContext";
+
 import { IoIosArrowDown } from "react-icons/io";
 
 function DashboardNavbar() {
+  const { user } = useContext(AuthContext);
   const [nav, setNav] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
@@ -92,40 +95,42 @@ function DashboardNavbar() {
 
         <ul className="hidden md:flex space-x-10 text-md"></ul>
 
-        <div className="hidden md:flex items-center space-x-4">
-          <div
-            to="/sign-in"
-            activeClassName="active"
-            className="text-lg relative"
-            onClick={toggleDropdown}
-          >
-            <div className="flex items-center gap-2">
-              <p>Benjamin.j</p>
-              <img src="" alt="profile" className="h-4 w-4 rounded-full" />
-              <div>
-                <IoIosArrowDown />
+        {user && (
+          <div className="hidden md:flex items-center space-x-4">
+            <div
+              to="/sign-in"
+              activeClassName="active"
+              className="text-lg relative"
+              onClick={toggleDropdown}
+            >
+              <div className="flex items-center gap-2">
+                <p>{user.username}</p>
+                <img src="" alt="profile" className="h-4 w-4 rounded-full" />
+                <div>
+                  <IoIosArrowDown />
+                </div>
               </div>
+              {isDropdownOpen && (
+                <div className="text-sm absolute top-full left-8 bg-white border rounded-lg shadow-lg p-4">
+                  <ul className="space-y-2">
+                    <li>
+                      <NavLink> Profile</NavLink>
+                    </li>
+                    <li>
+                      <NavLink> Notification</NavLink>
+                    </li>
+                    <li>
+                      <NavLink> Billing</NavLink>
+                    </li>
+                    <li>
+                      <NavLink> Logout</NavLink>
+                    </li>
+                  </ul>
+                </div>
+              )}
             </div>
-            {isDropdownOpen && (
-              <div className="text-sm absolute top-full left-8 bg-white border rounded-lg shadow-lg p-4">
-                <ul className="space-y-2">
-                  <li>
-                    <NavLink> Profile</NavLink>
-                  </li>
-                  <li>
-                    <NavLink> Notification</NavLink>
-                  </li>
-                  <li>
-                    <NavLink> Billing</NavLink>
-                  </li>
-                  <li>
-                    <NavLink> Logout</NavLink>
-                  </li>
-                </ul>
-              </div>
-            )}
           </div>
-        </div>
+        )}
 
         <div onClick={handleNav} className="block md:hidden">
           {!nav ? (
