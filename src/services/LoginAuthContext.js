@@ -20,7 +20,6 @@ export function LoginProvider({ children }) {
 
       const { token, ...userData } = response.data;
 
-      // Save the token to local storage
       localStorage.setItem("authToken", token);
 
       setUser(userData);
