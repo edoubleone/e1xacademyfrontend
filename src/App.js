@@ -24,6 +24,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import SignUp from "./page/SignUp";
 import LiveCourses from "./page/LiveCourse";
 import NotFound from "./page/NotFound";
+import EmailVerificationForm from "./page/EmailVerificationForm";
 import PrivateRoute from "./components/PrivateRoute";
 
 import CourseDetailPage from "./page/CourseDetails";
@@ -57,6 +58,7 @@ function AppContent() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/sign-in" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/verify-email" element={<EmailVerificationForm />} />
 
         <Route
           path="/dashboard"
