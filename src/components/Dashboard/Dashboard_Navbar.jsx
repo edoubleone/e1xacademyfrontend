@@ -3,12 +3,15 @@ import { NavLink } from "react-router-dom";
 import Logo from "../../assets/images/logo.jpeg";
 import { AiOutlineClose } from "react-icons/ai";
 import { FiMenu } from "react-icons/fi";
-import { AuthContext } from "../../services/LoginAuthContext";
+import { UserContext } from "../../services/UserContext";
 
 import { IoIosArrowDown } from "react-icons/io";
 
 function DashboardNavbar() {
-  const { user } = useContext(AuthContext);
+  const { user, isLoading, error } = useContext(UserContext);
+  console.log(user);
+
+  console.log("let me check if the use exist ", user);
   const [nav, setNav] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
@@ -103,7 +106,7 @@ function DashboardNavbar() {
             onClick={toggleDropdown}
           >
             <div className="flex items-center gap-2">
-              <p></p>
+              <p>{user ? user.firstname : ""}</p>
               <img src="" alt="profile" className="h-4 w-4 rounded-full" />
               <div>
                 <IoIosArrowDown />

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { motion } from "framer-motion";
-import { ClipLoader } from "react-spinners";
+
 import LoadingSpinner from "../LoadingSpinner";
 import { MdOutlineNavigateNext } from "react-icons/md";
 import CourseCard from "./components/CourseCard";
@@ -9,6 +9,7 @@ import { GoSearch } from "react-icons/go";
 import { NavLink } from "react-router-dom";
 import { CourseContext } from "../../services/CourseContext";
 import ErrorPage from "../../page/ErrorPage";
+
 const Course = () => {
   const { courses, isLoading, error, fetchOnlineCourse } =
     useContext(CourseContext);

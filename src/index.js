@@ -8,21 +8,24 @@ import { LoginProvider } from "./services/LoginAuthContext";
 import { CourseDetailProvider } from "./services/CourseDetails";
 import { CourseProvider } from "./services/CourseContext";
 import { LiveCourseProvider } from "./services/LiveContext";
+import { UserProvider } from "./services/UserContext";
 import { LiveCourseDetailProvider } from "./services/LiveCourseDetail";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <LoginProvider>
-      <LiveCourseDetailProvider>
-        <LiveCourseProvider>
-          <CourseProvider>
-            <CourseDetailProvider>
-              <App />
-            </CourseDetailProvider>
-          </CourseProvider>
-        </LiveCourseProvider>
-      </LiveCourseDetailProvider>
-    </LoginProvider>
+    <UserProvider>
+      <LoginProvider>
+        <LiveCourseDetailProvider>
+          <LiveCourseProvider>
+            <CourseProvider>
+              <CourseDetailProvider>
+                <App />
+              </CourseDetailProvider>
+            </CourseProvider>
+          </LiveCourseProvider>
+        </LiveCourseDetailProvider>
+      </LoginProvider>
+    </UserProvider>
   </React.StrictMode>
 );

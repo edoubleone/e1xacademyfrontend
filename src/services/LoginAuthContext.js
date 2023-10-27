@@ -5,6 +5,7 @@ export const AuthContext = createContext();
 
 export function LoginProvider({ children }) {
   const [user, setUser] = useState(null);
+
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -19,8 +20,13 @@ export function LoginProvider({ children }) {
       );
 
       const { token, ...userData } = response.data;
+      console.log("le", token);
 
-      localStorage.setItem("authToken", token);
+      localStorage.setItem("token", token);
+
+      const storedToken = localStorage.getItem("token");
+
+      console.log("stored", storedToken);
 
       setUser(userData);
     } catch (error) {
@@ -30,28 +36,9 @@ export function LoginProvider({ children }) {
     }
   };
 
-  useEffect(() => {
-    const fetchInitialUserData = async () => {
-      try {
-        const response = await axios.get(
-          " https://e1x.nueoffshore.com/api/user"
-        );
-        const userData = response.data;
-
-        setUser(userData);
-        console.log("better", userData);
-      } catch (error) {
-        setError(error.message);
-      }
-    };
-    fetchInitialUserData();
-  }, []);
-
   return (
     <AuthContext.Provider value={{ user, isLoading, error, login }}>
       {children}
     </AuthContext.Provider>
   );
 }
-
-//mm

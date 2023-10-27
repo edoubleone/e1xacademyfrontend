@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import Billing from "./Billing";
 
 import Password from "./Password";
@@ -7,11 +7,14 @@ import Notification from "./Notification";
 import Certificate from "./Certificate";
 import Order from "./Order";
 import { useNavigate } from "react-router-dom";
-
+import { UserContext } from "../../services/UserContext";
 import imageUrl from "../../assets/images/user-image-with-black-background.png";
 
 const Profile = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const { user, isLoading, error } = useContext(UserContext);
+  console.log(user);
+
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -25,33 +28,10 @@ const Profile = () => {
     setActiveTab(tab);
   };
 
-  const handleFirstNameChange = (e) => {
-    setFirstName(e.target.value);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleLastNameChange = (e) => {
-    setLastName(e.target.value);
-  };
-  const handleCompany = (e) => {
-    setCompany(e.target.value);
-  };
-
-  const handleProfession = (e) => {
-    setProfession(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
 
-    console.log("Username:", email);
-
-    console.log("First Name:", firstName);
-    console.log("Last Name:", lastName);
+    navigate("/");
   };
   return (
     <div className="custom-course-background">
@@ -145,15 +125,15 @@ const Profile = () => {
                     />
                   </div>
                   <div className="w-3/4 px-4">
-                    <form onSubmit={handleSubmit}>
+                    <form>
                       <div className="mb-4">
                         <label htmlFor="email">Email</label>
                         <input
                           type="email"
                           name="email"
-                          value={email}
+                          value={user ? user.email : ""}
                           placeholder="Email"
-                          onChange={handleEmailChange}
+                          onChange={(e) => setEmail(e.target.value)}
                           required
                           className="w-full border bg-gray-100 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
                         />
@@ -165,8 +145,8 @@ const Profile = () => {
                             <input
                               type="text"
                               name="FirstName"
-                              value={firstName}
-                              onChange={handleFirstNameChange}
+                              value={user ? user.firstname : ""}
+                              onChange={(e) => setFirstName(e.target.value)}
                               placeholder="First Name"
                               required
                               className="w-full border bg-gray-100 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
@@ -177,8 +157,8 @@ const Profile = () => {
                             <input
                               type="LastName"
                               name="LastName"
-                              value={lastName}
-                              onChange={handleLastNameChange}
+                              value={user ? user.lastname : ""}
+                              onChange={(e) => setLastName(e.target.value)}
                               placeholder="Last Name"
                               required
                               className="w-full border bg-gray-100 border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
@@ -193,7 +173,7 @@ const Profile = () => {
                           type="LastName"
                           name="LastName"
                           value={company}
-                          onChange={handleCompany}
+                          onChange={(e) => setCompany(e.target.value)}
                           placeholder="Company"
                           required
                           className="w-full border bg-gray-100 border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
@@ -206,7 +186,7 @@ const Profile = () => {
                           type="LastName"
                           name="LastName"
                           value={profession}
-                          onChange={handleProfession}
+                          onChange={(e) => setProfession(e.target.value)}
                           placeholder="Professional Title"
                           required
                           className="w-full border bg-gray-100 border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
@@ -216,6 +196,7 @@ const Profile = () => {
                       <button
                         type="submit"
                         className="w-40 bg-custom-button font-bold text-white rounded py-2 hover:bg-blue-600 mt-4"
+                        onSubmit={handleSubmit}
                       >
                         Save Changes
                       </button>
