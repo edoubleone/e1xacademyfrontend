@@ -1,62 +1,32 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
 const EmailVerificationForm = () => {
-  const [email, setEmail] = useState("");
-  const [verificationStatus, setVerificationStatus] = useState(null);
+  const [data, setData] = useState([]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    // Here, you can add the logic to send the email verification request to your backend.
-    // For simplicity, let's assume a successful response sets verificationStatus to 'sent'.
-    // You should modify this part to make an actual API call.
-    try {
-      // Simulate a backend request (replace with your actual API call)
-      await fetch("your-backend-api-url", {
-        method: "POST",
-        body: JSON.stringify({ email }),
-        headers: {
-          "Content-Type": "application/json",
-        },
+  useEffect(() => {
+    // Make a GET request to your backend API
+    axios
+      .get("/api/someEndpoint")
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
       });
-
-      setVerificationStatus("sent");
-    } catch (error) {
-      // Handle errors here
-    }
-  };
-
+  }, []);
   return (
-    <div className="max-w-md mx-auto p-4">
-      <form onSubmit={handleSubmit}>
-        <h1 className="text-2xl font-semibold text-center mb-4">
-          Verify Your Email
-        </h1>
-        <div className="mb-4">
-          <label htmlFor="email" className="block text-gray-600">
-            Email Address
-          </label>
-          <input
-            type="email"
-            id="email"
-            className="w-full border rounded p-2 focus:outline-none"
-            placeholder="Enter your email address"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-        >
-          Send Verification Email
-        </button>
-      </form>
-      {verificationStatus === "sent" && (
-        <p className="text-green-500 text-center mt-2">
-          Verification email sent!
+    <div className="custom-course-background min-h-screen flex items-center justify-center">
+      <div className="bg-white p-8 rounded-lg shadow-lg w-full sm:w-96">
+        <p className="text-lg font-semibold mb-4">Verification Link Sent</p>
+        <p className="text-gray-600 mb-4">
+          A verification link has been sent to your email. Kindly check your
+          inbox/spam folder to verify your account.
         </p>
-      )}
+        <button className="bg-blue-500 text-white hover:bg-blue-600 py-2 px-4 rounded-full w-full">
+          Resend Verification
+        </button>
+      </div>
     </div>
   );
 };

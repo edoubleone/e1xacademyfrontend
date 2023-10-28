@@ -18,7 +18,7 @@ const CourseDetails = () => {
       fetchCourseDetails(uuid);
     }
   }, []);
-  console.log(" i am checking ", courses);
+  console.log(" i am checking the detail page ", courses);
 
   const imgVariants = {
     initial: {
@@ -70,7 +70,7 @@ const CourseDetails = () => {
                     <p className="text-left text-white">Level</p>
                   </div>
 
-                  <p className="text-white">Beginner</p>
+                  <p className="text-white">{courses?.course_level_id}</p>
                 </div>
               </div>
 
@@ -81,7 +81,7 @@ const CourseDetails = () => {
                     <p className="text-left text-white">Level</p>
                   </div>
 
-                  <p className="text-white">Beginner</p>
+                  <p className="text-white">{courses?.course_level_id}</p>
                 </div>
               </div>
               <div className="flex px-4">
@@ -91,7 +91,7 @@ const CourseDetails = () => {
                     <p className="text-left text-white">Level</p>
                   </div>
 
-                  <p className="text-white">Beginner</p>
+                  <p className="text-white">{courses?.course_level_id}</p>
                 </div>
               </div>
               <div className="flex px-4">
@@ -101,7 +101,7 @@ const CourseDetails = () => {
                     <p className="text-left text-white">Level</p>
                   </div>
 
-                  <p className="text-white">Beginner</p>
+                  <p className="text-white">{courses?.course_level_id}</p>
                 </div>
               </div>
             </div>
@@ -111,7 +111,9 @@ const CourseDetails = () => {
 
         <div className="lg:w-1/2 w-full flex flex-col items-center justify-center">
           <div className="mb-4">
-            <img src={illustration} alt="illustration" />
+            {courses?.images.map((image) => (
+              <img src={image} alt="illustration" />
+            ))}
           </div>
           <div className="flex space-x-11">
             <motion.button

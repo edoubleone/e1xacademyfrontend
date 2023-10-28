@@ -18,6 +18,8 @@ const LiveCourse = () => {
     fetchLiveCourse();
   }, []);
 
+  console.log("kook", courses);
+
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10;
 
@@ -116,11 +118,14 @@ const LiveCourse = () => {
                 {courses.map((course) => (
                   <CourseCard
                     key={course.id}
-                    imageSrc="images"
+                    imageSrc={course.images}
+                    price={course.price}
+                    instructor={course.instructors}
                     title={course.title}
-                    beginnerText="Beginner"
-                    lessonsText="Lessons"
+                    beginnerText="hello"
+                    lessonsText={course.lesson_count}
                     hours={course.duration}
+                    currency={course.currency}
                     videos="30"
                     rating="4.3"
                     uuid={course.uuid}

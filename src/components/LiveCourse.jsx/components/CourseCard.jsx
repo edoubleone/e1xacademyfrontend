@@ -17,7 +17,10 @@ const CourseCard = ({
   hours,
   videos,
   rating,
+  instructor,
+  price,
   uuid,
+  currency,
 }) => {
   const navigate = useNavigate();
 
@@ -32,19 +35,26 @@ const CourseCard = ({
           <div className="flex w-full lg:gap-12 gap-1 mb-10">
             <div className="lg:flex justify-center md:justify-start">
               <img
-                src="images"
+                src={console.log("make i check ig", imageSrc)}
                 width="300"
                 height="300"
                 alt="course-pics"
-                className="mx-auto md:mx-0 object-fill" // Center on medium devices, align left on others
+                className="mx-auto md:mx-0 object-fill"
               />
             </div>
 
             <div className="w-full ">
-              <div className="lg:space-y-6 space-y-3 lg:mt-4    ">
+              <div className="space-y-2 md:space-y-3 lg:mt-4    ">
                 <h1 className="font-bold lg:text-2xl lg:text-left text-center ">
                   {title}
                 </h1>
+                <p className=" lg:text-left text-center ">
+                  {" "}
+                  Instructor : {instructor}
+                </p>
+                <p className="font-bold lg:text-xl lg:text-left text-center">
+                  {currency} {price}
+                </p>
 
                 <div className="flex items-center  gap-6  lg:justify-start  justify-between lg:px-0 px-4  ">
                   <div className="flex items-center gap-1">

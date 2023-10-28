@@ -117,13 +117,16 @@ const Course = () => {
                 {courses.map((course) => (
                   <CourseCard
                     key={course.id}
-                    imageSrc="images"
+                    images={course.images}
                     title={course.title}
-                    beginnerText="Beginner"
-                    lessonsText="Lessons"
+                    price={course.price}
+                    beginnerText={course.course_level_id}
+                    lessonsText={course.lesson_count}
                     hours={course.duration}
                     videos="30"
                     rating="4.3"
+                    currency={course.currency}
+                    instructor={course.instructors}
                     uuid={course.uuid}
                   />
                 ))}

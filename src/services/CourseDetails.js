@@ -12,11 +12,12 @@ export function CourseDetailProvider({ children }) {
     axios
       .get(
         `
-        https://e1x.nueoffshore.com/api/courses/online/live-courses/details/${uuid}
+        https://e1x.nueoffshore.com/api/courses/live/live-courses/details/${uuid}
       `
       )
       .then((response) => {
         setCourses(response.data);
+
         setIsLoading(false);
       })
       .catch((err) => {

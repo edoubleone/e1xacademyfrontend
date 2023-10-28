@@ -25,7 +25,7 @@ const Description = () => {
       fetchCourseDetails(uuid);
     }
   }, []);
-  console.log(" i am checking ", courses);
+
   const [animateImage, setAnimateImage] = useState(false);
   const [activeTab, setActiveTab] = useState("description");
   const controls = useAnimation();
