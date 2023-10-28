@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { ToastContainer } from "react-toastr";
 import { useContext } from "react";
 import axios from 'axios';
 import { FcGoogle } from "react-icons/fc";
@@ -8,7 +7,8 @@ import { AiFillApple } from "react-icons/ai";
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import imagePage from "../assets/images/pretty-black-woman-feeling-happy-facing-challenge-celebrating-agenda-concept_1194-339851.jpg";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import validator from "validator";
 import { AuthProvider } from "../services/AuthContext";
 
@@ -79,16 +79,16 @@ const SignUp = () => {
     let headers = {
       'Content-Type': 'application/json',
       'X-CSRF-Token': csrfToken,
-      'Authorization': window.localStorage.getItem('bearer_token') , // Include the CSRF token in the request headers
+      'Authorization': localStorage.getItem('bearer_token'), // Include the CSRF token in the request headers
     };
-    axios.post(`${process.env.REACT_APP_DOMAIN_URL}/api/user`, formData, headers).then(function (response) {
+    axios.post(`${process.env.REACT_APP_DOMAIN_URL}/api/user`, headers).then(function (response) {
       if(response.status === true){
         let data = response;
        console.log(data);
       }else{
          console.log('errors');
       }
-  }
+  })
 }
 
 
@@ -110,11 +110,25 @@ const SignUp = () => {
 
     axios.post(`${process.env.REACT_APP_DOMAIN_URL}/api/auth/register`, formData, headers).then(function (response) {
 
-    console.log(response.data.user);
-      if(response.data.user) {
-          localStorage.setItem('bearer_token', value);
-          alert("Register success");
+    console.log(response);
+      if(response.status === true) {
+          localStorage.setItem('bearer_token', response.token);
+          toast("registered successfully");
+          // alert("Register success");
           navigate('/dashboard');
+      }else{
+        let message = response.message;
+        toast('🦄 Wow so easy!', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+          type: "warning"
+          });
       }
   }).catch(error => {
       console.log(error);
