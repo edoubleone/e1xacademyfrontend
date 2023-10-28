@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ToastContainer } from "react-toastr";
 import { useContext } from "react";
 import axios from 'axios';
 import { FcGoogle } from "react-icons/fc";
@@ -22,6 +23,7 @@ const SignUp = () => {
   const [agreed, setAgreed] = useState(false); // State for checkbox
   const [errors, setErrors] = useState({});
   const [csrfToken, setCsrfToken] = useState('');
+  const [accessToken, setAccessToken] = useState('');
   useEffect(() => {
     // Fetch the CSRF token from the server
     fetch(`process.env.REACT_APP_DOMAIN_URL}/api/csrf-token`)
@@ -73,6 +75,22 @@ const SignUp = () => {
     return isValid;
   };
 
+  const checkLoginCheck = () => {
+    let headers = {
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': csrfToken,
+      'Authorization': window.localStorage.getItem('bearer_token') , // Include the CSRF token in the request headers
+    };
+    axios.post(`${process.env.REACT_APP_DOMAIN_URL}/api/user`, formData, headers).then(function (response) {
+      if(response.status === true){
+        let data = response;
+       console.log(data);
+      }else{
+         console.log('errors');
+      }
+  }
+}
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -91,21 +109,23 @@ const SignUp = () => {
   };
 
     axios.post(`${process.env.REACT_APP_DOMAIN_URL}/api/auth/register`, formData, headers).then(function (response) {
-      if(response.status === true){
 
-        let data = response;
-       console.log(data);
-      }else{
-         console.log('errors');
+    console.log(response.data.user);
+      if(response.data.user) {
+          localStorage.setItem('bearer_token', value);
+          alert("Register success");
+          navigate('/dashboard');
+      }
+  }).catch(error => {
+      console.log(error);
+      if(error.response) {
+          if (error.response.data.errors) {
+              setErrors(error.response.data.errors);
+          }
       }
   });
     
-    
-    console.log(formData);
-
-    if (validateForm()) {
-      navigate("/dashboard");
-    }
+       
   };
 
   return (
