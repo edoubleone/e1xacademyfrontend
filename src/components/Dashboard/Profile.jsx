@@ -1,15 +1,31 @@
 import React from "react";
+<<<<<<< HEAD
 import { useState } from "react";
+=======
+import { useState, useContext, useEffect } from "react";
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
 import Billing from "./Billing";
 
 import Password from "./Password";
 import Notification from "./Notification";
 import Certificate from "./Certificate";
 import Order from "./Order";
+<<<<<<< HEAD
 
 import imageUrl from "../../assets/images/user-image-with-black-background.png";
 
 const Profile = () => {
+=======
+import { useNavigate } from "react-router-dom";
+import { UserContext } from "../../services/UserContext";
+import imageUrl from "../../assets/images/user-image-with-black-background.png";
+
+const Profile = () => {
+  const navigate = useNavigate();
+  const { user, isLoading, error } = useContext(UserContext);
+  console.log(user);
+
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -23,6 +39,7 @@ const Profile = () => {
     setActiveTab(tab);
   };
 
+<<<<<<< HEAD
   const handleFirstNameChange = (e) => {
     setFirstName(e.target.value);
   };
@@ -49,6 +66,12 @@ const Profile = () => {
 
     console.log("First Name:", firstName);
     console.log("Last Name:", lastName);
+=======
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    navigate("/");
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
   };
   return (
     <div className="custom-course-background">
@@ -142,15 +165,25 @@ const Profile = () => {
                     />
                   </div>
                   <div className="w-3/4 px-4">
+<<<<<<< HEAD
                     <form onSubmit={handleSubmit}>
+=======
+                    <form>
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
                       <div className="mb-4">
                         <label htmlFor="email">Email</label>
                         <input
                           type="email"
                           name="email"
+<<<<<<< HEAD
                           value={email}
                           placeholder="Email"
                           onChange={handleEmailChange}
+=======
+                          value={user ? user.email : ""}
+                          placeholder="Email"
+                          onChange={(e) => setEmail(e.target.value)}
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
                           required
                           className="w-full border bg-gray-100 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
                         />
@@ -162,8 +195,13 @@ const Profile = () => {
                             <input
                               type="text"
                               name="FirstName"
+<<<<<<< HEAD
                               value={firstName}
                               onChange={handleFirstNameChange}
+=======
+                              value={user ? user.firstname : ""}
+                              onChange={(e) => setFirstName(e.target.value)}
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
                               placeholder="First Name"
                               required
                               className="w-full border bg-gray-100 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
@@ -174,8 +212,13 @@ const Profile = () => {
                             <input
                               type="LastName"
                               name="LastName"
+<<<<<<< HEAD
                               value={lastName}
                               onChange={handleLastNameChange}
+=======
+                              value={user ? user.lastname : ""}
+                              onChange={(e) => setLastName(e.target.value)}
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
                               placeholder="Last Name"
                               required
                               className="w-full border bg-gray-100 border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
@@ -190,7 +233,11 @@ const Profile = () => {
                           type="LastName"
                           name="LastName"
                           value={company}
+<<<<<<< HEAD
                           onChange={handleCompany}
+=======
+                          onChange={(e) => setCompany(e.target.value)}
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
                           placeholder="Company"
                           required
                           className="w-full border bg-gray-100 border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
@@ -203,7 +250,11 @@ const Profile = () => {
                           type="LastName"
                           name="LastName"
                           value={profession}
+<<<<<<< HEAD
                           onChange={handleProfession}
+=======
+                          onChange={(e) => setProfession(e.target.value)}
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
                           placeholder="Professional Title"
                           required
                           className="w-full border bg-gray-100 border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
@@ -213,6 +264,10 @@ const Profile = () => {
                       <button
                         type="submit"
                         className="w-40 bg-custom-button font-bold text-white rounded py-2 hover:bg-blue-600 mt-4"
+<<<<<<< HEAD
+=======
+                        onSubmit={handleSubmit}
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
                       >
                         Save Changes
                       </button>

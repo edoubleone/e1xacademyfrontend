@@ -1,11 +1,27 @@
+<<<<<<< HEAD
 import React, { useEffect, useState, useRef } from "react";
+=======
+import React, { useEffect, useState, useRef, useContext } from "react";
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
 import { NavLink } from "react-router-dom";
 import Logo from "../../assets/images/logo.jpeg";
 import { AiOutlineClose } from "react-icons/ai";
 import { FiMenu } from "react-icons/fi";
+<<<<<<< HEAD
 import { IoIosArrowDown } from "react-icons/io";
 
 function DashboardNavbar() {
+=======
+import { UserContext } from "../../services/UserContext";
+
+import { IoIosArrowDown } from "react-icons/io";
+
+function DashboardNavbar() {
+  const { user, isLoading, error } = useContext(UserContext);
+  console.log(user);
+
+  console.log("let me check if the use exist ", user);
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
   const [nav, setNav] = useState(false);
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
@@ -53,7 +69,11 @@ function DashboardNavbar() {
       <nav className="max-w-6xl flex items-center justify-between mx-auto   md:px-2">
         <div className="flex items-center gap-8">
           <NavLink
+<<<<<<< HEAD
             to="/"
+=======
+            to="/dashboard"
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
             exact
             activeClassName="active"
             className="text-4xl font-semibold text-[#e46601] flex items-center"
@@ -100,7 +120,11 @@ function DashboardNavbar() {
             onClick={toggleDropdown}
           >
             <div className="flex items-center gap-2">
+<<<<<<< HEAD
               <p>Benjamin.j</p>
+=======
+              <p>{user ? user.firstname : ""}</p>
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
               <img src="" alt="profile" className="h-4 w-4 rounded-full" />
               <div>
                 <IoIosArrowDown />

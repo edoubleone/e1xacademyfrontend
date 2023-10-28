@@ -13,18 +13,19 @@ import Course from "./page/Courses";
 import SuccessfulPage from "./page/SuccessfulPage";
 import DashboardCourse from "./components/Dashboard/Course";
 import ContactPage from "./page/ContactPage";
-import LiveCourse from "./page/LiveCourse";
 import Payement from "./page/Payement";
 import CheckOutPage from "./page/CheckOutPage";
 import About from "./page/About";
 import Login from "./page/Login";
 import ResetPassword from "./page/ResetPassword";
+import LiveCourseDetail from "./page/LiveCourseDetail";
 import Dashboard from "./components/Dashboard/Dashboard";
 import SignUp from "./page/SignUp";
+import LiveCourses from "./page/LiveCourse";
+import NotFound from "./page/NotFound";
+import PrivateRoute from "./components/PrivateRoute";
 
 import CourseDetailPage from "./page/CourseDetails";
-
-// require('dotenv').config()
 
 function App() {
   return (
@@ -45,19 +46,29 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/course" element={<Course />} />
-        <Route path="/course/:courseId" element={<CourseDetailPage />} />
+        <Route path="/course/:uuid" element={<CourseDetailPage />} />
         <Route path="/about" element={<About />} />
         <Route path="/checkout" element={<CheckOutPage />} />
         <Route path="/payment" element={<Payement />} />
         <Route path="/success" element={<SuccessfulPage />} />
-        <Route path="/live-course" element={<LiveCourse />} />
+        <Route path="/live-course" element={<LiveCourses />} />
+        <Route path="/live-course/:uuid" element={<LiveCourseDetail />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/sign-in" element={<Login />} />
         <Route path="/sign-up" element={<SignUp />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/dashboard/course" element={<DashboardCourse />} />
+
+        <Route
+          path="/dashboard"
+          element={<PrivateRoute Element={<Dashboard />} />}
+        />
+
+        <Route
+          path="/dashboard/course"
+          element={<PrivateRoute Element={<DashboardCourse />} />}
+        />
 
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
       <CookieConsent />

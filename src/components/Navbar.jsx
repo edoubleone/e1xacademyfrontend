@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import Logo from "../assets/images/logo.jpeg";
 import { AiOutlineClose } from "react-icons/ai";
 import { FiMenu } from "react-icons/fi";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 function Navbar() {
   const [nav, setNav] = useState(false);
@@ -10,7 +11,7 @@ function Navbar() {
   const [isSticky, setIsSticky] = useState(false);
   const [activeLink, setActiveLink] = useState("/");
   const navRef = useRef(null);
-  const timeoutRef = useRef(null); // Ref for the timeout
+  const timeoutRef = useRef(null);
 
   const handleScroll = () => {
     if (window.scrollY > 200) {
@@ -39,10 +40,9 @@ function Navbar() {
   const handleDropdownClose = () => {
     clearTimeout(timeoutRef.current);
 
-    // Set a timeout to close the dropdown after 1 second (adjust as needed)
     timeoutRef.current = setTimeout(() => {
       setDropdownOpen(false);
-    }, 1000); // 1000 milliseconds = 1 second
+    }, 1000);
   };
 
   useEffect(() => {
@@ -106,7 +106,7 @@ function Navbar() {
               courseDetail
             </NavLink>
           </li> */}
-          <li>
+          {/* <li>
             <NavLink
               to="/dashboard"
               activeClassName="active"
@@ -114,7 +114,7 @@ function Navbar() {
             >
               dashboard
             </NavLink>
-          </li>
+          </li> */}
 
           <li
             className={`relative group ${
@@ -124,13 +124,17 @@ function Navbar() {
             onMouseEnter={handleDropdownOpen}
             onMouseLeave={handleDropdownClose}
           >
-            <NavLink
-              to="#"
-              activeClassName="active"
-              className={`text-lg cursor-pointer hover:text-blue-500`}
-            >
-              Course
-            </NavLink>
+            <div className="flex items-center space-x-2">
+              <NavLink
+                to="#"
+                activeClassName="active"
+                className={`text-lg cursor-pointer hover:text-blue-500`}
+              >
+                Course
+              </NavLink>
+              <MdKeyboardArrowDown />
+            </div>
+
             <div
               className={`absolute left-[-2] top-full mt-2 w-60 bg-white border border-gray-300 rounded-md shadow-lg ${
                 isDropdownOpen ? "" : "hidden"
@@ -159,7 +163,7 @@ function Navbar() {
               >
                 Live Course
               </NavLink>
-              <NavLink
+              {/* <NavLink
                 to="/checkout"
                 activeClassName="active-link"
                 className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 ${
@@ -179,7 +183,7 @@ function Navbar() {
                 onClick={() => setActiveLink("/payment")}
               >
                 Payment
-              </NavLink>
+              </NavLink> */}
               {/* Add similar code for other links in the dropdown menu */}
             </div>
           </li>
@@ -204,7 +208,7 @@ function Navbar() {
 
           <button className="px-4 py-2 font-bold text-white rounded bg-custom-button hover:bg-custom-button">
             <NavLink to="/sign-up" activeClassName="active">
-              Create Account
+              Sign Out
             </NavLink>
           </button>
         </div>

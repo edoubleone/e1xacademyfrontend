@@ -2,7 +2,11 @@ import React from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import instructor2 from "../../assets/images/instructor.png";
 
+<<<<<<< HEAD
 import pic from "../../assets/images/woman.png";
+=======
+
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
 
 const Advisor = () => {
   return (

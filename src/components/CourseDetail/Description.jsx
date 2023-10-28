@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
+=======
+import React, { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
+import { CourseDetailContext } from "../../services/CourseDetails";
+
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
 import { motion, useAnimation } from "framer-motion";
 import { BiCheckCircle } from "react-icons/bi";
 import { FcRating } from "react-icons/fc";
@@ -8,7 +15,25 @@ import { GoDeviceCameraVideo } from "react-icons/go";
 import { useInView } from "react-intersection-observer";
 import StudentReviews from "../../assets/images/studentReviews.png";
 import instructor1 from "../../assets/images/instructor.png";
+<<<<<<< HEAD
 const Description = () => {
+=======
+
+const Description = () => {
+  const { uuid } = useParams();
+
+  const { courses, isLoading, error, fetchCourseDetails } =
+    useContext(CourseDetailContext);
+
+  // const { course_description, images, instructors } = courses;
+
+  useEffect(() => {
+    if (uuid) {
+      fetchCourseDetails(uuid);
+    }
+  }, []);
+  console.log(" i am checking ", courses);
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
   const [animateImage, setAnimateImage] = useState(false);
   const [activeTab, setActiveTab] = useState("description");
   const controls = useAnimation();
@@ -76,6 +101,7 @@ const Description = () => {
         <div className="max-w-5xl mx-auto space-y-5  py-12 p-4">
           <p className="font-bold text-2xl">Description</p>
           <div className="space-y-5">
+<<<<<<< HEAD
             <p>
               Becoming a Financial Data Analyst involves acquiring the skills
               and knowledge required to analyze and interpret financial data to
@@ -84,6 +110,9 @@ const Description = () => {
               data, often utilizing tools such as Excel, SQL, and data
               visualization software.
             </p>
+=======
+            {/* <p>{courses.course_description}</p> */}
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
 
             <p>
               {" "}
@@ -170,6 +199,7 @@ const Description = () => {
         <div className="max-w-5xl mx-auto space-y-5  py-12 p-4">
           <p className="font-bold text-2xl">Instructor </p>
           <div className="space-y-5">
+<<<<<<< HEAD
             <div>
               <p Al Sweigart></p>
               <p>Software developer, tech book author</p>
@@ -182,6 +212,27 @@ const Description = () => {
                   className="w-24 h-24 rounded-full"
                 />
               </div>
+=======
+            {courses.instructors.map((instructor) => (
+              <div>
+                <p></p>
+                <p>{instructor}</p>
+              </div>
+            ))}
+
+            <div className="flex gap-8">
+              {courses.images.map((img) => (
+                <div>
+                  <img
+                    key={img.id}
+                    src={img}
+                    alt="instructor"
+                    className="w-24 h-24 rounded-full"
+                  />
+                </div>
+              ))}
+
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <FcRating />

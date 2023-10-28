@@ -1,9 +1,23 @@
 import React, { useContext } from "react";
+<<<<<<< HEAD
 import { BsArrowRightCircle } from "react-icons/bs";
 import { CourseContext } from "../../../services/CourseContext";
 
 function CourseCard({ imageSrc, title, duration, onViewCourse }) {
   // const { courses, isLoading, error } = useContext(CourseContext);
+=======
+import { useNavigate } from "react-router-dom";
+import { BsArrowRightCircle } from "react-icons/bs";
+import { CourseContext } from "../../../services/CourseContext";
+
+function CourseCard({ imageSrc, title, duration,  uuid }) {
+  const navigate = useNavigate();
+
+  const handleViewDetails = (uuid) => {
+    console.log("checking ", uuid);
+    navigate(`/course/${uuid}`);
+  };
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
 
   return (
     <div className="lg:w-96 md:w-80 p-3">
@@ -22,7 +36,11 @@ function CourseCard({ imageSrc, title, duration, onViewCourse }) {
             <p>{duration}</p>
             <button
               className="flex items-center space-x-2"
+<<<<<<< HEAD
               onClick={onViewCourse}
+=======
+              onClick={() => handleViewDetails(uuid)}
+>>>>>>> 11558e6d411745085ec483755cd700c572f16543
             >
               <p>View Course</p>
               <BsArrowRightCircle />
