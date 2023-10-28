@@ -24,9 +24,8 @@ export function LoginProvider({ children }) {
 
       localStorage.setItem("token", token);
 
-      const storedToken = localStorage.getItem("token");
+     
 
-      console.log("stored", storedToken);
 
       setUser(userData);
     } catch (error) {
