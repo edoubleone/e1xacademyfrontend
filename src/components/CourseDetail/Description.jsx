@@ -1,11 +1,7 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from "react";
-=======
 import React, { useState, useEffect, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { CourseDetailContext } from "../../services/CourseDetails";
 
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
 import { motion, useAnimation } from "framer-motion";
 import { BiCheckCircle } from "react-icons/bi";
 import { FcRating } from "react-icons/fc";
@@ -15,9 +11,6 @@ import { GoDeviceCameraVideo } from "react-icons/go";
 import { useInView } from "react-intersection-observer";
 import StudentReviews from "../../assets/images/studentReviews.png";
 import instructor1 from "../../assets/images/instructor.png";
-<<<<<<< HEAD
-const Description = () => {
-=======
 
 const Description = () => {
   const { uuid } = useParams();
@@ -33,7 +26,6 @@ const Description = () => {
     }
   }, []);
   console.log(" i am checking ", courses);
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
   const [animateImage, setAnimateImage] = useState(false);
   const [activeTab, setActiveTab] = useState("description");
   const controls = useAnimation();
@@ -59,9 +51,9 @@ const Description = () => {
     setActiveTab(tab);
   };
   return (
-    <div className="w-full custom-description-background  mx-auto  ">
+    <div className="w-full mx-auto custom-description-background ">
       <div className="max-w-4xl mx-auto">
-        <div className="flex items-center space-x-10 justify-center py-5 p-4">
+        <div className="flex items-center justify-center p-4 py-5 space-x-10">
           <button
             className={`font-bold border-b-4 border-transparent hover:border-[#e46601] pb-3 focus:outline-none ${
               activeTab === "description" ? "border-[#e46601]" : ""
@@ -96,23 +88,12 @@ const Description = () => {
           </button>
         </div>
       </div>
-      <div className="border-t pb-6"> </div>
+      <div className="pb-6 border-t"> </div>
       {activeTab === "description" && (
-        <div className="max-w-5xl mx-auto space-y-5  py-12 p-4">
-          <p className="font-bold text-2xl">Description</p>
+        <div className="max-w-5xl p-4 py-12 mx-auto space-y-5">
+          <p className="text-2xl font-bold">Description</p>
           <div className="space-y-5">
-<<<<<<< HEAD
-            <p>
-              Becoming a Financial Data Analyst involves acquiring the skills
-              and knowledge required to analyze and interpret financial data to
-              make informed business decisions. Financial Data Analysts are
-              responsible for collecting, cleaning, and organizing financial
-              data, often utilizing tools such as Excel, SQL, and data
-              visualization software.
-            </p>
-=======
             {/* <p>{courses.course_description}</p> */}
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
 
             <p>
               {" "}
@@ -135,8 +116,8 @@ const Description = () => {
       )}
 
       {activeTab === "content" && (
-        <div className="max-w-4xl mx-auto space-y-5 py-12 ">
-          <p className="font-bold text-2xl ml-16">Courses Content</p>
+        <div className="max-w-4xl py-12 mx-auto space-y-5 ">
+          <p className="ml-16 text-2xl font-bold">Courses Content</p>
           <div className="flex items-center justify-center gap-5">
             <div className="w-1/2 space-y-2">
               <div className="flex items-center gap-2">
@@ -196,23 +177,9 @@ const Description = () => {
       )}
 
       {activeTab === "instructor" && (
-        <div className="max-w-5xl mx-auto space-y-5  py-12 p-4">
-          <p className="font-bold text-2xl">Instructor </p>
+        <div className="max-w-5xl p-4 py-12 mx-auto space-y-5">
+          <p className="text-2xl font-bold">Instructor </p>
           <div className="space-y-5">
-<<<<<<< HEAD
-            <div>
-              <p Al Sweigart></p>
-              <p>Software developer, tech book author</p>
-            </div>
-            <div className="flex gap-8">
-              <div>
-                <img
-                  src={instructor1}
-                  alt="instructor"
-                  className="w-24 h-24 rounded-full"
-                />
-              </div>
-=======
             {courses.instructors.map((instructor) => (
               <div>
                 <p></p>
@@ -232,7 +199,6 @@ const Description = () => {
                 </div>
               ))}
 
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
               <div className="space-y-3">
                 <div className="flex items-center gap-2">
                   <FcRating />
@@ -268,10 +234,10 @@ const Description = () => {
       )}
 
       {activeTab === "reviews" && (
-        <div className="max-w-4xl mx-auto space-y-5 py-12 p-4">
-          <div className="lg:flex flex-row  gap-6">
-            <div className="lg:w-1/2 w-full">
-              <div className="background-card mb-4 px-4 py-10 space-y-8">
+        <div className="max-w-4xl p-4 py-12 mx-auto space-y-5">
+          <div className="flex-row gap-6 lg:flex">
+            <div className="w-full lg:w-1/2">
+              <div className="px-4 py-10 mb-4 space-y-8 background-card">
                 <p className="text-xs">
                   The courses are well-structured, and the instructors are
                   knowledgeable and supportive. I've gained practical skills
@@ -279,7 +245,7 @@ const Description = () => {
                   highly recommend Academy to anyone looking to advance their
                   education.
                 </p>
-                <div className="flex items-center justify-between border-b pb-1">
+                <div className="flex items-center justify-between pb-1 border-b">
                   <div>
                     <p className="font-bold">Jessica Akoh</p>
                     <p className="text-xs">21 days ago</p>
@@ -291,8 +257,8 @@ const Description = () => {
               </div>
             </div>
 
-            <div className="lg:w-1/2 w-full">
-              <div className="background-card mb-4 px-4 py-10 space-y-8">
+            <div className="w-full lg:w-1/2">
+              <div className="px-4 py-10 mb-4 space-y-8 background-card">
                 <p className="text-xs">
                   I've been a student at Ex1 Academy for the past year, and I've
                   found the variety of courses to be impressive. The instructors
@@ -300,7 +266,7 @@ const Description = () => {
                   only reason I didn't give it five stars is that I wish there
                   were more opportunities for hands-on projects.
                 </p>
-                <div className="flex items-center justify-between border-b pb-1">
+                <div className="flex items-center justify-between pb-1 border-b">
                   <div>
                     <p className="font-bold">Jane Smith</p>
                     <p className="text-xs">21 days ago</p>

@@ -1,21 +1,11 @@
 import React from "react";
-<<<<<<< HEAD
-import { useState } from "react";
-=======
 import { useState, useContext, useEffect } from "react";
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
 import Billing from "./Billing";
 
 import Password from "./Password";
 import Notification from "./Notification";
 import Certificate from "./Certificate";
 import Order from "./Order";
-<<<<<<< HEAD
-
-import imageUrl from "../../assets/images/user-image-with-black-background.png";
-
-const Profile = () => {
-=======
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../services/UserContext";
 import imageUrl from "../../assets/images/user-image-with-black-background.png";
@@ -25,7 +15,6 @@ const Profile = () => {
   const { user, isLoading, error } = useContext(UserContext);
   console.log(user);
 
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -39,45 +28,16 @@ const Profile = () => {
     setActiveTab(tab);
   };
 
-<<<<<<< HEAD
-  const handleFirstNameChange = (e) => {
-    setFirstName(e.target.value);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handleLastNameChange = (e) => {
-    setLastName(e.target.value);
-  };
-  const handleCompany = (e) => {
-    setCompany(e.target.value);
-  };
-
-  const handleProfession = (e) => {
-    setProfession(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    console.log("Username:", email);
-
-    console.log("First Name:", firstName);
-    console.log("Last Name:", lastName);
-=======
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     navigate("/");
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
   };
   return (
     <div className="custom-course-background">
-      <div className="max-w-6xl mx-auto py-10">
-        <div className="lg:flex flex-wrap gap-14 px-4 ">
-          <div className="lg:w-1/5 w-full mb-4 ">
+      <div className="max-w-6xl py-10 mx-auto">
+        <div className="flex-wrap px-4 lg:flex gap-14 ">
+          <div className="w-full mb-4 lg:w-1/5 ">
             <ul className="bg-gray-300">
               <li
                 className={`hover:border-l-4 ${
@@ -152,7 +112,7 @@ const Profile = () => {
               </li>
             </ul>
           </div>
-          <div className="lg:w-3/4 w-full">
+          <div className="w-full lg:w-3/4">
             {activeTab === "profile" && (
               <>
                 <h1 className="text-4xl font-bold ">Edit Profile </h1>
@@ -161,50 +121,35 @@ const Profile = () => {
                     <img
                       src={imageUrl}
                       alt="image-url"
-                      className="lg:h-32 lg:w-32 h-16 w-16 rounded-full mx-auto"
+                      className="w-16 h-16 mx-auto rounded-full lg:h-32 lg:w-32"
                     />
                   </div>
                   <div className="w-3/4 px-4">
-<<<<<<< HEAD
-                    <form onSubmit={handleSubmit}>
-=======
                     <form>
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
                       <div className="mb-4">
                         <label htmlFor="email">Email</label>
                         <input
                           type="email"
                           name="email"
-<<<<<<< HEAD
-                          value={email}
-                          placeholder="Email"
-                          onChange={handleEmailChange}
-=======
                           value={user ? user.email : ""}
                           placeholder="Email"
                           onChange={(e) => setEmail(e.target.value)}
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
                           required
-                          className="w-full border bg-gray-100 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                          className="w-full px-3 py-2 bg-gray-100 border rounded focus:outline-none focus:border-blue-400"
                         />
                       </div>
                       <div className="mb-4">
-                        <div className="flex flex-col md:flex-row gap-4 ">
+                        <div className="flex flex-col gap-4 md:flex-row ">
                           <div className="lg:w-1/2">
                             <label htmlFor="FirstName">First Name</label>
                             <input
                               type="text"
                               name="FirstName"
-<<<<<<< HEAD
-                              value={firstName}
-                              onChange={handleFirstNameChange}
-=======
                               value={user ? user.firstname : ""}
                               onChange={(e) => setFirstName(e.target.value)}
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
                               placeholder="First Name"
                               required
-                              className="w-full border bg-gray-100 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                              className="w-full px-3 py-2 bg-gray-100 border rounded focus:outline-none focus:border-blue-400"
                             />
                           </div>
                           <div className="lg:w-1/2">
@@ -212,16 +157,11 @@ const Profile = () => {
                             <input
                               type="LastName"
                               name="LastName"
-<<<<<<< HEAD
-                              value={lastName}
-                              onChange={handleLastNameChange}
-=======
                               value={user ? user.lastname : ""}
                               onChange={(e) => setLastName(e.target.value)}
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
                               placeholder="Last Name"
                               required
-                              className="w-full border bg-gray-100 border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                              className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:border-blue-400"
                             />
                           </div>
                         </div>
@@ -233,14 +173,10 @@ const Profile = () => {
                           type="LastName"
                           name="LastName"
                           value={company}
-<<<<<<< HEAD
-                          onChange={handleCompany}
-=======
                           onChange={(e) => setCompany(e.target.value)}
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
                           placeholder="Company"
                           required
-                          className="w-full border bg-gray-100 border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                          className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:border-blue-400"
                         />
                       </div>
 
@@ -250,24 +186,17 @@ const Profile = () => {
                           type="LastName"
                           name="LastName"
                           value={profession}
-<<<<<<< HEAD
-                          onChange={handleProfession}
-=======
                           onChange={(e) => setProfession(e.target.value)}
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
                           placeholder="Professional Title"
                           required
-                          className="w-full border bg-gray-100 border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                          className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:border-blue-400"
                         />
                       </div>
 
                       <button
                         type="submit"
-                        className="w-40 bg-custom-button font-bold text-white rounded py-2 hover:bg-blue-600 mt-4"
-<<<<<<< HEAD
-=======
+                        className="w-40 py-2 mt-4 font-bold text-white rounded bg-custom-button hover:bg-blue-600"
                         onSubmit={handleSubmit}
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
                       >
                         Save Changes
                       </button>

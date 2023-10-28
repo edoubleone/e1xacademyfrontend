@@ -2,28 +2,23 @@ import React from "react";
 import { AiOutlinePlus } from "react-icons/ai";
 import instructor2 from "../../assets/images/instructor.png";
 
-<<<<<<< HEAD
-import pic from "../../assets/images/woman.png";
-=======
-
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
 
 const Advisor = () => {
   return (
-    <div className="bg-custom-gradient py-24">
+    <div className="py-24 bg-custom-gradient">
       <div className="max-w-6xl mx-auto ">
-        <div className="lg:flex flex-row gap-5 px-3">
-          <div className="lg:w-1/2 w-full">
+        <div className="flex-row gap-5 px-3 lg:flex">
+          <div className="w-full lg:w-1/2">
             <div className="space-y-4">
-              <p className="font-bold text-xl text-white">COURSE ADVISOR</p>
-              <p className="border-b-2 border-white w-16 pb-4 t"></p>
+              <p className="text-xl font-bold text-white">COURSE ADVISOR</p>
+              <p className="w-16 pb-4 border-b-2 border-white t"></p>
 
-              <p className="font-bold text-4xl text-white">
+              <p className="text-4xl font-bold text-white">
                 Our professional & Expert <br></br> Course advisor
               </p>
             </div>
           </div>
-          <div className="lg:w-1/2 w-full">
+          <div className="w-full lg:w-1/2">
             <div className="space-y-4">
               <p className="text-lg text-white">
                 At E1X Academy, our lectures are anything but melancholy. We
@@ -31,7 +26,7 @@ const Advisor = () => {
                 that leaves a lasting impression on our students.
               </p>
 
-              <button className="py-3 px-8 text-lg  font-bold flex items-center gap-3 rounded  text-white bg-custom-button border-6    ">
+              <button className="flex items-center gap-3 px-8 py-3 text-lg font-bold text-white rounded bg-custom-button border-6 ">
                 View All
                 <AiOutlinePlus />
               </button>
@@ -39,33 +34,33 @@ const Advisor = () => {
           </div>
         </div>
 
-        <div className="lg:flex md:flex-row md:flex md:justify-center gap-5 mt-20  ">
-          <div className="lg:w-2/5 w-full px-3 shadow-md py-3 mb-4">
+        <div className="gap-5 mt-20 lg:flex md:flex-row md:flex md:justify-center ">
+          <div className="w-full px-3 py-3 mb-4 shadow-md lg:w-2/5">
             <img src={instructor2} alt="thumbs" className="mx-auto" />
             <div className="space-y-2 text-center">
-              <p className="text-white font-bold"> Danile Eniron</p>
-              <p className="text-white text-xs">Financial Data Analyst</p>
+              <p className="font-bold text-white"> Danile Eniron</p>
+              <p className="text-xs text-white">Financial Data Analyst</p>
             </div>
           </div>
-          <div className="lg:w-2/5 w-full px-3 shadow-md py-3 mb-4">
+          <div className="w-full px-3 py-3 mb-4 shadow-md lg:w-2/5">
             <img src={instructor2} alt="thumbs" className="mx-auto" />
             <div className="space-y-2 text-center">
-              <p className="text-white font-bold"> Danile Eniron</p>
-              <p className="text-white text-xs">Financial Data Analyst</p>
+              <p className="font-bold text-white"> Danile Eniron</p>
+              <p className="text-xs text-white">Financial Data Analyst</p>
             </div>
           </div>
-          <div className="lg:w-2/5 w-full px-3 shadow-md py-3 mb-4">
+          <div className="w-full px-3 py-3 mb-4 shadow-md lg:w-2/5">
             <img src={instructor2} alt="thumbs" className="mx-auto" />
             <div className="space-y-2 text-center">
-              <p className="text-white font-bold"> Danile Eniron</p>
-              <p className="text-white text-xs">Financial Data Analyst</p>
+              <p className="font-bold text-white"> Danile Eniron</p>
+              <p className="text-xs text-white">Financial Data Analyst</p>
             </div>
           </div>
-          <div className="lg:w-2/5 w-full px-3 shadow-md py-3 mb-4">
+          <div className="w-full px-3 py-3 mb-4 shadow-md lg:w-2/5">
             <img src={instructor2} alt="thumbs" className="mx-auto" />
             <div className="space-y-2 text-center">
-              <p className="text-white font-bold"> Danile Eniron</p>
-              <p className="text-white text-xs">Financial Data Analyst</p>
+              <p className="font-bold text-white"> Danile Eniron</p>
+              <p className="text-xs text-white">Financial Data Analyst</p>
             </div>
           </div>
         </div>

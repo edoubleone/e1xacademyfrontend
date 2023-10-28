@@ -1,18 +1,12 @@
-<<<<<<< HEAD
-import React, { useEffect, useState } from "react";
-=======
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { CourseDetailContext } from "../../services/CourseDetails";
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import instructor1 from "../../assets/images/instructor.png";
 import instructor2 from "../../assets/images/instructor.png";
 import instructor3 from "../../assets/images/instructor.png";
 const Instructor = () => {
-<<<<<<< HEAD
-=======
   const { uuid } = useParams();
 
   const { courses, isLoading, error, fetchCourseDetails } =
@@ -24,7 +18,6 @@ const Instructor = () => {
     }
   }, []);
 
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
   const [animateImage, setAnimateImage] = useState(false);
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -46,14 +39,14 @@ const Instructor = () => {
   }, [controls, inView]);
 
   return (
-    <div className="bg-custom-blue py-20">
+    <div className="py-20 bg-custom-blue">
       <div className="max-w-5xl mx-auto ">
-        <div className="mb-10 lg:space-y-10 md:space-y-2 px-4">
-          <h1 className="font-bold lg:text-5xl text-2xl text-white text-center md:text-left">
+        <div className="px-4 mb-10 lg:space-y-10 md:space-y-2">
+          <h1 className="text-2xl font-bold text-center text-white lg:text-5xl md:text-left">
             Your Instructor(s)
           </h1>
 
-          <p className="text-white lg:text-lg text-xs">
+          <p className="text-xs text-white lg:text-lg">
             With Our World Class Tutor With Backed Up Experience in Top
             Companies
             <br className="hidden lg:inline" />
@@ -67,35 +60,28 @@ const Instructor = () => {
           ref={ref}
         >
           <div class="md:w-1/3 p-4 space-y-4">
-<<<<<<< HEAD
-            <img src={instructor1} alt="thumbs" />
-            <div className="space-y-2">
-              <p className="text-white font-bold ">Danile Eniron</p>
-              <p className="text-white text-xs">Financial Data Analyst</p>
-=======
             {/* {courses.images.map((img) => (
               <img key={img.id} src={instructor1} alt="thumbs" />
             ))} */}
 
             <div className="space-y-2">
               {/* {courses.instructors.map((instructor) => (
-                <p className="text-white font-bold ">{instructor}</p>
+                <p className="font-bold text-white ">{instructor}</p>
               ))} */}
->>>>>>> 11558e6d411745085ec483755cd700c572f16543
             </div>
           </div>
           <div class="md:w-1/3 p-4 space-y-4">
             <img src={instructor2} alt="thumbs" />
             <div className="space-y-2">
-              <p className="text-white font-bold"> Danile Eniron</p>
-              <p className="text-white text-xs">Financial Data Analyst</p>
+              <p className="font-bold text-white"> Danile Eniron</p>
+              <p className="text-xs text-white">Financial Data Analyst</p>
             </div>
           </div>
           <div class="md:w-1/3 p-4 space-y-4">
             <img src={instructor3} alt="thumbs" />
             <div className="space-y-2">
-              <p className="text-white font-bold">Danile Eniron</p>
-              <p className="text-white text-xs">Financial Data Analyst</p>
+              <p className="font-bold text-white">Danile Eniron</p>
+              <p className="text-xs text-white">Financial Data Analyst</p>
             </div>
           </div>
         </motion.div>

@@ -208,7 +208,7 @@ function Navbar() {
 
           <button className="px-4 py-2 font-bold text-white rounded bg-custom-button hover:bg-custom-button">
             <NavLink to="/sign-up" activeClassName="active">
-              Sign Out
+              Create Account
             </NavLink>
           </button>
         </div>

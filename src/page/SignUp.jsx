@@ -23,13 +23,18 @@ const SignUp = () => {
   const [agreed, setAgreed] = useState(false); // State for checkbox
   const [errors, setErrors] = useState({});
   const [csrfToken, setCsrfToken] = useState('');
-  const [accessToken, setAccessToken] = useState('');
+  // const [accessToken, setAccessToken] = useState('');
   useEffect(() => {
+    //console.log('Hello', process.env)
+    let headers = {
+      'Content-Type': 'application/json',
+      'X-CSRF-Token': csrfToken,
+      'Authorization': localStorage.getItem('bearer_token'), // Include the CSRF token in the request headers
+    };
     // Fetch the CSRF token from the server
-    fetch(`process.env.REACT_APP_DOMAIN_URL}/api/csrf-token`)
-      .then(response => response.json())
-      .then(data => setCsrfToken(data.token))
-      .catch(error => console.error('Error fetching CSRF token:', error));
+    axios.get(`${process.env.REACT_APP_DOMAIN_URL}/api/csrf-token`, headers).then(function (response) {
+      setCsrfToken(response);
+  });
   }, []);
 
   // useEffect(() => {
@@ -111,14 +116,29 @@ const SignUp = () => {
     axios.post(`${process.env.REACT_APP_DOMAIN_URL}/api/auth/register`, formData, headers).then(function (response) {
 
     console.log(response);
-      if(response.status === true) {
+      if(response.data.status === true) {
           localStorage.setItem('bearer_token', response.token);
-          toast("registered successfully");
+          toast('Account created successfully', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            type: "success"
+            });
           // alert("Register success");
           navigate('/dashboard');
       }else{
-        let message = response.message;
-        toast('🦄 Wow so easy!', {
+        let data = response.data.errors;
+       // console.log(data);
+        let error = '';
+        for (const key in data) {
+          error += `${key}: ${data[key]}`;
+      }
+        toast(error, {
           position: "top-right",
           autoClose: 5000,
           hideProgressBar: false,
@@ -143,6 +163,7 @@ const SignUp = () => {
   };
 
   return (
+    
     <div className="custom-course-background">
       <div className="max-w-5xl px-4 py-12 mx-auto">
         <div className="flex flex-col md:flex-row ">
@@ -154,6 +175,7 @@ const SignUp = () => {
               loading="lazy"
             />
           </div>
+          <ToastContainer />
           <div className="w-full px-4 py-5 mx-auto bg-white shadow-sm lg:w-1/2">
             <div className="text-center">
               <h1 className="font-bold text-red-700 lg:text-4xl ">
