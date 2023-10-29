@@ -35,9 +35,9 @@ const Profile = () => {
   };
   return (
     <div className="custom-course-background">
-      <div className="max-w-6xl mx-auto py-10">
-        <div className="lg:flex flex-wrap gap-14 px-4 ">
-          <div className="lg:w-1/5 w-full mb-4 ">
+      <div className="max-w-6xl py-10 mx-auto">
+        <div className="flex-wrap px-4 lg:flex gap-14 ">
+          <div className="w-full mb-4 lg:w-1/5 ">
             <ul className="bg-gray-300">
               <li
                 className={`hover:border-l-4 ${
@@ -112,7 +112,7 @@ const Profile = () => {
               </li>
             </ul>
           </div>
-          <div className="lg:w-3/4 w-full">
+          <div className="w-full lg:w-3/4">
             {activeTab === "profile" && (
               <>
                 <h1 className="text-4xl font-bold ">Edit Profile </h1>
@@ -121,7 +121,7 @@ const Profile = () => {
                     <img
                       src={imageUrl}
                       alt="image-url"
-                      className="lg:h-32 lg:w-32 h-16 w-16 rounded-full mx-auto"
+                      className="w-16 h-16 mx-auto rounded-full lg:h-32 lg:w-32"
                     />
                   </div>
                   <div className="w-3/4 px-4">
@@ -135,11 +135,11 @@ const Profile = () => {
                           placeholder="Email"
                           onChange={(e) => setEmail(e.target.value)}
                           required
-                          className="w-full border bg-gray-100 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                          className="w-full px-3 py-2 bg-gray-100 border rounded focus:outline-none focus:border-blue-400"
                         />
                       </div>
                       <div className="mb-4">
-                        <div className="flex flex-col md:flex-row gap-4 ">
+                        <div className="flex flex-col gap-4 md:flex-row ">
                           <div className="lg:w-1/2">
                             <label htmlFor="FirstName">First Name</label>
                             <input
@@ -149,7 +149,7 @@ const Profile = () => {
                               onChange={(e) => setFirstName(e.target.value)}
                               placeholder="First Name"
                               required
-                              className="w-full border bg-gray-100 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                              className="w-full px-3 py-2 bg-gray-100 border rounded focus:outline-none focus:border-blue-400"
                             />
                           </div>
                           <div className="lg:w-1/2">
@@ -161,7 +161,7 @@ const Profile = () => {
                               onChange={(e) => setLastName(e.target.value)}
                               placeholder="Last Name"
                               required
-                              className="w-full border bg-gray-100 border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                              className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:border-blue-400"
                             />
                           </div>
                         </div>
@@ -176,7 +176,7 @@ const Profile = () => {
                           onChange={(e) => setCompany(e.target.value)}
                           placeholder="Company"
                           required
-                          className="w-full border bg-gray-100 border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                          className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:border-blue-400"
                         />
                       </div>
 
@@ -189,13 +189,18 @@ const Profile = () => {
                           onChange={(e) => setProfession(e.target.value)}
                           placeholder="Professional Title"
                           required
-                          className="w-full border bg-gray-100 border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                          className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:border-blue-400"
                         />
                       </div>
 
                       <button
                         type="submit"
+<<<<<<< HEAD
                         className="w-40 bg-custom-button font-bold text-white rounded py-2 hover:bg-blue-600 mt-4"
+=======
+                        className="w-40 py-2 mt-4 font-bold text-white rounded bg-custom-button hover:bg-blue-600"
+                        onSubmit={handleSubmit}
+>>>>>>> 20ffcfabd2c5bd1bd30604eb90e98b43865b8006
                       >
                         Save Changes
                       </button>

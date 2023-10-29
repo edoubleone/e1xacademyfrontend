@@ -60,21 +60,25 @@ const Login = () => {
 
   return (
     <div className="custom-course-background">
-      <div className="max-w-4xl mx-auto py-12">
+      <div className="max-w-4xl py-12 mx-auto">
         <div className="flex flex-col md:flex-row">
-          <div className="lg:w-1/2 w-full">
+          <div className="w-full lg:w-1/2">
             <img
               src={imagePage}
               alt="image"
-              className="w-full h-full object-cover"
+              className="object-cover w-full h-full"
             />
           </div>
+<<<<<<< HEAD
 
           <div className="lg:w-1/2 w-full px-4 py-5 mx-auto bg-white shadow-sm">
+=======
+          <div className="w-full px-4 py-5 mx-auto bg-white shadow-sm lg:w-1/2">
+>>>>>>> 20ffcfabd2c5bd1bd30604eb90e98b43865b8006
             <div className="text-center">
-              <h1 className="font-bold text-4xl text-red-700">Login</h1>
+              <h1 className="text-4xl font-bold text-red-700">Login</h1>
             </div>
-            <form onSubmit={handleSubmit} className="border-b pb-3">
+            <form onSubmit={handleSubmit} className="pb-3 border-b">
               <div className="mb-4">
                 <label htmlFor="email">Email</label>
                 <input
@@ -84,7 +88,7 @@ const Login = () => {
                   onChange={handleEmailChange}
                   required
                   placeholder="Email"
-                  className="w-full border bg-gray-100 border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                  className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:border-blue-400"
                 />
                 {errors.email && <p className="error">{errors.email}</p>}
               </div>
@@ -97,11 +101,11 @@ const Login = () => {
                   onChange={handlePasswordChange}
                   required
                   placeholder="Password"
-                  className="w-full bg-slate-100 border border-gray-300 rounded px-3 py-2 focus:outline-none focus:border-blue-400"
+                  className="w-full px-3 py-2 border border-gray-300 rounded bg-slate-100 focus:outline-none focus:border-blue-400"
                 />
                 {errors.password && <p className="error">{errors.password}</p>}
                 {/* {error && (
-                  <p className="text-red-400 text-sm">
+                  <p className="text-sm text-red-400">
                     An error occurred. Please try again later.
                   </p>
                 )} */}
@@ -113,19 +117,19 @@ const Login = () => {
 
               <button
                 type="submit"
-                className="w-40 bg-custom-button text-white rounded py-2 hover:bg-blue-600"
+                className="w-40 py-2 text-white rounded bg-custom-button hover:bg-blue-600"
               >
                 Login
               </button>
             </form>
 
-            <div className="flex items-center justify-center space-x-4 mt-4">
+            <div className="flex items-center justify-center mt-4 space-x-4">
               <SocialButton icon={<FcGoogle />} />
               <SocialButton icon={<FaFacebook />} className="text-blue-600" />
               <SocialButton icon={<AiFillApple />} />
             </div>
             <div>
-              <p className="text-center mt-3 text-sm">
+              <p className="mt-3 text-sm text-center">
                 Don't have an account?{" "}
                 <NavLink to="/sign-up" className="text-sm">
                   Sign-up

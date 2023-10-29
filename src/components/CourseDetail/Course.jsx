@@ -17,13 +17,13 @@ const Course = () => {
   const fetchFirstFour = courses.slice(0, 4);
 
   return (
-    <div className="w-full custom-description-background py-24">
+    <div className="w-full py-24 custom-description-background">
       <div class="max-w-5xl mx-auto ">
-        <p className="lg:text-4xl text-2xl font-bold px-4">
+        <p className="px-4 text-2xl font-bold lg:text-4xl">
           Course You May Like
         </p>
 
-        <div className="flex flex-col md:flex-row gap-3 mt-7">
+        <div className="flex flex-col gap-3 md:flex-row mt-7">
           {fetchFirstFour.map((course) => (
             <div class="lg:w-1/4 w-full p-4">
               <CourseCard

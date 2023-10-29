@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function CustomButton({ text, link }) {
   return (
     <NavLink to={link}>
-      <button className="bg-custom-button hover:bg-custom-button text-white py-4 px-1 rounded-lg lg:w-72 w-full">
+      <button className="w-full px-1 py-4 text-white rounded-lg bg-custom-button hover:bg-custom-button lg:w-72">
         {text}
       </button>
     </NavLink>

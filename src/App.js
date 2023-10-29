@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import DashboardNavbar from "./components/Dashboard/Dashboard_Navbar";
 import Navbar from "./components/Navbar";
@@ -13,7 +12,6 @@ import Course from "./page/Courses";
 import SuccessfulPage from "./page/SuccessfulPage";
 import DashboardCourse from "./components/Dashboard/Course";
 import ContactPage from "./page/ContactPage";
-
 import Payement from "./page/Payement";
 import CheckOutPage from "./page/CheckOutPage";
 import About from "./page/About";
@@ -26,8 +24,12 @@ import LiveCourses from "./page/LiveCourse";
 import NotFound from "./page/NotFound";
 import EmailVerificationForm from "./page/EmailVerificationForm";
 import PrivateRoute from "./components/PrivateRoute";
+<<<<<<< HEAD
 import { EmailProtectedRoute } from "./components/EmailProtectedRoute";
 
+=======
+import Callback from "./page/Callback"; 
+>>>>>>> 20ffcfabd2c5bd1bd30604eb90e98b43865b8006
 import CourseDetailPage from "./page/CourseDetails";
 
 function App() {
@@ -53,6 +55,7 @@ function AppContent() {
         <Route path="/about" element={<About />} />
         <Route path="/checkout" element={<CheckOutPage />} />
         <Route path="/payment" element={<Payement />} />
+        <Route path="/payment-complete/:reference" element={<Callback />} />
         <Route path="/success" element={<SuccessfulPage />} />
         <Route path="/live-course" element={<LiveCourses />} />
         <Route path="/live-course/:uuid" element={<LiveCourseDetail />} />

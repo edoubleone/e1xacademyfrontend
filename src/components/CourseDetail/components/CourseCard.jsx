@@ -9,15 +9,15 @@ function CourseCard({ imageSrc, title, duration, uuid }) {
     navigate(`/course/${uuid}`);
   };
   return (
-    <div className="h-full bg-white p-3">
+    <div className="h-full p-3 bg-white">
       <img src={imageSrc} alt="course" />
       <div>
-        <p className="text-center font-bold py-3">{title}</p>
+        <p className="py-3 font-bold text-center">{title}</p>
 
         <div className="flex justify-between ">
           <p className="text-xs">{duration}</p>
           <button
-            className="flex items-center space-x-2  "
+            className="flex items-center space-x-2 "
             onClick={() => handleViewDetails(uuid)}
           >
             <p className="text-xs">View Course</p>

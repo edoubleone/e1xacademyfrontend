@@ -22,16 +22,16 @@ const DashboardCourse = () => {
   const fetchSecondFour = courses.slice(2, 4);
 
   return (
-    <div className="custom-course-background py-10">
+    <div className="py-10 custom-course-background">
       {isLoading && <LoadingSpinner />}
 
       {error && <ErrorPage errors={error} />}
 
       {!isLoading && !error && (
         <div className="max-w-6xl mx-auto">
-          <div className="lg:flex lg:justify-between flex-row  items-center px-4">
-            <p className="text-4xl font-bold lg:mb-0 mb-4 ">My Courses</p>
-            <div className="lg:flex  lg:justify-end justify-center ">
+          <div className="flex-row items-center px-4 lg:flex lg:justify-between">
+            <p className="mb-4 text-4xl font-bold lg:mb-0 ">My Courses</p>
+            <div className="justify-center lg:flex lg:justify-end ">
               <div class="relative ">
                 <input
                   type="text"
@@ -44,7 +44,7 @@ const DashboardCourse = () => {
               </div>
             </div>
           </div>
-          <div className=" lg:flex flex-row gap-8 mb-6 mt-12">
+          <div className="flex-row gap-8 mt-12 mb-6  lg:flex">
             {fetchFirstTwo?.map((course) => (
               <CourseCard
                 key={course.id}

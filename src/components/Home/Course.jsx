@@ -64,13 +64,13 @@ function Course() {
       {error && <ErrorPage errors={error} />}
 
       {!isLoading && !error && (
-        <div className="max-w-6xl mx-auto justify-center items-center px-4 ">
+        <div className="items-center justify-center max-w-6xl px-4 mx-auto ">
           <div>
-            <h1 className="text-center font-bold pb-2 lg:text-5xl text-3xl gradient-text-blue">
+            <h1 className="pb-2 text-3xl font-bold text-center lg:text-5xl gradient-text-blue">
               Popular Course
             </h1>
 
-            <p className="text-center lg:text-xl text-sm mb-5">
+            <p className="mb-5 text-sm text-center lg:text-xl">
               Explore From All Your Online Course
             </p>
           </div>
@@ -109,7 +109,7 @@ function Course() {
           </div>
 
           <motion.div
-            className="text-center  mt-12 mb-9"
+            className="mt-12 text-center mb-9"
             variants={buttonVariants}
             whileHover="hover"
             whileTap="tap"

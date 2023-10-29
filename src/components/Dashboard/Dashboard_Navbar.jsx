@@ -56,7 +56,7 @@ function DashboardNavbar() {
 
   return (
     <div className={`p-4 ${isSticky ? "sticky-navbar" : ""}`}>
-      <nav className="max-w-6xl flex items-center justify-between mx-auto   md:px-2">
+      <nav className="flex items-center justify-between max-w-6xl mx-auto md:px-2">
         <div className="flex items-center gap-8">
           <NavLink
             to="/dashboard"
@@ -96,24 +96,24 @@ function DashboardNavbar() {
           </li>
         </div>
 
-        <ul className="hidden md:flex space-x-10 text-md"></ul>
+        <ul className="hidden space-x-10 md:flex text-md"></ul>
 
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="items-center hidden space-x-4 md:flex">
           <div
             to="/sign-in"
             activeClassName="active"
-            className="text-lg relative"
+            className="relative text-lg"
             onClick={toggleDropdown}
           >
             <div className="flex items-center gap-2">
               <p>{user ? user.firstname : ""}</p>
-              <img src="" alt="profile" className="h-4 w-4 rounded-full" />
+              <img src="" alt="profile" className="w-4 h-4 rounded-full" />
               <div>
                 <IoIosArrowDown />
               </div>
             </div>
             {isDropdownOpen && (
-              <div className="text-sm absolute top-full left-8 bg-white border rounded-lg shadow-lg p-4">
+              <div className="absolute p-4 text-sm bg-white border rounded-lg shadow-lg top-full left-8">
                 <ul className="space-y-2">
                   <li>
                     <NavLink> Profile</NavLink>
@@ -155,8 +155,8 @@ function DashboardNavbar() {
             height: "100%", // Extend to the full height of the parent container
           }}
         >
-          <ul className="uppercase flex-col items-center justify-center  p-4 ">
-            <div className="flex  p-4">
+          <ul className="flex-col items-center justify-center p-4 uppercase ">
+            <div className="flex p-4">
               <NavLink
                 to="/"
                 exact

@@ -60,7 +60,7 @@ function Navbar() {
 
   return (
     <div className={`p-4 ${isSticky ? "sticky-navbar" : ""}`}>
-      <nav className="max-w-6xl flex items-center justify-between mx-auto md:px-2">
+      <nav className="flex items-center justify-between max-w-6xl mx-auto md:px-2">
         <div>
           <NavLink
             to="/"
@@ -72,7 +72,7 @@ function Navbar() {
           </NavLink>
         </div>
 
-        <ul className="hidden md:flex space-x-10 text-md">
+        <ul className="hidden space-x-10 md:flex text-md">
           <li>
             <NavLink
               to="/"
@@ -201,14 +201,14 @@ function Navbar() {
           </li>
         </ul>
 
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="items-center hidden space-x-4 md:flex">
           <NavLink to="/sign-in" activeClassName="active" className="text-lg">
             Sign In
           </NavLink>
 
-          <button className="bg-custom-button hover:bg-custom-button text-white font-bold py-2 px-4 rounded">
+          <button className="px-4 py-2 font-bold text-white rounded bg-custom-button hover:bg-custom-button">
             <NavLink to="/sign-up" activeClassName="active">
-              Sign Out
+              Create Account
             </NavLink>
           </button>
         </div>
@@ -235,8 +235,8 @@ function Navbar() {
             height: "100%", // Extend to the full height of the parent container
           }}
         >
-          <ul className="uppercase flex-col items-center justify-center  p-4 ">
-            <div className="flex  p-4">
+          <ul className="flex-col items-center justify-center p-4 uppercase ">
+            <div className="flex p-4">
               <NavLink
                 to="/"
                 exact

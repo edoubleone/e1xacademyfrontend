@@ -30,8 +30,9 @@ const CourseCard = ({
     navigate(`/course/${uuid}`);
   };
   return (
-    <div className="max-w-6xl mx-auto  bg-white p-4">
+    <div className="max-w-6xl p-4 mx-auto bg-white">
       <div className="mb-4">
+<<<<<<< HEAD
         <div className="flex space-x-4   ">
           <div className="lg:flex w-full lg:gap-12 gap-1 mb-10">
             <div className="lg:flex justify-center md:justify-start">
@@ -55,6 +56,23 @@ const CourseCard = ({
             <div className="w-full  ">
               <div className="space-y-2 md:space-y-3 lg:mt-4    ">
                 <h1 className="font-bold lg:text-2xl lg:text-left text-center ">
+=======
+        <div className="flex space-x-4 ">
+          <div className="w-full gap-1 mb-10 lg:flex lg:gap-12">
+            <div className="justify-center lg:flex md:justify-start">
+              <img
+                src="images"
+                width="300"
+                height="300"
+                alt="course-pics"
+                className="object-fill mx-auto md:mx-0" // Center on medium devices, align left on others
+              />
+            </div>
+
+            <div className="w-full ">
+              <div className="space-y-3 lg:space-y-6 lg:mt-4 ">
+                <h1 className="font-bold text-center lg:text-2xl lg:text-left ">
+>>>>>>> 20ffcfabd2c5bd1bd30604eb90e98b43865b8006
                   {title}
                 </h1>
                 <p className=" lg:text-left text-center ">
@@ -65,34 +83,40 @@ const CourseCard = ({
                   {currency} {price}
                 </p>
 
-                <div className="flex items-center  gap-6  lg:justify-start  justify-between lg:px-0 px-4  ">
+                <div className="flex items-center justify-between gap-6 px-4 lg:justify-start lg:px-0 ">
                   <div className="flex items-center gap-1">
                     <img src={iconBar} alt="icon-bar" />
-                    <p className="lg:text-md text-sm ">{beginnerText}</p>
+                    <p className="text-sm lg:text-md ">{beginnerText}</p>
                   </div>
-                  <div className="flex items-center gap-1  ">
+                  <div className="flex items-center gap-1 ">
                     <img src={bookBar} alt="icon-bar" />
-                    <p className="lg:text-md text-sm">{lessonsText}</p>
+                    <p className="text-sm lg:text-md">{lessonsText}</p>
                   </div>
                 </div>
+<<<<<<< HEAD
+=======
+                <div className="flex justify-center lg:justify-start">
+                  {price}
+                </div>
+>>>>>>> 20ffcfabd2c5bd1bd30604eb90e98b43865b8006
 
-                <div className="flex items-center gap-6  lg:justify-start justify-between lg:px-0 px-4">
+                <div className="flex items-center justify-between gap-6 px-4 lg:justify-start lg:px-0">
                   <div className="flex items-center gap-1">
                     <LiaClock />
-                    <p className="lg:text-md text-sm"> {hours}</p>
+                    <p className="text-sm lg:text-md"> {hours}</p>
                   </div>
                   <div className="flex items-center gap-1">
                     <HiOutlineVideoCamera />
                     <div className="flex items-center">
-                      <p className="lg:text-md text-sm">{videos}</p>
-                      <p className="lg:text-md text-sm">Videos</p>
+                      <p className="text-sm lg:text-md">{videos}</p>
+                      <p className="text-sm lg:text-md">Videos</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="lg:mt-24 mt-3">
-                <div className="flex justify-between lg:px-0 px-4">
+              <div className="mt-3 lg:mt-24">
+                <div className="flex justify-between px-4 lg:px-0">
                   <div className="flex gap-4">
                     <img src={courseGroup} alt="course-group" />
                     <div className="flex items-center gap-1">
