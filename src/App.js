@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import DashboardNavbar from "./components/Dashboard/Dashboard_Navbar";
 import Navbar from "./components/Navbar";
@@ -24,7 +23,7 @@ import SignUp from "./page/SignUp";
 import LiveCourses from "./page/LiveCourse";
 import NotFound from "./page/NotFound";
 import PrivateRoute from "./components/PrivateRoute";
-
+import Callback from "./page/Callback"; 
 import CourseDetailPage from "./page/CourseDetails";
 
 function App() {
@@ -50,6 +49,7 @@ function AppContent() {
         <Route path="/about" element={<About />} />
         <Route path="/checkout" element={<CheckOutPage />} />
         <Route path="/payment" element={<Payement />} />
+        <Route path="/payment-complete/:reference" element={<Callback />} />
         <Route path="/success" element={<SuccessfulPage />} />
         <Route path="/live-course" element={<LiveCourses />} />
         <Route path="/live-course/:uuid" element={<LiveCourseDetail />} />
