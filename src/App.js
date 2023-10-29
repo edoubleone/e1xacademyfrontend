@@ -26,6 +26,7 @@ import LiveCourses from "./page/LiveCourse";
 import NotFound from "./page/NotFound";
 import EmailVerificationForm from "./page/EmailVerificationForm";
 import PrivateRoute from "./components/PrivateRoute";
+import { EmailProtectedRoute } from "./components/EmailProtectedRoute";
 
 import CourseDetailPage from "./page/CourseDetails";
 
@@ -63,6 +64,10 @@ function AppContent() {
         <Route
           path="/dashboard"
           element={<PrivateRoute Element={<Dashboard />} />}
+        />
+        <Route
+          path="/dashboard"
+          element={<EmailProtectedRoute Element={<Dashboard />} />}
         />
 
         <Route

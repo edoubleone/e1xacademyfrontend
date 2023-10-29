@@ -31,7 +31,7 @@ const Profile = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    navigate("/");
+    navigate("/course");
   };
   return (
     <div className="custom-course-background">
@@ -125,7 +125,7 @@ const Profile = () => {
                     />
                   </div>
                   <div className="w-3/4 px-4">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                       <div className="mb-4">
                         <label htmlFor="email">Email</label>
                         <input
@@ -196,7 +196,6 @@ const Profile = () => {
                       <button
                         type="submit"
                         className="w-40 bg-custom-button font-bold text-white rounded py-2 hover:bg-blue-600 mt-4"
-                        onSubmit={handleSubmit}
                       >
                         Save Changes
                       </button>

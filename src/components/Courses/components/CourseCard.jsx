@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { IoIosMagnet } from "react-icons/io";
 import iconBar from "../../../assets/icons/Vector (5).png";
 import bookBar from "../../../assets/icons/Group.png";
 import { LiaClock } from "react-icons/lia";
@@ -33,24 +34,15 @@ const CourseCard = ({
       <div className="mb-4">
         <div className="flex space-x-4   ">
           <div className="lg:flex w-full lg:gap-12 gap-1 mb-10">
-            {/* <div className="lg:flex justify-center md:justify-start">
-              {images.map((image, index) => (
-                <img
-                  key={index}
-                  src={image[0]}
-                  width="300"
-                  height="300"
-                  alt={`course-pics-${index}`}
-                  className="mx-auto md:mx-0 object-fill"
-                />
-              ))}
-            </div> */}
             <div className="lg:flex justify-center md:justify-start">
               {images.map((image, index) =>
                 index === 0 ? (
                   <img
                     key={index}
-                    src={image}
+                    src={console.log(
+                      "i wnat to see the image in the api",
+                      image
+                    )}
                     width="300"
                     height="300"
                     alt={`course-pics-${index}`}

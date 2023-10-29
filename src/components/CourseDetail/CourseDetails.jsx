@@ -1,14 +1,16 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-
+import { AuthContext } from "../../services/LoginAuthContext";
 import { motion } from "framer-motion";
 import vector from "../../assets/icons/Vector.png";
 import illustration from "../../assets/images/illustration.png";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { CourseDetailContext } from "../../services/CourseDetails";
 
 const CourseDetails = () => {
+  const { user } = useContext(AuthContext);
   const { uuid } = useParams();
+  const navigate = useNavigate();
 
   const { courses, isLoading, error, fetchCourseDetails } =
     useContext(CourseDetailContext);
@@ -18,7 +20,14 @@ const CourseDetails = () => {
       fetchCourseDetails(uuid);
     }
   }, []);
-  console.log(" i am checking the detail page ", courses);
+
+  const handleEnrollClick = () => {
+    if (user) {
+      navigate("/dashboard/course");
+    } else {
+      navigate("/sign-up");
+    }
+  };
 
   const imgVariants = {
     initial: {
@@ -57,9 +66,16 @@ const CourseDetails = () => {
           <h1 className="font-bold text-white lg:text-6xl md:text-3xl">
             {courses?.title}
           </h1>
+
           <p className="text-white lg:text-lg md:text-xs">
-            {/* {courses.course_description} */}
+            {courses?.course_description
+              ? courses.course_description.slice(0, 50)
+              : "Becoming a Financial Data Analyst involves acquiring the skills and knowledge required to analyze and interpret financial data to make informed business decisions. Financial Data Analysts are responsible"}
           </p>
+
+          <div>
+            <p className="text-white">Last Updated: {courses?.date}</p>
+          </div>
 
           <div className="mt-4">
             <div className="py-8 bg-[#256BDB] space-y-4">
@@ -112,8 +128,21 @@ const CourseDetails = () => {
         <div className="lg:w-1/2 w-full flex flex-col items-center justify-center">
           <div className="mb-4">
             {courses?.images.map((image) => (
-              <img src={image} alt="illustration" />
+              <img
+                src={illustration}
+                alt="illustration"
+                width="500"
+                height="500"
+              />
             ))}
+          </div>
+          <div className=" flex justify-start space-x-4 text-white mb-4 text-3xl font-bold">
+            <div className="flex">
+              <p>
+                {courses?.currency_NGN}
+                {courses?.price_NGN}
+              </p>
+            </div>
           </div>
           <div className="flex space-x-11">
             <motion.button
@@ -121,6 +150,7 @@ const CourseDetails = () => {
               variants={buttonVariants}
               whileHover="hover"
               whileTap="tap"
+              onClick={handleEnrollClick}
             >
               Enroll
             </motion.button>

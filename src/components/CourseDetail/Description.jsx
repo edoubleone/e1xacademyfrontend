@@ -93,16 +93,10 @@ const Description = () => {
         <div className="max-w-5xl mx-auto space-y-5  py-12 p-4">
           <p className="font-bold text-2xl">Description</p>
           <div className="space-y-5">
-            {/* <p>{courses.course_description}</p> */}
+            {courses?.course_description
+              ? courses.course_description.slice(0, 150)
+              : "They perform quantitative analysis to identify trends, patterns, and anomalies in financial data to support strategic planning and investment decisions. Strong analytical skills, proficiency in financial modeling, and a solid understanding of financial markets are essential for success in this role."}
 
-            <p>
-              {" "}
-              They perform quantitative analysis to identify trends, patterns,
-              and anomalies in financial data to support strategic planning and
-              investment decisions. Strong analytical skills, proficiency in
-              financial modeling, and a solid understanding of financial markets
-              are essential for success in this role.
-            </p>
             <p>
               Financial Data Analysts play a crucial role in helping
               organizations optimize their financial performance and mitigate

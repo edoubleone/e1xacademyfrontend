@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useContext } from "react";
+
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { AiFillApple } from "react-icons/ai";
@@ -8,13 +8,13 @@ import { useNavigate } from "react-router-dom";
 import imagePage from "../assets/images/pretty-black-woman-feeling-happy-facing-challenge-celebrating-agenda-concept_1194-339851.jpg";
 
 import validator from "validator";
-import { AuthProvider } from "../services/AuthContext";
 
 const SignUp = () => {
-  // const { user, setUser, apiData, isLoading, error } = useContext(AuthProvider);
   const navigate = useNavigate();
-  
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const [email, setEmail] = useState("");
+
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -81,9 +81,10 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     if (validateForm()) {
-      navigate("/dashboard");
+      navigate("/verify-email");
     }
   };
 
@@ -187,13 +188,14 @@ const SignUp = () => {
               <button
                 type="submit"
                 className="w-40 bg-custom-button text-white rounded py-2 hover:bg-blue-600 mt-4"
+                disabled={isSubmitting}
               >
                 Sign Up
               </button>
             </form>
 
             <div className="flex items-center justify-center space-x-4 mt-4">
-              <button className="border rounded-full py-2 px-2 hover:bg-[#d8c1ae]">
+              <button className="border rounded-full py-2 px-2 hover:bg-[#5f5a55]">
                 <FcGoogle />
               </button>
 

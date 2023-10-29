@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
 
 const EmailVerificationForm = () => {
-  const [data, setData] = useState([]);
+  const [emailVerified, setEmailVerified] = useState(false);
 
   useEffect(() => {
-    // Make a GET request to your backend API
+    // Make a GET request to your backend API to check if the email is verified
     axios
-      .get("/api/someEndpoint")
+      .get("/api/checkEmailVerification")
       .then((response) => {
-        setData(response.data);
+        setEmailVerified(response.data.verified);
       })
       .catch((error) => {
         console.error("Error:", error);
       });
   }, []);
+
+  if (emailVerified) {
+    return <Navigate to="/dashboard" replace />;
+  }
   return (
     <div className="custom-course-background min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full sm:w-96">

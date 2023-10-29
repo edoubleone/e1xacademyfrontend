@@ -1,6 +1,7 @@
 // Login.js
 import React, { useState } from "react";
 import validator from "validator";
+import "react-toastify/dist/ReactToastify.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import imagePage from "../assets/images/pretty-black-woman-feeling-happy-facing-challenge-celebrating-agenda-concept_1194-339851.jpg";
 import { AuthContext } from "../services/LoginAuthContext";
@@ -8,6 +9,7 @@ import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { AiFillApple } from "react-icons/ai";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -42,11 +44,16 @@ const Login = () => {
     e.preventDefault();
 
     if (validateForm()) {
-      // Assuming login function is an async function
-      await login(email, password); // Wait for the login operation to complete
-      // If login is successful and user is set in context, navigate to dashboard
-      if (user) {
-        navigate("/dashboard"); // Redirect to the dashboard page
+      try {
+        await login(email, password); // Assuming this logs the user in
+
+        if (user) {
+          toast("Login successful", { type: "success" });
+
+          navigate("/dashboard");
+        }
+      } catch (error) {
+        toast("User not set. Login failed.", { type: "error" });
       }
     }
   };
@@ -62,6 +69,7 @@ const Login = () => {
               className="w-full h-full object-cover"
             />
           </div>
+
           <div className="lg:w-1/2 w-full px-4 py-5 mx-auto bg-white shadow-sm">
             <div className="text-center">
               <h1 className="font-bold text-4xl text-red-700">Login</h1>
@@ -127,6 +135,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };
