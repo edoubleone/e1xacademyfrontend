@@ -1,11 +1,9 @@
-// Login.js
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import validator from "validator";
 import "react-toastify/dist/ReactToastify.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import imagePage from "../assets/images/pretty-black-woman-feeling-happy-facing-challenge-celebrating-agenda-concept_1194-339851.jpg";
 import { AuthContext } from "../services/LoginAuthContext";
-import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { AiFillApple } from "react-icons/ai";
@@ -13,14 +11,11 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { user, error, login } = useContext(AuthContext);
+  const { user, login } = useContext(AuthContext);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
-
-  const handleEmailChange = (e) => setEmail(e.target.value);
-  const handlePasswordChange = (e) => setPassword(e.target.value);
 
   const validateForm = () => {
     let newErrors = {};
@@ -45,15 +40,11 @@ const Login = () => {
 
     if (validateForm()) {
       try {
-        await login(email, password); // Assuming this logs the user in
-
-        if (user) {
-          toast("Login successful", { type: "success" });
-
-          navigate("/dashboard");
-        }
-      } catch (error) {
-        toast("User not set. Login failed.", { type: "error" });
+        await login(email, password);
+        toast("Login successful", { type: "success" });
+        navigate("/dashboard");
+      } catch (err) {
+        toast("Login failed.", { type: "error" });
       }
     }
   };
@@ -65,50 +56,43 @@ const Login = () => {
           <div className="w-full lg:w-1/2">
             <img
               src={imagePage}
-              alt="image"
+              alt="login"
               className="object-cover w-full h-full"
             />
           </div>
-<<<<<<< HEAD
 
-          <div className="lg:w-1/2 w-full px-4 py-5 mx-auto bg-white shadow-sm">
-=======
           <div className="w-full px-4 py-5 mx-auto bg-white shadow-sm lg:w-1/2">
->>>>>>> 20ffcfabd2c5bd1bd30604eb90e98b43865b8006
             <div className="text-center">
               <h1 className="text-4xl font-bold text-red-700">Login</h1>
             </div>
+
             <form onSubmit={handleSubmit} className="pb-3 border-b">
               <div className="mb-4">
-                <label htmlFor="email">Email</label>
+                <label>Email</label>
                 <input
                   type="email"
-                  name="email"
                   value={email}
-                  onChange={handleEmailChange}
-                  required
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email"
-                  className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded focus:outline-none focus:border-blue-400"
+                  className="w-full px-3 py-2 bg-gray-100 border rounded focus:outline-none focus:border-blue-400"
                 />
-                {errors.email && <p className="error">{errors.email}</p>}
+                {errors.email && (
+                  <p className="text-sm text-red-500">{errors.email}</p>
+                )}
               </div>
+
               <div className="mb-4">
-                <label htmlFor="password">Password</label>
+                <label>Password</label>
                 <input
                   type="password"
-                  name="password"
                   value={password}
-                  onChange={handlePasswordChange}
-                  required
+                  onChange={(e) => setPassword(e.target.value)}
                   placeholder="Password"
-                  className="w-full px-3 py-2 border border-gray-300 rounded bg-slate-100 focus:outline-none focus:border-blue-400"
+                  className="w-full px-3 py-2 bg-gray-100 border rounded focus:outline-none focus:border-blue-400"
                 />
-                {errors.password && <p className="error">{errors.password}</p>}
-                {/* {error && (
-                  <p className="text-sm text-red-400">
-                    An error occurred. Please try again later.
-                  </p>
-                )} */}
+                {errors.password && (
+                  <p className="text-sm text-red-500">{errors.password}</p>
+                )}
 
                 <NavLink to="/reset-password" className="text-xs">
                   Forgot password
@@ -125,17 +109,14 @@ const Login = () => {
 
             <div className="flex items-center justify-center mt-4 space-x-4">
               <SocialButton icon={<FcGoogle />} />
-              <SocialButton icon={<FaFacebook />} className="text-blue-600" />
+              <SocialButton icon={<FaFacebook />} />
               <SocialButton icon={<AiFillApple />} />
             </div>
-            <div>
-              <p className="mt-3 text-sm text-center">
-                Don't have an account?{" "}
-                <NavLink to="/sign-up" className="text-sm">
-                  Sign-up
-                </NavLink>
-              </p>
-            </div>
+
+            <p className="mt-3 text-sm text-center">
+              Don't have an account?{" "}
+              <NavLink to="/sign-up">Sign-up</NavLink>
+            </p>
           </div>
         </div>
       </div>
@@ -144,11 +125,8 @@ const Login = () => {
   );
 };
 
-// SocialButton component for social media icons
-const SocialButton = ({ icon, className }) => (
-  <button
-    className={`border rounded-full py-2 px-2 hover:bg-[#d8c1ae] ${className}`}
-  >
+const SocialButton = ({ icon }) => (
+  <button className="px-2 py-2 border rounded-full hover:bg-[#d8c1ae]">
     {icon}
   </button>
 );

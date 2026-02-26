@@ -24,12 +24,8 @@ import LiveCourses from "./page/LiveCourse";
 import NotFound from "./page/NotFound";
 import EmailVerificationForm from "./page/EmailVerificationForm";
 import PrivateRoute from "./components/PrivateRoute";
-<<<<<<< HEAD
 import { EmailProtectedRoute } from "./components/EmailProtectedRoute";
-
-=======
-import Callback from "./page/Callback"; 
->>>>>>> 20ffcfabd2c5bd1bd30604eb90e98b43865b8006
+import Callback from "./page/Callback";
 import CourseDetailPage from "./page/CourseDetails";
 
 function App() {
